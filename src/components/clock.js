@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from "react";
-import { css } from "@emotion/react";
+import { css } from "@emotion/css";
 
 const Clock = () => {
   const monthNames = [
@@ -38,7 +38,7 @@ const Clock = () => {
 
   return (
     <div
-      css={css`
+      className={css`
         display: flex;
         flex-direction: column;
         justify-content: space-around;
