@@ -33,20 +33,7 @@ const Footer = () => {
         `}
       >
         <Clock />
-        <Link
-          href="/archive"
-          className={css`
-            position: relative;
-            width: fit-content;
-            height: fit-content;
-            font-family: moderat-meduim;
-            font-style: normal;
-            font-weight: 500;
-            font-size: 3.125vw;
-            letter-spacing: 0.02em;
-            padding-right: 2vw;
-          `}
-        >
+        <Link href="/archive" className="Archive-font">
           Archive
         </Link>
       </div>

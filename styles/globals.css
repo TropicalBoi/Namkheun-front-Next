@@ -7,6 +7,7 @@ html {
   overflow: hidden;
   scrollbar-width: none;
   cursor: url(../images/icon_cur.png), auto;
+  color: #000;
 }
 
 a {
@@ -97,6 +98,18 @@ span {
   text-align: center;
 }
 
+.archive-font {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  font-family: moderat-meduim;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 3.125vw;
+  letter-spacing: 0.02em;
+  padding-right: 2vw;
+}
+
 .visually-hidden {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -175,9 +188,5 @@ span {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
   }
 }
