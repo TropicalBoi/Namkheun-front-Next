@@ -35,7 +35,7 @@ const contact = () => {
         <a
           href="https://www.instagram.com/namkheun/"
           target="_blank"
-          without
+          
           rel="noreferrer"
         >
           @namkheun
@@ -45,7 +45,7 @@ const contact = () => {
         <a
           href="https://twitter.com/namkheun"
           target="_blank"
-          without
+          
           rel="noreferrer"
         >
           @namkheun
@@ -55,7 +55,7 @@ const contact = () => {
         <a
           href="https://www.facebook.com/namkheun"
           target="_blank"
-          without
+          
           rel="noreferrer"
         >
           <span>น้ำขึ้น</span> Namkheun

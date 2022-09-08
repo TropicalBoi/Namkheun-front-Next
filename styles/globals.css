@@ -98,17 +98,7 @@ span {
   text-align: center;
 }
 
-.archive-font {
-  position: relative;
-  width: fit-content;
-  height: fit-content;
-  font-family: moderat-meduim;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 3.125vw;
-  letter-spacing: 0.02em;
-  padding-right: 2vw;
-}
+
 
 .visually-hidden {
   clip: rect(0 0 0 0);
@@ -135,9 +125,6 @@ span {
   src: url(./font/ABCMarfaMonoVariable-Trial.ttf);
 }
 
-.MenuLink {
-  margin: 0 30px 0 0;
-}
 
 @keyframes shake {
   0% {

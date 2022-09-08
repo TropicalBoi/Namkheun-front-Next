@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from "react";
-import { css } from "@emotion/css";
+import style from "../../styles/clock.module.css"
 
 const Clock = () => {
   const monthNames = [
@@ -38,21 +38,7 @@ const Clock = () => {
 
   return (
     <div
-      className={css`
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: flex-start;
-        width: 22.39vw;
-        height: 6.969vh;
-        font-family: ABC-Marfa-Mono;
-        font-style: normal;
-        font-weight: 300;
-        font-size: 1.458vw;
-        line-height: 3.69vh;
-        letter-spacing: 0.02em;
-        padding-left: 2vw;
-      `}
+      className={style.clock}
     >
       {date.toLocaleTimeString("en-GB")}
       <div>

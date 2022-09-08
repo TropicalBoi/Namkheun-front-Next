@@ -1,52 +1,32 @@
 import * as React from "react";
 import Link from "next/link";
-import { css } from "@emotion/css";
+
 // import searchIcon from "../images/SearchIcon.png";
+import style from "../../styles/navbar.module.css"
 
 const Navbar = () => {
   return (
     <nav
-      className={css`
-          position: absolute;
-          top: 0;
-          width: 100%;
-          height: 25vh;
-          font-family: moderat-meduim;
-          font-style: normalว
-          font-weight: 500;
-          font-size: 3.125vw;
-          letter-spacing: 0.02em;
-          line-height: 6.33vh;
-          background-image: linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,1), rgba(255,255,255,0));
-          z-index: 100;
-        `}
+      className={style.navbar}
     >
       <div
-        className={css`
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          position: absolute;
-          top: 2.9vh;
-          left: 1.82vw;
-        `}
+        className={style.navbarContainer}
       >
         <Link href="/">Namkheun Collective</Link>
         <div
-          className={css`
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-          `}
+          className={style.navbarMenu}
         >
-          <Link href="/about" className="MenuLink">
-            About
+          <Link href="/about" >
+            <p className={style.MenuLink}> About </p>
+            
           </Link>
-          <Link href="/projects" className="MenuLink">
-            Projects
+          <Link href="/projects" >
+            <p className={style.MenuLink}>    Projects</p>
+         
           </Link>
-          <Link href="/contact" className="MenuLink">
-            Contact
+          <Link href="/contact" >
+            <p className={style.MenuLink}> Contact</p>
+            
           </Link>
         </div>
       </div>

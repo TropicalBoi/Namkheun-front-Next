@@ -1,40 +1,20 @@
 import * as React from "react";
 import Clock from "./clock";
 import Link from "next/link";
-import { css } from "@emotion/css";
+
+import style from "../../styles/footer.module.css"
 
 const Footer = () => {
   return (
     <footer
-      className={css`
-        position: absolute;
-        bottom: 0;
-        width: 100vw;
-        height: 12vh;
-        background-image: linear-gradient(
-          to top,
-          rgba(255, 255, 255, 1),
-          rgba(255, 255, 255, 1),
-          rgba(255, 255, 255, 1),
-          rgba(255, 255, 255, 0)
-        );
-        z-index: 100;
-      `}
+      className={style.footerContainer}
     >
       <div
-        className={css`
-          position: absolute;
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: flex-end;
-          width: 100vw;
-          bottom: 1vh;
-        `}
+        className={style.footerInner}
       >
         <Clock />
-        <Link href="/archive" className="Archive-font">
-          Archive
+        <Link href="/archive" >
+          <p className={style.ArchiveFont}>Archive</p>
         </Link>
       </div>
     </footer>

@@ -5,7 +5,7 @@ import style from '../styles/about.module.css'
 import { useState } from "react";
 
 
-const about = () => {
+const About = () => {
     const [thaiText, setThaiText] = useState(false);
 
 
@@ -98,4 +98,4 @@ const about = () => {
   )
 }
 
-export default about
+export default About
