@@ -1,79 +1,32 @@
 import React from "react";
-import { css } from "@emotion/css";
 import Layout from "../src/components/layout";
+import style from '../styles/contact.module.css'
 
 const contact = () => {
   return (
     <Layout>
     <div
-      className={css`
-        width: 100vw;
-        height: 90vh;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-evenly;
-        font-family: moderat-meduim;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 3.125vw;
-        letter-spacing: 0.02em;
-        padding-top: 8vh;
-      `}
+      className={style.contactContainer}
     >
       <p
-        className={css`
-          width: 23.02vw;
-          height: 32.2vh;
-          text-align: center;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        `}
+        className={style.signupSection}
       >
         Sign up for<br></br>
         our mailing list:<br></br>
         <input
-          className={css`
-            width: 41.66vw;
-            border: none;
-            color: #c4c4c4;
-            font-family: moderat-meduim;
-            font-style: normal;
-            font-weight: 500;
-            font-size: 3.125vw;
-            letter-spacing: 0.02em;
-            text-align: center;
-          `}
+          className={style.inputSection}
           type="text"
           placeholder="Your email here"
         />
         <br></br>
         <input
-          className={css`
-            border: none;
-            color: #000000;
-            font-family: moderat-meduim;
-            font-style: normal;
-            font-weight: 500;
-            font-size: 3.125vw;
-            letter-spacing: 0.02em;
-            text-align: center;
-            background-color: transparent;
-          `}
+          className={style.summitSection}
           type="submit"
           value="Subscibe"
         />
       </p>
       <p
-        className={css`
-          position: absolutel;
-          top: 17.7vh;
-          left: 50vw;
-          width: 39.89vw;
-          height: 60.82vh;
-          line-height: 6.86vh;
-        `}
+        className={style.socialUpdate}
       >
         For regular updates, follow us on
         <br></br>

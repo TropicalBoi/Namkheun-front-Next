@@ -1,0 +1,44 @@
+.aboutContainer{
+    position: absolute;
+    overflow: scroll;
+    scrollbar-width: none;
+    width: 100vw;
+    height: 100vh;
+}
+.aboutSection{
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 40vh 0 20vh 0;
+}
+.aboutInfo{
+    width: 62.55vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.languageSection{
+    position: absolute;
+                width: 12vw;
+                height: fit-content;
+                left: 18.5vw;
+                top: 25vh;
+                font-family: Moderat;
+                font-style: normal;
+                font-size: 3.125vw;
+                letter-spacing: 0.02em;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                
+}
+.languageOnActive{
+    text-decoration: underline;
+}
+.languageOnHover{
+    cursor: pointer;;
+}
