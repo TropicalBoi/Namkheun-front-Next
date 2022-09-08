@@ -1,5 +1,5 @@
 import * as React from "react";
-import { css } from "@emotion/react";
+import { css } from "@emotion/css";
 import Head from "next/head";
 import Navbar from "./navbar";
 import Footer from "./footer";
@@ -7,7 +7,7 @@ import Footer from "./footer";
 export default function Layout({ children }) {
   return (
     <div
-      css={css`
+      className={css`
         width: 100vw;
         height: 100vh;
       `}

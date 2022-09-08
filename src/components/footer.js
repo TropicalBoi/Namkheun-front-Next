@@ -1,12 +1,12 @@
 import * as React from "react";
 import Clock from "./clock";
 import Link from "next/link";
-import { css } from "@emotion/react";
+import { css } from "@emotion/css";
 
 const Footer = () => {
   return (
     <footer
-      css={css`
+      className={css`
         position: absolute;
         bottom: 0;
         width: 100vw;
@@ -22,7 +22,7 @@ const Footer = () => {
       `}
     >
       <div
-        css={css`
+        className={css`
           position: absolute;
           display: flex;
           flex-direction: row;
@@ -35,7 +35,7 @@ const Footer = () => {
         <Clock />
         <Link
           href="/archive"
-          css={css`
+          className={css`
             position: relative;
             width: fit-content;
             height: fit-content;

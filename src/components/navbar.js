@@ -1,12 +1,12 @@
 import * as React from "react";
 import Link from "next/link";
-import { css } from "@emotion/react";
+import { css } from "@emotion/css";
 // import searchIcon from "../images/SearchIcon.png";
 
 const Navbar = () => {
   return (
     <nav
-      css={css`
+      className={css`
           position: absolute;
           top: 0;
           width: 100%;
@@ -22,7 +22,7 @@ const Navbar = () => {
         `}
     >
       <div
-        css={css`
+        className={css`
           display: flex;
           flex-direction: column;
           justify-content: flex-start;
@@ -33,7 +33,7 @@ const Navbar = () => {
       >
         <Link href="/">Namkheun Collective</Link>
         <div
-          css={css`
+          className={css`
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
