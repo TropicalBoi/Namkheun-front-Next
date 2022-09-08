@@ -1,5 +1,5 @@
 import * as React from "react";
-import Clock from "./clock";
+// import Clock from "./clock";
 import Link from "next/link";
 import { css } from "@emotion/css";
 

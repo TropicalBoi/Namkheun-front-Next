@@ -1,8 +1,10 @@
 import React from "react";
 import { css } from "@emotion/css";
+import Layout from "../src/components/layout";
 
 const contact = () => {
   return (
+    <Layout>
     <div
       className={css`
         width: 100vw;
@@ -110,6 +112,7 @@ const contact = () => {
         Alternatively, write to us at collective@namkheun.com
       </p>
     </div>
+    </Layout>
   );
 };
 
