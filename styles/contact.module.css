@@ -1,0 +1,52 @@
+.contactContainer{
+    width: 100vw;
+        height: 90vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        font-family: moderat-meduim;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 3.125vw;
+        letter-spacing: 0.02em;
+        padding-top: 8vh;
+}
+.signupSection{
+    width: 23.02vw;
+    height: 32.2vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.inputSection{
+    width: 41.66vw;
+    border: none;
+    color: #c4c4c4;
+    font-family: moderat-meduim;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 3.125vw;
+    letter-spacing: 0.02em;
+    text-align: center;
+}
+.summitSection{
+    border: none;
+            color: #000000;
+            font-family: moderat-meduim;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 3.125vw;
+            letter-spacing: 0.02em;
+            text-align: center;
+            background-color: transparent;
+}
+.socialUpdate{
+    position: absolutel;
+    top: 17.7vh;
+    left: 50vw;
+    width: 39.89vw;
+    height: 60.82vh;
+    line-height: 6.86vh;
+}

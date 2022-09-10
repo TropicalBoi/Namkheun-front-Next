@@ -1,17 +1,14 @@
 import * as React from "react";
-import { css } from "@emotion/css";
+
+import style from "../../styles/layout.module.css";
+import Head from "next/head";
 import Navbar from "./navbar";
 import Footer from "./footer";
 import Head from "next/head";
 
 export default function Layout({ children }) {
   return (
-    <div
-      className={css`
-        width: 100vw;
-        height: 100vh;
-      `}
-    >
+    <div className={style.layout}>
       <Head>
         <meta charSet="utf-8" />
         <title>Namkheun Collective</title>
