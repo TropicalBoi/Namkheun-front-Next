@@ -11,7 +11,6 @@ export const globalStyles = (
           Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
         overflow: hidden;
         scrollbar-width: none;
-        cursor: url(../images/icon_cur.png), auto;
         color: #000;
       }
     `}

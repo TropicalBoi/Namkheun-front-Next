@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from "react";
-import style from "../../styles/clock.module.css"
+import style from "../../styles/clock.module.css";
 
 const Clock = () => {
   const monthNames = [
@@ -34,12 +34,10 @@ const Clock = () => {
     return function cleanup() {
       clearInterval(timerID);
     };
-  });
+  }, []);
 
   return (
-    <div
-      className={style.clock}
-    >
+    <div className={style.clock}>
       {date.toLocaleTimeString("en-GB")}
       <div>
         {days[date.getDay()]}&nbsp;
