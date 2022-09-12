@@ -27,6 +27,8 @@ const Clock = () => {
     "Saturday",
   ];
 
+  const shortDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
   const [date, setDate] = useState(new Date());
 
   useEffect(() => {
@@ -39,8 +41,9 @@ const Clock = () => {
   return (
     <div className={style.clock}>
       {date.toLocaleTimeString("en-GB")}
-      <div>
-        {days[date.getDay()]}&nbsp;
+      <div className={style.date}>
+        <div className={style.shortDays}>{shortDays[date.getDay()]}&nbsp;</div>
+        <div className={style.fullDays}>{days[date.getDay()]}&nbsp;</div>
         {monthNames[date.getMonth()]}&nbsp;
         {date.getDate()}&nbsp;
         {date.getFullYear()}

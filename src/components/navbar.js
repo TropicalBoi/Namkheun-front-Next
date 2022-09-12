@@ -2,31 +2,30 @@ import * as React from "react";
 import Link from "next/link";
 
 // import searchIcon from "../images/SearchIcon.png";
-import style from "../../styles/navbar.module.css"
+import style from "../../styles/navbar.module.css";
 
 const Navbar = () => {
   return (
-    <nav
-      className={style.navbar}
-    >
-      <div
-        className={style.navbarContainer}
-      >
-        <Link href="/">Namkheun Collective</Link>
-        <div
-          className={style.navbarMenu}
-        >
-          <Link href="/about" >
+    <nav className={style.navbar}>
+      <div className={style.navbarContainer}>
+        <Link href="/">
+          <p className={style.HomeLink}> Namkheun Collective </p>
+        </Link>
+        <div className={style.navbarMenu}>
+          <Link href="/about">
             <p className={style.MenuLink}> About </p>
-            
           </Link>
-          <Link href="/projects" >
-            <p className={style.MenuLink}>    Projects</p>
-         
+          <Link href="/projects">
+            <p className={style.MenuLink}> Projects</p>
           </Link>
-          <Link href="/contact" >
+          <Link href="/projects">
+            <p className={style.MenuLink}> News</p>
+          </Link>
+          <Link href="/projects">
+            <p className={style.MenuLink}> Shop</p>
+          </Link>
+          <Link href="/contact">
             <p className={style.MenuLink}> Contact</p>
-            
           </Link>
         </div>
       </div>

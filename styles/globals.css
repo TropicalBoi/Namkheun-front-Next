@@ -98,8 +98,6 @@ span {
   text-align: center;
 }
 
-
-
 .visually-hidden {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -124,7 +122,6 @@ span {
   font-family: ABC-Marfa-Mono;
   src: url(./font/ABCMarfaMonoVariable-Trial.ttf);
 }
-
 
 @keyframes shake {
   0% {
@@ -172,8 +169,9 @@ span {
   }
 }
 
-@media (prefers-color-scheme: dark) {
+@media screen and (max-width: 428px) {
+  body,
   html {
-    color-scheme: dark;
+    cursor: default;
   }
 }
