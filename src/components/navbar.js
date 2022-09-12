@@ -1,7 +1,6 @@
 import * as React from "react";
 import Link from "next/link";
 
-// import searchIcon from "../images/SearchIcon.png";
 import style from "../../styles/navbar.module.css";
 
 const Navbar = () => {
@@ -29,17 +28,9 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
-      {/* <img
-        src={searchIcon}
-        css={css`
-          position: absolute;
-          width: 2.6vw;
-          height: auto;
-          top: 3.69vh;
-          right: 1.82vw;
-        `}
-        alt="search"
-      /> */}
+      <picture>
+        <img src="/Search.svg" className={style.SearchIcon} alt="search" />
+      </picture>
     </nav>
   );
 };

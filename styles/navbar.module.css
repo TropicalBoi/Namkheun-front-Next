@@ -46,6 +46,14 @@
   animation-iteration-count: infinite;
 }
 
+.SearchIcon {
+  position: absolute;
+  width: 2.6vw;
+  height: auto;
+  top: 3.69vh;
+  right: 1.82vw;
+}
+
 @keyframes shake {
   0% {
     transform: rotate(0deg);
