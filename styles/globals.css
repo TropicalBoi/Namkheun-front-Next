@@ -3,7 +3,7 @@ html {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    Ubuntu, Cantarell, Fira Sans, Moderat,Droid Sans, Helvetica Neue, sans-serif;
   overflow: hidden;
   scrollbar-width: none;
   cursor: url(../images/icon_cur.png), auto;
@@ -75,6 +75,7 @@ span {
   font-weight: normal;
   font-size: 2.86vw;
   letter-spacing: 0.02em;
+  
 }
 
 .infoTxt {

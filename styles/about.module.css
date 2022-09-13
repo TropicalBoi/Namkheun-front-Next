@@ -27,17 +27,22 @@
   height: fit-content;
   left: 18.5vw;
   top: 25vh;
-  font-family: Moderat;
+  font-family: moderat-meduim;
   font-style: normal;
   font-size: 3.125vw;
+  font-weight: 500;
   letter-spacing: 0.02em;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  
+  
 }
 .languageOnActive {
   text-decoration: underline;
 }
 .languageOnHover {
   cursor: pointer;
+  
+  
 }

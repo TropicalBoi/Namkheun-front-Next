@@ -30,17 +30,20 @@ const Clock = () => {
   const [date, setDate] = useState(new Date());
 
   useEffect(() => {
-    var timerID = setInterval(() => setDate(new Date()), 1000);
+    
+    let timerID = setInterval(() => setDate(new Date()), 1000);
     return function cleanup() {
       clearInterval(timerID);
     };
   });
+  
+  let time1=date.toLocaleTimeString("en-GB")
 
   return (
     <div
       className={style.clock}
     >
-      {date.toLocaleTimeString("en-GB")}
+      {time1}
       <div>
         {days[date.getDay()]}&nbsp;
         {monthNames[date.getMonth()]}&nbsp;
@@ -52,3 +55,7 @@ const Clock = () => {
 };
 
 export default Clock;
+
+
+
+
