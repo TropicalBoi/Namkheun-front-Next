@@ -1,28 +1,28 @@
-.footerContainer{
-    position: absolute;
-        bottom: 0;
-        width: 100vw;
-        height: 12vh;
-        background-image: linear-gradient(
-          to top,
-          rgba(255, 255, 255, 1),
-          rgba(255, 255, 255, 1),
-          rgba(255, 255, 255, 1),
-          rgba(255, 255, 255, 0)
-        );
-        z-index: 100;
+.footerContainer {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 12vh;
+  background-image: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+  z-index: 100;
 }
-.footerInner{
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
-    width: 100vw;
-    bottom: 1vh;
+.footerInner {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100vw;
+  bottom: 1vh;
 }
-.ArchiveFont{
-position: relative;
+.ArchiveFont {
+  position: relative;
   width: fit-content;
   height: fit-content;
   font-family: moderat-meduim;
@@ -31,4 +31,11 @@ position: relative;
   font-size: 3.125vw;
   letter-spacing: 0.02em;
   padding-right: 2vw;
+}
+
+@media screen and (max-width: 428px) {
+  .ArchiveFont {
+    font-size: 40px;
+    line-height: 48px;
+  }
 }

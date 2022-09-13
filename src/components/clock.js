@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from "react";
-import style from "../../styles/clock.module.css"
+import style from "../../styles/clock.module.css";
 
 const Clock = () => {
   const monthNames = [
@@ -27,6 +27,8 @@ const Clock = () => {
     "Saturday",
   ];
 
+  const shortDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
   const [date, setDate] = useState(new Date());
 
   useEffect(() => {
@@ -35,17 +37,14 @@ const Clock = () => {
     return function cleanup() {
       clearInterval(timerID);
     };
-  });
-  
-  let time1=date.toLocaleTimeString("en-GB")
+  }, []);
 
   return (
-    <div
-      className={style.clock}
-    >
-      {time1}
-      <div>
-        {days[date.getDay()]}&nbsp;
+    <div className={style.clock}>
+      {date.toLocaleTimeString("en-GB")}
+      <div className={style.date}>
+        <div className={style.shortDays}>{shortDays[date.getDay()]}&nbsp;</div>
+        <div className={style.fullDays}>{days[date.getDay()]}&nbsp;</div>
         {monthNames[date.getMonth()]}&nbsp;
         {date.getDate()}&nbsp;
         {date.getFullYear()}

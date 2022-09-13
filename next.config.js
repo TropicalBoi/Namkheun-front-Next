@@ -4,7 +4,6 @@ const { flush } = require('@emotion/css');
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  // hydrate: false,
 };
 
 module.exports = nextConfig;
