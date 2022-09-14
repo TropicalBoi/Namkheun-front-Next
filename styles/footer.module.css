@@ -19,7 +19,7 @@
   justify-content: space-between;
   align-items: flex-end;
   width: 100vw;
-  bottom: 1vh;
+  bottom: 2vw;
 }
 .ArchiveFont {
   position: relative;
@@ -29,6 +29,7 @@
   font-style: normal;
   font-weight: 500;
   font-size: 3.125vw;
+  line-height: 6.4vh;
   letter-spacing: 0.02em;
   padding-right: 2vw;
 }
@@ -36,6 +37,12 @@
 @media screen and (max-width: 428px) {
   .ArchiveFont {
     font-size: 40px;
-    line-height: 48px;
+    line-height: 38px;
+    padding-right: 2vw;
+  }
+
+  .footerInner {
+    justify-content: space-around;
+    bottom: 5vw;
   }
 }

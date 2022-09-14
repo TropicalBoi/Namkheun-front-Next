@@ -16,7 +16,7 @@
     rgba(255, 255, 255, 1),
     rgba(255, 255, 255, 0)
   );
-  z-index: 100;
+  z-index: 150;
 }
 .navbarContainer {
   display: flex;
@@ -56,6 +56,14 @@
 
 .HamburgerIcon {
   display: none;
+}
+
+.HamburgerButton {
+  padding: 0;
+  margin: 0;
+  border: none;
+  width: fit-content;
+  height: fit-content;
 }
 
 @keyframes shake {
@@ -132,6 +140,7 @@
   .SearchIcon {
     display: none;
   }
+
 
   .HamburgerIcon {
     display: flex;
