@@ -54,6 +54,10 @@
   right: 1.82vw;
 }
 
+.HamburgerIcon {
+  display: none;
+}
+
 @keyframes shake {
   0% {
     transform: rotate(0deg);
@@ -123,5 +127,18 @@
 
   .navbarMenu {
     display: none;
+  }
+
+  .SearchIcon {
+    display: none;
+  }
+
+  .HamburgerIcon {
+    display: flex;
+    position: absolute;
+    width: 7vw;
+    height: auto;
+    right: 7vw;
+    top: 5vh;
   }
 }

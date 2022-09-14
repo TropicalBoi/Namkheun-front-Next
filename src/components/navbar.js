@@ -30,6 +30,11 @@ const Navbar = () => {
       </div>
       <picture>
         <img src="/Search.svg" className={style.SearchIcon} alt="search" />
+        <img
+          src="/HamburgerIcon.svg"
+          className={style.HamburgerIcon}
+          alt="search"
+        />
       </picture>
     </nav>
   );
