@@ -9,10 +9,6 @@ const DynamicComponentClock = dynamic(() => import("./clock"), {
 });
 
 const Footer = () => {
-
- 
-
-
   return (
     <footer className={style.footerContainer}>
       <div className={style.footerInner}>

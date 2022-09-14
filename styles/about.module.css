@@ -35,14 +35,24 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  
-  
 }
 .languageOnActive {
   text-decoration: underline;
 }
 .languageOnHover {
   cursor: pointer;
-  
-  
+}
+
+@media screen and (max-width: 428px) {
+  .languageSection {
+    font-size: 5.797101449275362vw;
+    top: 20vh;
+    left: 6vw;
+  }
+  .aboutInfo {
+    width: 88.64734299516908vw;
+  }
+  .aboutSection {
+    padding-top: 28vh;
+  }
 }

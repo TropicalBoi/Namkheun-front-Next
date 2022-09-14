@@ -1,8 +1,12 @@
 import React from 'react'
 
+const archiveInfo =["test","test2"]
+
+
+
 const archive = () => {
   return (
-    <div>archive</div>
+    <div>{}</div>
   )
 }
 

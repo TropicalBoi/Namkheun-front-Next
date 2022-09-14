@@ -1,53 +1,78 @@
-.contactContainer{
-    width: 100vw;
-        height: 90vh;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-evenly;
-        font-family: moderat-meduim;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 3.125vw;
-        letter-spacing: 0.02em;
-        padding-top: 8vh;
+.contactContainer {
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  font-family: moderat-meduim;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 3.125vw;
+  letter-spacing: 0.02em;
+  padding-top: 8vh;
 }
-.signupSection{
-    width: 23.02vw;
-    height: 32.2vh;
-    text-align: center;
-    display: flex;
+.signupSection {
+  width: 23.02vw;
+  height: 32.2vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.inputSection {
+  width: 41.66vw;
+  border: none;
+  color: #c4c4c4;
+  font-family: moderat-meduim;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 3.125vw;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+.summitSection {
+  border: none;
+  color: #000000;
+  font-family: moderat-meduim;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 3.125vw;
+  letter-spacing: 0.02em;
+  text-align: center;
+  background-color: transparent;
+}
+.socialUpdate {
+  position: absolutel;
+  top: 17.7vh;
+  left: 50vw;
+  width: 39.89vw;
+  height: 60.82vh;
+  line-height: 6.86vh;
+}
+@media screen and (max-width: 428px) {
+  .contactContainer {
     flex-direction: column;
-    align-items: center;
-}
-.inputSection{
-    width: 41.66vw;
-    border: none;
-    color: #c4c4c4;
-    font-family: moderat-meduim;
-    font-style: normal;
+    margin-top: 15vh;
+    font-size: 7.729468599033816vw;
     font-weight: 500;
-    font-size: 3.125vw;
-    letter-spacing: 0.02em;
-    text-align: center;
-}
-.summitSection{
-    border: none;
-            color: #000000;
-            font-family: moderat-meduim;
-            font-style: normal;
-            font-weight: 500;
-            font-size: 3.125vw;
-            letter-spacing: 0.02em;
-            text-align: center;
-            background-color: transparent;
-}
-.socialUpdate{
-    position: absolutel;
-    top: 17.7vh;
-    left: 50vw;
-    width: 39.89vw;
-    height: 60.82vh;
-    line-height: 6.86vh;
-    
+  }
+  .signupSection {
+    width: 62.07729468599034vw;
+    line-height: 43px;
+    display: block;
+  }
+  .inputSection {
+    width: 62.07729468599034vw;
+    font-size: 7.729468599033816vw;
+    margin: 3vw 0 3vw 0;
+  }
+  .summitSection {
+    margin-bottom: 2vw;
+  }
+  .socialUpdate {
+    width: 77.29468599033817vw;
+    font-size: 5.797101449275362vw;
+    line-height: 3.236607142857143vh;
+  }
 }
