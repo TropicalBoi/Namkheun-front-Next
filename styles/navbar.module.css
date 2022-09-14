@@ -16,7 +16,7 @@
     rgba(255, 255, 255, 1),
     rgba(255, 255, 255, 0)
   );
-  z-index: 100;
+  z-index: 150;
 }
 .navbarContainer {
   display: flex;
@@ -52,6 +52,18 @@
   height: auto;
   top: 3.69vh;
   right: 1.82vw;
+}
+
+.HamburgerIcon {
+  display: none;
+}
+
+.HamburgerButton {
+  padding: 0;
+  margin: 0;
+  border: none;
+  width: fit-content;
+  height: fit-content;
 }
 
 @keyframes shake {
@@ -123,5 +135,19 @@
 
   .navbarMenu {
     display: none;
+  }
+
+  .SearchIcon {
+    display: none;
+  }
+
+
+  .HamburgerIcon {
+    display: flex;
+    position: absolute;
+    width: 7vw;
+    height: auto;
+    right: 7vw;
+    top: 5vh;
   }
 }

@@ -1,9 +1,12 @@
-import * as React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
+import MobileMenu from "./mobileMenu";
 
 import style from "../../styles/navbar.module.css";
 
 const Navbar = () => {
+  const [mobileMenu, setMobileMenu] = useState(false);
+
   return (
     <nav className={style.navbar}>
       <div className={style.navbarContainer}>
@@ -28,9 +31,22 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
-      <picture>
-        <img src="/Search.svg" className={style.SearchIcon} alt="search" />
-      </picture>
+      {!mobileMenu && (
+        <picture>
+          <img src="/Search.svg" className={style.SearchIcon} alt="search" />
+          <button
+            className={style.HamburgerButton}
+            onClick={() => setMobileMenu(true)}
+          >
+            <img
+              src="/HamburgerIcon.svg"
+              className={style.HamburgerIcon}
+              alt="search"
+            />
+          </button>
+        </picture>
+      )}
+      <MobileMenu trigger={mobileMenu} setTrigger={setMobileMenu} />
     </nav>
   );
 };
