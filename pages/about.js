@@ -2,13 +2,11 @@ import React from "react";
 import Layout from "../src/components/layout";
 import style from '../styles/about.module.css'
 
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 
 const About = () => {
-    const [thaiText, setThaiText] = useState(false);
-
-
+ const [thaiText, setThaiText] = useState();
 
   return (
     <Layout>
@@ -34,7 +32,7 @@ const About = () => {
               )}
               {!thaiText && (
                 <p
-                  className={style.languageActive}
+                  className={style.languageOnActive}
                 >
                   EN
                 </p>
@@ -50,7 +48,7 @@ const About = () => {
               )}
               {thaiText && (
                 <p
-                  className={style.languageActive}
+                  className={style.languageOnActive}
                 >
                   TH
                 </p>

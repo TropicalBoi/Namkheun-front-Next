@@ -32,7 +32,8 @@ const Clock = () => {
   const [date, setDate] = useState(new Date());
 
   useEffect(() => {
-    var timerID = setInterval(() => setDate(new Date()), 1000);
+    
+    let timerID = setInterval(() => setDate(new Date()), 1000);
     return function cleanup() {
       clearInterval(timerID);
     };
@@ -53,3 +54,7 @@ const Clock = () => {
 };
 
 export default Clock;
+
+
+
+

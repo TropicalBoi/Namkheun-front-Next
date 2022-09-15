@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "../src/components/layout";
 import style from '../styles/contact.module.css'
 
-const contact = () => {
+const Contact = () => {
   return (
     <Layout>
     <div
@@ -69,4 +69,4 @@ const contact = () => {
   );
 };
 
-export default contact;
+export default Contact;
