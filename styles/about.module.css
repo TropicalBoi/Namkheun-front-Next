@@ -5,6 +5,9 @@
   width: 100vw;
   height: 100vh;
 }
+.aboutContainer::-webkit-scrollbar {
+  display: none;
+}
 .aboutSection {
   width: 100vw;
   height: fit-content;

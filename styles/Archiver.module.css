@@ -1,0 +1,74 @@
+.archiveContainer {
+  margin-top: 15vh;
+  position: absolute;
+  overflow: scroll;
+  scrollbar-width: none;
+  width: 100vw;
+  height: 80vh;
+  font-size: 3.125vw;
+  font-weight: 400;
+  font-family: moderat-meduim;
+}
+
+.archiveContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.archiveInfo {
+  width: 72vw;
+  margin: 7vw auto;
+}
+.heading {
+  display: flex;
+  margin-bottom: 4vh;
+}
+.headingTitle {
+  width: 60%;
+}
+.headingDate {
+  width: 20%;
+}
+.headingProject {
+  width: 20%;
+}
+.archiveDetail {
+  display: flex;
+  margin-bottom: 1vh;
+  flex-wrap: wrap;
+}
+.archiveTitle {
+  display: list-item;
+  list-style-type: disc;
+  list-style-position: inside;
+  width: 60%;
+}
+.archiveDate {
+  width: 20%;
+}
+.archiveProject {
+  width: 20%;
+}
+@media screen and (max-width: 428px) {
+  .archiveContainer {
+    font-size: 5.7vw;
+    font-weight: 500;
+  }
+  .headingDate,
+  .headingProject {
+    display: none;
+  }
+  .archiveTitle {
+    width: 100%;
+  }
+  .archiveDate {
+    font-size: 3.84vw;
+    width: fit-content;
+    margin-right: 1vw;
+  }
+
+  .archiveProject {
+    display: list-item;
+    list-style-type: ",";
+    font-size: 3.84vw;
+  }
+}
