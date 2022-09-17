@@ -61,11 +61,14 @@
     width: 100%;
   }
   .archiveDate {
-    width: 40%;
+    font-size: 3.84vw;
+    width: fit-content;
+    margin-right: 1vw;
   }
+
   .archiveProject {
     display: list-item;
     list-style-type: ",";
-    padding-left: 15px;
+    font-size: 3.84vw;
   }
 }
