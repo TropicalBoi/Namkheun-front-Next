@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../src/components/layout";
-import content from "../../content.json";
+import content from "../content.json";
 import style from "../styles/Archiver.module.css";
 
 const archive = () => {
