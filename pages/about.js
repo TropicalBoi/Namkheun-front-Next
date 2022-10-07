@@ -1,27 +1,18 @@
 import React from "react";
 import Layout from "../src/components/layout";
-import style from '../styles/about.module.css'
+import style from "../styles/about.module.css";
 
-import { useState,useEffect } from "react";
-
+import { useState, useEffect } from "react";
 
 const About = () => {
- const [thaiText, setThaiText] = useState();
+  const [thaiText, setThaiText] = useState();
 
   return (
     <Layout>
-    <div
-        className={style.aboutContainer}
-      >
-        <div
-          className={style.aboutSection}
-        >
-          <div
-            className={style.aboutInfo}
-          >
-            <div
-              className={style.languageSection}
-            >
+      <div className={style.aboutContainer}>
+        <div className={style.aboutSection}>
+          <div className={style.aboutInfo}>
+            <div className={style.languageSection}>
               {thaiText && (
                 <p
                   className={style.languageOnHover}
@@ -30,13 +21,7 @@ const About = () => {
                   EN
                 </p>
               )}
-              {!thaiText && (
-                <p
-                  className={style.languageOnActive}
-                >
-                  EN
-                </p>
-              )}
+              {!thaiText && <p className={style.languageOnActive}>EN</p>}
               <p>/</p>
               {!thaiText && (
                 <p
@@ -46,13 +31,7 @@ const About = () => {
                   TH
                 </p>
               )}
-              {thaiText && (
-                <p
-                  className={style.languageOnActive}
-                >
-                  TH
-                </p>
-              )}
+              {thaiText && <p className={style.languageOnActive}>TH</p>}
             </div>
             {!thaiText && (
               <p className="engTxt">
@@ -92,8 +71,9 @@ const About = () => {
             )}
           </div>
         </div>
-      </div></Layout>
-  )
-}
+      </div>
+    </Layout>
+  );
+};
 
-export default About
+export default About;
