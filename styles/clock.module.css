@@ -1,0 +1,49 @@
+.clock {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 22.39vw;
+  height: 6.969vh;
+  font-family: ABC-Marfa-Mono;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.458vw;
+  line-height: 3.69vh;
+  letter-spacing: 0.02em;
+  padding-left: 2vw;
+}
+
+.date{
+  display: flex;
+  flex-direction: row;
+}
+
+.shortDays{
+  width: fit-content;
+  display: none;
+}
+
+.fullDays{
+  width: fit-content;
+  display: block;
+}
+
+@media screen and (max-width: 428px) {
+  .clock{
+    width: 50.2vw;
+    height: 3.8vh;
+    font-size: 3.7vw;
+    line-height: 2.1vh;
+  }
+
+  .shortDays{
+    width: fit-content;
+    display: block;
+  }
+  
+  .fullDays{
+    width: fit-content;
+    display: none;
+  }
+}

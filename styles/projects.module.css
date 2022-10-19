@@ -1,0 +1,40 @@
+.projectsContainer {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  padding-top: 20vh;
+  overflow: scroll;
+}
+
+.projectContainer {
+  height: 80vh;
+  width: 100vw;
+}
+
+.projectHeader {
+  height: 8vh;
+  width: 100vw;
+}
+
+.projectName {
+  font-family: moderat-meduim;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 3.125vw;
+  line-height: 7.6vh;
+  color: #000000;
+  padding-left: 1.82vw;
+}
+
+.projectBody {
+  height: 72vh;
+  width: 100vw;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.manifestosCoverImg {
+  height: 100%;
+  width: auto;
+  margin: 0 5vw;
+}
