@@ -20,10 +20,10 @@ const Navbar = () => {
           <Link href="/projects">
             <p className={style.MenuLink}> Projects</p>
           </Link>
-          <Link href="/projects">
+          <Link href="/news">
             <p className={style.MenuLink}> News</p>
           </Link>
-          <Link href="/projects">
+          <Link href="/shop">
             <p className={style.MenuLink}> Shop</p>
           </Link>
           <Link href="/contact">
