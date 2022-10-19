@@ -6,6 +6,7 @@ import axios from "axios";
 const Projects = () => {
   const [projects, SetProjects] = useState([]);
   const [manifestos, SetManifestos] = useState([]);
+  const [notes, SetNotes] = useState([]);
 
   const fetch = async () => {
     const data = await axios.get(
@@ -21,9 +22,17 @@ const Projects = () => {
     SetManifestos(manifestoData.data.data);
   };
 
+  const fetchNotes = async () => {
+    const notesData = await axios.get(
+      "https://namkheun-back.herokuapp.com/api/notes?populate=%2A"
+    );
+    SetNotes(notesData.data.data);
+  };
+
   useEffect(() => {
     fetch();
     fetchManifesto();
+    fetchNotes();
   }, []);
 
   const renderProjectBody = (projectsId) => {
@@ -41,6 +50,28 @@ const Projects = () => {
                     <img
                       src={Manifesto.attributes.CoverImages.data.attributes.url}
                       className={style.manifestosCoverImg}
+                    />
+                  </picture>
+                </div>
+              );
+            })}
+          </>
+        );
+      case 2:
+        return <p>{projectsId}</p>;
+      case 3:
+        return (
+          <>
+            {notes.map((Notes) => {
+              return (
+                <div
+                  className={style.projectBody}
+                  key={Notes.attributes.CoverImages.data.attributes.url}
+                >
+                  <picture>
+                    <img
+                      src={Notes.attributes.CoverImages.data.attributes.url}
+                      className={style.notesCoverImg}
                     />
                   </picture>
                 </div>
