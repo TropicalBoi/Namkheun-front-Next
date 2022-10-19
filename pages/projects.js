@@ -11,7 +11,6 @@ const Projects = () => {
     const data = await axios.get(
       "https://namkheun-back.herokuapp.com/api/projects/"
     );
-    console.log(data.data.data);
     SetProjects(data.data.data);
   };
 
@@ -29,23 +28,28 @@ const Projects = () => {
 
   const renderProjectBody = (projectsId) => {
     switch (projectsId) {
-      case "1":
+      case 1:
         return (
-          <div className={style.projectBody}>
+          <>
             {manifestos.map((Manifesto) => {
               return (
-                <picture>
-                  <img
-                    src={Manifesto.attributes.Images.data.attributes.url}
-                    className={style.manifestosCoverImg}
-                  />
-                </picture>
+                <div
+                  className={style.projectBody}
+                  key={Manifesto.attributes.CoverImages.data.attributes.url}
+                >
+                  <picture>
+                    <img
+                      src={Manifesto.attributes.CoverImages.data.attributes.url}
+                      className={style.manifestosCoverImg}
+                    />
+                  </picture>
+                </div>
               );
             })}
-          </div>
+          </>
         );
       default:
-        return <></>;
+        return <p>{projectsId}</p>;
     }
   };
 
@@ -58,7 +62,7 @@ const Projects = () => {
           })
           .map((Project) => {
             return (
-              <div className={style.projectContainer}>
+              <div className={style.projectContainer} key={Project.id}>
                 <div
                   className={style.projectHeader}
                   key={Project.attributes.ProjectName}
@@ -67,7 +71,7 @@ const Projects = () => {
                     {Project.attributes.ProjectName}
                   </p>
                 </div>
-                {renderProjectBody(projects.id)}
+                {renderProjectBody(Project.id)}
               </div>
             );
           })}
