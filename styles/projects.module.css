@@ -33,13 +33,26 @@
   overflow-y: hidden;
 }
 
+.projectBodyFrost {
+  height: 72vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
 .manifestosCoverImg {
   height: 100%;
   width: auto;
   margin: 0 5vw;
 }
 
-.notesCoverImg{
+.frostsCoverImg {
+  height: 100%;
+  width: auto;
+}
+
+.notesCoverImg {
   height: 50vh;
   width: auto;
   margin: 3.5vh 5vw;
