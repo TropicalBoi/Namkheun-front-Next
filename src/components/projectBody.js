@@ -45,6 +45,7 @@ const RenderProjectBody = (props) => {
                     <img
                       src={Manifesto.attributes.CoverImages.data.attributes.url}
                       className={style.manifestosCoverImg}
+                      alt="manifesto"
                     />
                   </picture>
                 </div>
@@ -65,6 +66,7 @@ const RenderProjectBody = (props) => {
                     <img
                       src={Frosts.attributes.CoverImages.data.attributes.url}
                       className={style.frostsCoverImg}
+                      alt="frost"
                     />
                   </picture>
                 </div>
@@ -85,6 +87,7 @@ const RenderProjectBody = (props) => {
                     <img
                       src={Notes.attributes.CoverImages.data.attributes.url}
                       className={style.notesCoverImg}
+                      alt="notes"
                     />
                   </picture>
                 </div>

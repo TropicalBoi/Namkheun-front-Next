@@ -11,11 +11,13 @@ const MobileMenu = (props) => {
         <picture className={style.cornerBTNs}>
           {!search && (
             <button onClick={() => setSearch(true)} className={style.cornerBTN}>
-              <img
-                src="/Search.svg"
-                className={style.cornerIcon}
-                alt="Search"
-              />
+              <picture>
+                <img
+                  src="/Search.svg"
+                  className={style.cornerIcon}
+                  alt="Search"
+                />
+              </picture>
             </button>
           )}
           {search && (
@@ -23,11 +25,13 @@ const MobileMenu = (props) => {
               onClick={() => setSearch(false)}
               className={style.cornerBTN}
             >
-              <img
-                src="/HamburgerIcon.svg"
-                className={style.cornerIcon}
-                alt="Search"
-              />
+              <picture>
+                <img
+                  src="/HamburgerIcon.svg"
+                  className={style.cornerIcon}
+                  alt="Search"
+                />
+              </picture>
             </button>
           )}
           <button
@@ -37,7 +41,13 @@ const MobileMenu = (props) => {
             }}
             className={style.cornerBTN}
           >
-            <img src="/CloseBtn.svg" className={style.cornerIcon} />
+            <picture>
+              <img
+                src="/CloseBtn.svg"
+                className={style.cornerIcon}
+                alt="close button"
+              />
+            </picture>
           </button>
         </picture>
         {!search && (

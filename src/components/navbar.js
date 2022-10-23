@@ -32,19 +32,23 @@ const Navbar = () => {
         </div>
       </div>
       {!mobileMenu && (
-        <picture>
-          <img src="/Search.svg" className={style.SearchIcon} alt="search" />
+        <>
+          <picture>
+            <img src="/Search.svg" className={style.SearchIcon} alt="search" />
+          </picture>
           <button
             className={style.HamburgerButton}
             onClick={() => setMobileMenu(true)}
           >
-            <img
-              src="/HamburgerIcon.svg"
-              className={style.HamburgerIcon}
-              alt="search"
-            />
+            <picture>
+              <img
+                src="/HamburgerIcon.svg"
+                className={style.HamburgerIcon}
+                alt="search"
+              />
+            </picture>
           </button>
-        </picture>
+        </>
       )}
       <MobileMenu trigger={mobileMenu} setTrigger={setMobileMenu} />
     </nav>
