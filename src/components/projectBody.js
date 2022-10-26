@@ -34,13 +34,10 @@ const RenderProjectBody = (props) => {
     switch (inputId) {
       case 1:
         return (
-          <>
+          <div className={style.projectBody}>
             {manifestos.map((Manifesto) => {
               return (
-                <div
-                  className={style.projectBody}
-                  key={Manifesto.attributes.CoverImages.data.attributes.url}
-                >
+                <div key={Manifesto.attributes.CoverImages.data.attributes.url}>
                   <picture>
                     <img
                       src={Manifesto.attributes.CoverImages.data.attributes.url}
@@ -51,7 +48,7 @@ const RenderProjectBody = (props) => {
                 </div>
               );
             })}
-          </>
+          </div>
         );
       case 2:
         return (
@@ -76,13 +73,10 @@ const RenderProjectBody = (props) => {
         );
       case 3:
         return (
-          <>
+          <div className={style.projectBodyNotes}>
             {notes.map((Notes) => {
               return (
-                <div
-                  className={style.projectBody}
-                  key={Notes.attributes.CoverImages.data.attributes.url}
-                >
+                <div key={Notes.attributes.CoverImages.data.attributes.url}>
                   <picture>
                     <img
                       src={Notes.attributes.CoverImages.data.attributes.url}
@@ -93,7 +87,7 @@ const RenderProjectBody = (props) => {
                 </div>
               );
             })}
-          </>
+          </div>
         );
       default:
         return <p>{projectsId}</p>;

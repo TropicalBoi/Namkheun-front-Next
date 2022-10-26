@@ -31,6 +31,10 @@
   width: 100vw;
   overflow-x: scroll;
   overflow-y: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 0 5vw;
 }
 
 .projectBodyFrost {
@@ -41,10 +45,15 @@
   justify-content: center;
 }
 
+.projectBodyNotes {
+  height: 72vh;
+  width: 100vw;
+}
+
 .manifestosCoverImg {
   height: 100%;
   width: auto;
-  margin: 0 5vw;
+  margin: 0 1vw;
 }
 
 .frostsCoverImg {
@@ -55,5 +64,10 @@
 .notesCoverImg {
   height: 50vh;
   width: auto;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   margin: 3.5vh 5vw;
 }
