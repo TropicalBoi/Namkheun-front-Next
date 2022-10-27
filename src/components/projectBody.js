@@ -3,8 +3,9 @@ import {
   fetchingManifesto,
   fetchingFrost,
   fetchingNotes,
-} from "../../pages/api/projectBodyAPIs";
+} from "../APIs/projectBodyAPIs";
 import style from "../../styles/projects.module.css";
+import Link from "next/link";
 
 const RenderProjectBody = (props) => {
   const [manifestos, SetManifestos] = useState([]);
@@ -37,14 +38,22 @@ const RenderProjectBody = (props) => {
           <div className={style.projectBody}>
             {manifestos.map((Manifesto) => {
               return (
-                <div key={Manifesto.attributes.CoverImages.data.attributes.url}>
-                  <picture>
-                    <img
-                      src={Manifesto.attributes.CoverImages.data.attributes.url}
-                      className={style.manifestosCoverImg}
-                      alt="manifesto"
-                    />
-                  </picture>
+                <div key={Manifesto.id}>
+                  <Link href={`/manifestos/${Manifesto.id}`}>
+                    <div
+                      key={Manifesto.attributes.CoverImages.data.attributes.url}
+                    >
+                      <picture>
+                        <img
+                          src={
+                            Manifesto.attributes.CoverImages.data.attributes.url
+                          }
+                          className={style.manifestosCoverImg}
+                          alt="manifesto"
+                        />
+                      </picture>
+                    </div>
+                  </Link>
                 </div>
               );
             })}

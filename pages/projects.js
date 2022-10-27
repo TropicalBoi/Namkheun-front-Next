@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Layout from "../src/components/layout";
 import style from "../styles/projects.module.css";
 import RenderProjectBody from "../src/components/projectBody";
-import { fetchingProjects } from "./api/projectBodyAPIs";
+import { fetchingProjects } from "../src/APIs/projectBodyAPIs";
 
 const Projects = () => {
   const [projects, SetProjects] = useState([]);

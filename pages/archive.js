@@ -4,12 +4,11 @@ import {
   fetchingManifesto,
   fetchingFrost,
   fetchingNotes,
-} from "./api/projectBodyAPIs";
+} from "../src/APIs/projectBodyAPIs";
 import style from "../styles/Archiver.module.css";
 
-const archive = () => {
-  const [manifestosInput, setManifestosInput] = useState([]);
-  const [notesInput, setNotesInput] = useState([]);
+const Archive = () => {
+  const [table, setTable] = useState([]);
 
   const fetchTable = async () => {
     try {
@@ -18,8 +17,27 @@ const archive = () => {
         fetchingFrost(),
         fetchingNotes(),
       ]);
-      setManifestosInput(manifestoData);
-      setNotesInput(notesData);
+      console.log(manifestoData);
+
+      const manifestosList = manifestoData.map((manifestosDetails) => {
+        return {
+          title: manifestosDetails.attributes.Title,
+          date: "xx/xx/xx",
+          Project:
+            manifestosDetails.attributes.project.data.attributes.ProjectName,
+        };
+      });
+
+      const notesList = notesData.map((notesDetails) => {
+        return {
+          title: notesDetails.attributes.Title,
+          date: "xx/xx/xx",
+          Project: notesDetails.attributes.project.data.attributes.ProjectName,
+        };
+      });
+
+      const tableDetail = manifestosList.concat(notesList);
+      setTable(tableDetail);
     } catch (e) {
       console.log(e);
     }
@@ -29,23 +47,7 @@ const archive = () => {
     fetchTable();
   }, []);
 
-  const manifestosList = manifestosInput.map((manifestosDetails) => {
-    return {
-      title: manifestosDetails.attributes.Title,
-      date: "xx/xx/xx",
-      Project: manifestosDetails.attributes.project.data.attributes.ProjectName,
-    };
-  });
-
-  const notesList = notesInput.map((notesDetails) => {
-    return {
-      title: notesDetails.attributes.Title,
-      date: "xx/xx/xx",
-      Project: notesDetails.attributes.project.data.attributes.ProjectName,
-    };
-  });
-
-  const table = manifestosList.concat(notesList);
+  console.log(table);
 
   return (
     <Layout>
@@ -72,4 +74,4 @@ const archive = () => {
   );
 };
 
-export default archive;
+export default Archive;
