@@ -17,7 +17,7 @@ const Manifesto = () => {
           const data = await axios.get(
             `https://namkheun-back.herokuapp.com/api/manifestos/${id}?populate=*`
           );
-          setPageContent(data.data.data);
+          setPageContent(data.data.data.attributes);
         } catch (e) {
           console.log(e);
         }
@@ -26,12 +26,12 @@ const Manifesto = () => {
     }
   }, [router.isReady]);
 
-  console.log(pageContent.id);
+  console.log(pageContent.Title);
 
   return (
     <Layout>
-      <div className={style.manifestoBody} key={pageContent.id}>
-        <p>post: {pageContent.id}</p>
+      <div className={style.manifestoBody} key={pageContent.Title}>
+        <p>post: {pageContent.Title}</p>
       </div>
     </Layout>
   );
