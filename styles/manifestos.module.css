@@ -1,7 +1,99 @@
 .manifestoBody {
   width: 100vw;
   height: 100vh;
+  background-color: white;
+  padding: 24vh 0;
+  overflow: scroll;
+}
+
+.manifestoBody p {
+  font-family: moderat-meduim;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.45vw;
+  line-height: 4vh;
+  letter-spacing: 0.02em;
+}
+
+.manifestoHeader {
+  width: 96vw;
+  height: fit-content;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 2vw;
+}
+
+.manifestoTitle {
+  width: 26.125vw;
+  padding-right: 2vw;
+}
+
+.manifestoDescription {
+  width: 43.75vw;
+  padding-right: 4vw;
+}
+
+.manifestoDetail {
+  width: 26.125vw;
+  padding-right: 2vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.authorYear {
+  width: 26.125vw;
+  margin: 0;
+  display: flex;
+}
+
+.authorYearKey {
+  width: 6.5vw;
+  margin: 0 2vw 0 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.authorYearValue {
+  width: 25vw;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.manifestoPDF {
+  width: 96vw;
+  height: fit-content;
+  margin: 4vh 2vw;
+  padding: 0 26.125vw;
+}
+
+.manifestoImg {
+  width: 43.75vw;
+  height: fit-content;
+  margin: 5vh 28.125vw 11vh 28.125vw;
+
+}
+
+.manifestoPageImage {
+  width: 43.75vw;
+  height: auto;
+}
+
+.manifestoContent {
+  width: 43.75vw;
+  height: fit-content;
+  margin: 0 28.125vw;
+}
+
+.textLeft {
+  text-align: left;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.textRight {
+  text-align: right;
 }
