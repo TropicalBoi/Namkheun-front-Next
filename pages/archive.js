@@ -5,7 +5,8 @@ import {
   fetchingFrost,
   fetchingNotes,
 } from "../src/APIs/projectBodyAPIs";
-import style from "../styles/Archiver.module.css";
+import Link from "next/link";
+import style from "../styles/archiver.module.css";
 
 const Archive = () => {
   const [table, setTable] = useState([]);
@@ -17,24 +18,37 @@ const Archive = () => {
         fetchingFrost(),
         fetchingNotes(),
       ]);
-      console.log(manifestoData);
 
       const manifestosList = manifestoData.map((manifestosDetails) => {
         return {
+          id: manifestosDetails.id,
           title: manifestosDetails.attributes.Title,
-          date: "xx/xx/xx",
+          date: manifestosDetails.attributes.PublishDate.replace(
+            /([\w ]+)-([\w ]+)-([\w ]+)/g,
+            "$3/$2/$1"
+          ),
           Project:
             manifestosDetails.attributes.project.data.attributes.ProjectName,
+          UrlProject:
+            manifestosDetails.attributes.project.data.attributes.ProjectName.toLowerCase(),
         };
       });
 
       const notesList = notesData.map((notesDetails) => {
         return {
+          id: notesDetails.id,
           title: notesDetails.attributes.Title,
-          date: "xx/xx/xx",
+          date: notesDetails.attributes.PublishDate.replace(
+            /([\w ]+)-([\w ]+)-([\w ]+)/g,
+            "$3/$2/$1"
+          ),
           Project: notesDetails.attributes.project.data.attributes.ProjectName,
+          UrlProject:
+            notesDetails.attributes.project.data.attributes.ProjectName.toLowerCase(),
         };
       });
+
+      console.log(notesList[0].UrlProject);
 
       const tableDetail = manifestosList.concat(notesList);
       setTable(tableDetail);
@@ -46,8 +60,6 @@ const Archive = () => {
   useEffect(() => {
     fetchTable();
   }, []);
-
-  console.log(table);
 
   return (
     <Layout>
@@ -61,10 +73,14 @@ const Archive = () => {
 
           {table.map((value, index) => {
             return (
-              <div className={style.archiveDetail} key={index}>
-                <p className={style.archiveTitle}>{value.title}</p>
-                <p className={style.archiveDate}>{value.date}</p>
-                <p className={style.archiveProject}>{value.Project}</p>
+              <div key={index}>
+                <Link href={`/${value.UrlProject}/${value.id}`}>
+                  <div className={style.archiveDetail} key={index}>
+                    <p className={style.archiveTitle}>{value.title}</p>
+                    <p className={style.archiveDate}>{value.date}</p>
+                    <p className={style.archiveProject}>{value.Project}</p>
+                  </div>
+                </Link>
               </div>
             );
           })}

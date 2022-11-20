@@ -5,7 +5,7 @@ import Layout from "../../src/components/layout";
 import style from "../../styles/manifestos.module.css";
 import cn from "classnames";
 
-const Manifesto = () => {
+const Note = () => {
   const router = useRouter();
 
   const [pageContent, setPageContent] = useState([]);
@@ -15,14 +15,16 @@ const Manifesto = () => {
 
   useEffect(() => {
     if (router.isReady) {
-      const id = router.query.manifestosPage;
+      const id = router.query.notesPage;
       const fetch = async () => {
         try {
           const data = await axios.get(
-            `https://namkheun-back.herokuapp.com/api/manifestos/${id}?populate=*`
+            `https://namkheun-back.herokuapp.com/api/notes/${id}?populate=*`
           );
           setPageContent(data.data.data.attributes);
-          setPageImage(data.data.data.attributes.Images.data.attributes.url);
+          setPageImage(
+            data.data.data.attributes.CoverImages.data.attributes.url
+          );
           const replaced = data.data.data.attributes.Content.replace(
             /\n/g,
             "<br />"
@@ -53,7 +55,7 @@ const Manifesto = () => {
             <p>{pageContent.Title}</p>
           </div>
           <div className={style.manifestoDescription}>
-            <p>{pageContent.Description}</p>
+            {/* <p>{pageContent.Description}</p> */}
             <p>Published by Namkheun Collective on: {renderDate}</p>
           </div>
           <div className={style.manifestoDetail}>
@@ -67,7 +69,6 @@ const Manifesto = () => {
                 <p>{pageContent.Year}</p>
               </div>
             </div>
-            <p>EN / TH</p>
           </div>
         </div>
         <div className={style.manifestoPDF}>
@@ -97,4 +98,4 @@ const Manifesto = () => {
   );
 };
 
-export default Manifesto;
+export default Note;

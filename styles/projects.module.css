@@ -34,7 +34,6 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  margin: 0 5vw;
 }
 
 .projectBodyFrost {
@@ -43,6 +42,7 @@
   overflow: hidden;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .projectBodyNotes {
@@ -50,14 +50,15 @@
   width: 100vw;
 }
 
+
 .manifestosCoverImg {
-  height: 100%;
+  height: 70vh;
   width: auto;
-  margin: 0 1vw;
+  margin: 2vh 2vw;
 }
 
 .frostsCoverImg {
-  height: 100%;
+  height: 72vh;
   width: auto;
 }
 

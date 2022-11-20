@@ -85,14 +85,18 @@ const RenderProjectBody = (props) => {
           <div className={style.projectBodyNotes}>
             {notes.map((Notes) => {
               return (
-                <div key={Notes.attributes.CoverImages.data.attributes.url}>
-                  <picture>
-                    <img
-                      src={Notes.attributes.CoverImages.data.attributes.url}
-                      className={style.notesCoverImg}
-                      alt="notes"
-                    />
-                  </picture>
+                <div key={Notes.id}>
+                  <Link href={`/notes/${Notes.id}`}>
+                    <div key={Notes.attributes.CoverImages.data.attributes.url}>
+                      <picture>
+                        <img
+                          src={Notes.attributes.CoverImages.data.attributes.url}
+                          className={style.notesCoverImg}
+                          alt="notes"
+                        />
+                      </picture>
+                    </div>
+                  </Link>
                 </div>
               );
             })}

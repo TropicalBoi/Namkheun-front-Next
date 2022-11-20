@@ -20,7 +20,6 @@
   height: fit-content;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   margin: 0 2vw;
 }
 
@@ -35,8 +34,8 @@
 }
 
 .manifestoDetail {
-  width: 26.125vw;
-  padding-right: 2vw;
+  width: 24.125vw;
+  padding: 0 2vw;
   display: flex;
   flex-direction: column;
 }
