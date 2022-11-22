@@ -4,14 +4,14 @@ import axios from "axios";
 import Layout from "../../src/components/layout";
 import style from "../../styles/manifestos.module.css";
 import cn from "classnames";
+import { replaceTags, reRenderDate } from "../../src/components/commonFn";
 
 const Manifesto = () => {
   const router = useRouter();
 
-  const [pageContent, setPageContent] = useState([]);
-  const [pageImage, setPageImage] = useState();
-  const [renderRichtext, setRenderRichtext] = useState([]);
-  const [renderDate, setRenderDate] = useState("");
+  const [content, setContent] = useState([]);
+
+  const [thaiText, setThaiText] = useState();
 
   useEffect(() => {
     if (router.isReady) {
@@ -21,20 +21,25 @@ const Manifesto = () => {
           const data = await axios.get(
             `https://namkheun-back.herokuapp.com/api/manifestos/${id}?populate=*`
           );
-          setPageContent(data.data.data.attributes);
-          setPageImage(data.data.data.attributes.Images.data.attributes.url);
-          const replaced = data.data.data.attributes.Content.replace(
-            /\n/g,
-            "<br />"
-          )
-            .replace(/\*{2}(.*?)\*{2}/g, "<b>$1</b>")
-            .replace(/_(.*?)_/g, "<i>$1</i>");
-          setRenderRichtext(replaced);
-          const reRenderDate = data.data.data.attributes.PublishDate.replace(
-            /([\w ]+)-([\w ]+)-([\w ]+)/g,
-            "$3/$2/$1"
-          );
-          setRenderDate(reRenderDate);
+
+          const rawContentData = data.data.data.attributes;
+
+          const contentData = {
+            title: rawContentData.Title,
+            titleTH: rawContentData.ThTitle,
+            description: rawContentData.Description,
+            descriptionTH: rawContentData.ThDescription,
+            publishDate: reRenderDate(rawContentData.PublishDate),
+            author: rawContentData.Author,
+            authorTH: rawContentData.ThAuthor,
+            year: rawContentData.Year,
+            img: rawContentData.Images.data.attributes.url,
+            content: replaceTags(rawContentData.Content),
+            contentTH: replaceTags(rawContentData.ThContent),
+            textAlign: rawContentData.TextAlign,
+          };
+
+          setContent(contentData);
         } catch (e) {
           console.log(e);
         }
@@ -43,18 +48,25 @@ const Manifesto = () => {
     }
   }, [router.isReady]);
 
-  const clean = { __html: renderRichtext };
+  const clean = { __html: content.content };
+
+  const cleanTh = { __html: content.contentTH };
 
   return (
     <Layout>
-      <div className={style.manifestoBody} key={pageContent.Title}>
+      <div className={style.manifestoBody} key={content.title}>
         <div className={style.manifestoHeader}>
           <div className={style.manifestoTitle}>
-            <p>{pageContent.Title}</p>
+            {!thaiText ? <p>{content.title}</p> : <p>{content.titleTH}</p>}
           </div>
           <div className={style.manifestoDescription}>
-            <p>{pageContent.Description}</p>
-            <p>Published by Namkheun Collective on: {renderDate}</p>
+            {!thaiText ? (
+              <p>{content.description}</p>
+            ) : (
+              <p>{content.descriptionTH}</p>
+            )}
+
+            <p>Published by Namkheun Collective on: {content.publishDate}</p>
           </div>
           <div className={style.manifestoDetail}>
             <div className={style.authorYear}>
@@ -63,11 +75,36 @@ const Manifesto = () => {
                 <p>Year</p>
               </div>
               <div className={style.authorYearValue}>
-                <p>{pageContent.Author}</p>
-                <p>{pageContent.Year}</p>
+                {!thaiText ? (
+                  <p>{content.author}</p>
+                ) : (
+                  <p>{content.authorTH}</p>
+                )}
+
+                <p>{content.year}</p>
               </div>
             </div>
-            <p>EN / TH</p>
+            <div className={style.languageSection}>
+              {thaiText && (
+                <p
+                  className={style.languageOnHover}
+                  onClick={() => setThaiText(!thaiText)}
+                >
+                  EN
+                </p>
+              )}
+              {!thaiText && <p className={style.languageOnActive}>EN</p>}
+              <p>/</p>
+              {!thaiText && (
+                <p
+                  className={style.languageOnHover}
+                  onClick={() => setThaiText(!thaiText)}
+                >
+                  TH
+                </p>
+              )}
+              {thaiText && <p className={style.languageOnActive}>TH</p>}
+            </div>
           </div>
         </div>
         <div className={style.manifestoPDF}>
@@ -76,7 +113,7 @@ const Manifesto = () => {
         <div className={style.manifestoImg}>
           <picture>
             <img
-              src={pageImage}
+              src={content.img}
               className={style.manifestoPageImage}
               alt="page image"
             />
@@ -85,11 +122,11 @@ const Manifesto = () => {
         <div className={style.manifestoContent}>
           <p
             className={cn({
-              [style.textLeft]: pageContent.TextAlign === "Left",
-              [style.textCenter]: pageContent.TextAlign === "Center",
-              [style.textRight]: pageContent.TextAlign === "Right",
+              [style.textLeft]: content.textAlign === "Left",
+              [style.textCenter]: content.textAlign === "Center",
+              [style.textRight]: content.textAlign === "Right",
             })}
-            dangerouslySetInnerHTML={clean}
+            dangerouslySetInnerHTML={!thaiText ? clean : cleanTh}
           />
         </div>
       </div>

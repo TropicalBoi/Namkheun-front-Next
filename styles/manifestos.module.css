@@ -96,3 +96,17 @@
 .textRight {
   text-align: right;
 }
+
+.languageSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: fit-content;
+}
+
+.languageOnActive {
+  text-decoration: underline;
+}
+.languageOnHover {
+  cursor: pointer;
+}
