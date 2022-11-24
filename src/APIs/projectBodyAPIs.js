@@ -7,11 +7,11 @@ export const fetchingProjects = async () => {
   return data.data.data;
 };
 
-export const fetchingManifesto = async () => {
-  const manifestoData = await axios.get(
-    "https://namkheun-back.herokuapp.com/api/manifestos?populate=%2A"
+export const fetchingProjectDeatail = async (projectName) => {
+  const data = await axios.get(
+    `https://namkheun-back.herokuapp.com/api/${projectName}?populate=%2A`
   );
-  return manifestoData.data.data;
+  return data.data.data;
 };
 
 export const fetchingFrost = async () => {

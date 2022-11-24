@@ -2,7 +2,7 @@
   width: 100vw;
   height: 100vh;
   background-color: white;
-  padding-top: 20vh;
+  padding:20vh 0 12vh 0;
   overflow: scroll;
 }
 
@@ -45,11 +45,6 @@
   align-items: center;
 }
 
-.projectBodyNotes {
-  height: 72vh;
-  width: 100vw;
-}
-
 
 .manifestosCoverImg {
   height: 70vh;
@@ -65,10 +60,5 @@
 .notesCoverImg {
   height: 50vh;
   width: auto;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  margin: 3.5vh 5vw;
+  margin: 10vh 5vw;
 }

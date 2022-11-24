@@ -1,15 +1,26 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../src/components/layout";
 import style from "../styles/projects.module.css";
+import {
+  fetchingProjects,
+  fetchingProjectDeatail,
+} from "../src/APIs/projectBodyAPIs";
 import RenderProjectBody from "../src/components/projectBody";
-import { fetchingProjects } from "../src/APIs/projectBodyAPIs";
 
 const Projects = () => {
   const [projects, SetProjects] = useState([]);
 
   const fetchProjects = async () => {
-    const data = await fetchingProjects();
-    SetProjects(data);
+    const projectData = await fetchingProjects();
+
+    const projectItems = projectData.map((data) => {
+      const items = fetchingProjectDeatail(data.attributes.ProjectName);
+      return items;
+    });
+
+    console.log(projectItems);
+
+    SetProjects(projectData);
   };
 
   useEffect(() => {
@@ -21,7 +32,7 @@ const Projects = () => {
       <div className={style.projectsContainer}>
         {projects
           .sort((a, b) => {
-            return a.id - b.id;
+            return b.id - a.id;
           })
           .map((Project) => {
             return (
@@ -33,8 +44,10 @@ const Projects = () => {
                   <p className={style.projectName}>
                     {Project.attributes.ProjectName}
                   </p>
+                  <RenderProjectBody
+                    projectName={Project.attributes.ProjectName}
+                  />
                 </div>
-                <RenderProjectBody idNumber={Project.id} />
               </div>
             );
           })}
