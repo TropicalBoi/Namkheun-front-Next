@@ -10,13 +10,13 @@ const RenderProjectBody = (props) => {
     try {
       const manifestoData = await fetchingProjectDeatail(props.projectName);
 
-      const findImgSize = (h, w) => {
-        if (h < w) {
-          return true;
-        } else {
-          return false;
-        }
-      };
+      // const findImgSize = (h, w) => {
+      //   if (h < w) {
+      //     return true;
+      //   } else {
+      //     return false;
+      //   }
+      // };
 
       const renderProjectBody = (inputValue) => {
         if (typeof inputValue === "object" && !Array.isArray(inputValue)) {
@@ -25,7 +25,7 @@ const RenderProjectBody = (props) => {
               <picture>
                 <img
                   src={inputValue.attributes.CoverImages.data.attributes.url}
-                  className={style.frostsCoverImg}
+                  className={style.coverImg}
                   alt={`${props.projectName}`}
                 />
               </picture>
@@ -48,16 +48,7 @@ const RenderProjectBody = (props) => {
                             src={
                               items.attributes.CoverImages.data.attributes.url
                             }
-                            className={
-                              findImgSize(
-                                items.attributes.CoverImages.data.attributes
-                                  .height,
-                                items.attributes.CoverImages.data.attributes
-                                  .width
-                              )
-                                ? style.notesCoverImg
-                                : style.manifestosCoverImg
-                            }
+                            className={style.coverImg}
                             alt={`${items.attributes.Title}`}
                           />
                         </picture>

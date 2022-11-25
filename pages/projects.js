@@ -44,10 +44,10 @@ const Projects = () => {
                   <p className={style.projectName}>
                     {Project.attributes.ProjectName}
                   </p>
-                  <RenderProjectBody
-                    projectName={Project.attributes.ProjectName}
-                  />
                 </div>
+                <RenderProjectBody
+                  projectName={Project.attributes.ProjectName}
+                />
               </div>
             );
           })}
