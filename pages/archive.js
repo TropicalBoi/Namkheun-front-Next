@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../src/components/layout";
 import {
-  fetchingManifesto,
-  fetchingFrost,
-  fetchingNotes,
+  fetchingProjects,
+  fetchingProjectDeatail,
 } from "../src/APIs/projectBodyAPIs";
+
+import {
+  defaultStringToLowerCase,
+  reRenderDate,
+} from "../src/components/commonFn";
+
 import Link from "next/link";
 import style from "../styles/archiver.module.css";
 
@@ -12,46 +17,61 @@ const Archive = () => {
   const [table, setTable] = useState([]);
 
   const fetchTable = async () => {
+    const projectData = await fetchingProjects();
+
     try {
-      const [manifestoData, frostData, notesData] = await Promise.all([
-        fetchingManifesto(),
-        fetchingFrost(),
-        fetchingNotes(),
-      ]);
+      const result = Promise.all(
+        projectData.map(async (data) => {
+          const items = await fetchingProjectDeatail(
+            data.attributes.ProjectName
+          );
 
-      const manifestosList = manifestoData.map((manifestosDetails) => {
-        return {
-          id: manifestosDetails.id,
-          title: manifestosDetails.attributes.Title,
-          date: manifestosDetails.attributes.PublishDate.replace(
-            /([\w ]+)-([\w ]+)-([\w ]+)/g,
-            "$3/$2/$1"
-          ),
-          Project:
-            manifestosDetails.attributes.project.data.attributes.ProjectName,
-          UrlProject:
-            manifestosDetails.attributes.project.data.attributes.ProjectName.toLowerCase(),
-        };
-      });
+          // console.log(items);
 
-      const notesList = notesData.map((notesDetails) => {
-        return {
-          id: notesDetails.id,
-          title: notesDetails.attributes.Title,
-          date: notesDetails.attributes.PublishDate.replace(
-            /([\w ]+)-([\w ]+)-([\w ]+)/g,
-            "$3/$2/$1"
-          ),
-          Project: notesDetails.attributes.project.data.attributes.ProjectName,
-          UrlProject:
-            notesDetails.attributes.project.data.attributes.ProjectName.toLowerCase(),
-        };
-      });
+          if (typeof items === "object" && !Array.isArray(items)) {
+            const singleObj = {
+              id: 1,
+              title: items.attributes.project.data.attributes.ProjectName,
+              date: "-",
+              Project: items.attributes.project.data.attributes.ProjectName,
+              UrlProject: null,
+            };
 
-      console.log(notesList[0].UrlProject);
+            return singleObj;
+          } else if (Array.isArray(items)) {
+            const arrData = items.map((eachArr) => {
+              const returnDefault = (input) => {
+                if (!input) {
+                  return null;
+                }
+                return input.attributes.ProjectName;
+              };
 
-      const tableDetail = manifestosList.concat(notesList);
-      setTable(tableDetail);
+              const EacObjData = {
+                id: eachArr.id,
+                title: eachArr.attributes.Title,
+                date: reRenderDate(eachArr.attributes.PublishDate),
+                Project: returnDefault(eachArr.attributes.project.data),
+                UrlProject: defaultStringToLowerCase(
+                  eachArr.attributes.project.data
+                ),
+              };
+
+              return EacObjData;
+            });
+            return arrData;
+          } else {
+            return;
+          }
+        })
+      );
+
+      result.then((value) => {
+        const flattend = value.flat();
+        console.log(flattend);
+        setTable(flattend);
+      }, []);
+      return;
     } catch (e) {
       console.log(e);
     }
@@ -74,13 +94,23 @@ const Archive = () => {
           {table.map((value, index) => {
             return (
               <div key={index}>
-                <Link href={`/${value.UrlProject}/${value.id}`}>
-                  <div className={style.archiveDetail} key={index}>
-                    <p className={style.archiveTitle}>{value.title}</p>
-                    <p className={style.archiveDate}>{value.date}</p>
-                    <p className={style.archiveProject}>{value.Project}</p>
-                  </div>
-                </Link>
+                {value.UrlProject ? (
+                  <Link href={`/projects/${value.UrlProject}/${value.id}`}>
+                    <div className={style.archiveDetail} key={index}>
+                      <p className={style.archiveTitle}>{value.title}</p>
+                      <p className={style.archiveDate}>{value.date}</p>
+                      <p className={style.archiveProject}>{value.Project}</p>
+                    </div>
+                  </Link>
+                ) : (
+                  <Link href="/projects">
+                    <div className={style.archiveDetail} key={index}>
+                      <p className={style.archiveTitle}>{value.title}</p>
+                      <p className={style.archiveDate}>{value.date}</p>
+                      <p className={style.archiveProject}>{value.Project}</p>
+                    </div>
+                  </Link>
+                )}
               </div>
             );
           })}

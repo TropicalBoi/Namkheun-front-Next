@@ -38,7 +38,9 @@ const RenderProjectBody = (props) => {
                 return (
                   <div key={items.id}>
                     <Link
-                      href={`/${props.projectName.toLowerCase()}/${items.id}`}
+                      href={`/projects/${props.projectName.toLowerCase()}/${
+                        items.id
+                      }`}
                     >
                       <div
                         key={items.attributes.CoverImages.data.attributes.url}

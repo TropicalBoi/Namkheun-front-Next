@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
-import Layout from "../../src/components/layout";
-import style from "../../styles/manifestos.module.css";
+import Layout from "../../../src/components/layout";
+import style from "../../../styles/manifestos.module.css";
 import cn from "classnames";
-import { replaceTags, reRenderDate } from "../../src/components/commonFn";
+import {
+  defaultString,
+  replaceTags,
+  reRenderDate,
+} from "../../../src/components/commonFn";
 
 const Manifesto = () => {
   const router = useRouter();
@@ -13,16 +17,31 @@ const Manifesto = () => {
 
   const [thaiText, setThaiText] = useState();
 
+  const [thaiOnly, setThaiOnly] = useState(true);
+
   useEffect(() => {
     if (router.isReady) {
-      const id = router.query.manifestosPage;
       const fetch = async () => {
         try {
+          const projectName = router.query.projectName;
+          const id = router.query.innerProject;
+
           const data = await axios.get(
-            `https://namkheun-back.herokuapp.com/api/manifestos/${id}?populate=*`
+            `https://namkheun-back.herokuapp.com/api/${projectName}/${id}?populate=*`
           );
 
           const rawContentData = data.data.data.attributes;
+
+          if (rawContentData.ThContent) {
+            setThaiOnly(false);
+          }
+
+          const headlineImg = (input) => {
+            if (!input.Images) {
+              return input.CoverImages.data.attributes.url;
+            }
+            return input.Images.data.attributes.url;
+          };
 
           const contentData = {
             title: rawContentData.Title,
@@ -33,9 +52,9 @@ const Manifesto = () => {
             author: rawContentData.Author,
             authorTH: rawContentData.ThAuthor,
             year: rawContentData.Year,
-            img: rawContentData.Images.data.attributes.url,
+            img: headlineImg(rawContentData),
             content: replaceTags(rawContentData.Content),
-            contentTH: replaceTags(rawContentData.ThContent),
+            contentTH: replaceTags(defaultString(rawContentData.ThContent)),
             textAlign: rawContentData.TextAlign,
           };
 
@@ -71,8 +90,8 @@ const Manifesto = () => {
           <div className={style.manifestoDetail}>
             <div className={style.authorYear}>
               <div className={style.authorYearKey}>
-                <p>Author</p>
-                <p>Year</p>
+                {content.author ? <p>Author</p> : ""}
+                {content.year ? <p>Year</p> : ""}
               </div>
               <div className={style.authorYearValue}>
                 {!thaiText ? (
@@ -84,27 +103,31 @@ const Manifesto = () => {
                 <p>{content.year}</p>
               </div>
             </div>
-            <div className={style.languageSection}>
-              {thaiText && (
-                <p
-                  className={style.languageOnHover}
-                  onClick={() => setThaiText(!thaiText)}
-                >
-                  EN
-                </p>
-              )}
-              {!thaiText && <p className={style.languageOnActive}>EN</p>}
-              <p>/</p>
-              {!thaiText && (
-                <p
-                  className={style.languageOnHover}
-                  onClick={() => setThaiText(!thaiText)}
-                >
-                  TH
-                </p>
-              )}
-              {thaiText && <p className={style.languageOnActive}>TH</p>}
-            </div>
+            {!thaiOnly ? (
+              <div className={style.languageSection}>
+                {thaiText && (
+                  <p
+                    className={style.languageOnHover}
+                    onClick={() => setThaiText(!thaiText)}
+                  >
+                    EN
+                  </p>
+                )}
+                {!thaiText && <p className={style.languageOnActive}>EN</p>}
+                <p>/</p>
+                {!thaiText && (
+                  <p
+                    className={style.languageOnHover}
+                    onClick={() => setThaiText(!thaiText)}
+                  >
+                    TH
+                  </p>
+                )}
+                {thaiText && <p className={style.languageOnActive}>TH</p>}
+              </div>
+            ) : (
+              ""
+            )}
           </div>
         </div>
         <div className={style.manifestoPDF}>
