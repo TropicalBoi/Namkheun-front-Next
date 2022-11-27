@@ -13,12 +13,12 @@ const Projects = () => {
   const fetchProjects = async () => {
     const projectData = await fetchingProjects();
 
-    const projectItems = projectData.map((data) => {
-      const items = fetchingProjectDeatail(data.attributes.ProjectName);
-      return items;
-    });
+    // const projectItems = projectData.map((data) => {
+    //   const items = fetchingProjectDeatail(data.attributes.ProjectName);
+    //   return items;
+    // });
 
-    console.log(projectItems);
+    // console.log(projectItems);
 
     SetProjects(projectData);
   };
@@ -35,6 +35,9 @@ const Projects = () => {
             return b.id - a.id;
           })
           .map((Project) => {
+            if (Project.attributes.ProjectName === "News") {
+              return;
+            }
             return (
               <div className={style.projectContainer} key={Project.id}>
                 <div
@@ -44,6 +47,14 @@ const Projects = () => {
                   <p className={style.projectName}>
                     {Project.attributes.ProjectName}
                   </p>
+
+                  <picture>
+                    <img
+                      src="/NK_Icon-dungo.svg"
+                      className={style.dungoIcon}
+                      alt="about"
+                    />
+                  </picture>
                 </div>
                 <RenderProjectBody
                   projectName={Project.attributes.ProjectName}

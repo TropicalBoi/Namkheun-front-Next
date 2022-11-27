@@ -23,5 +23,8 @@ export const replaceTags = (data) => {
 };
 
 export const reRenderDate = (data) => {
+  if (!data) {
+    return null;
+  }
   return data.replace(/([\w ]+)-([\w ]+)-([\w ]+)/g, "$3/$2/$1");
 };

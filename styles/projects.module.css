@@ -14,6 +14,9 @@
 .projectHeader {
   height: 8vh;
   width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
 
 .projectName {
@@ -26,6 +29,14 @@
   padding-left: 1.82vw;
 }
 
+
+
+.dungoIcon {
+  height: 4vh;
+  width: auto;
+  padding-right: 1.82vw;
+}
+
 .projectBody {
   height: 60vh;
   width: 100vw;
@@ -34,7 +45,15 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  padding-right: 2vw;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
+
+.projectBody::-webkit-scrollbar {
+  display: none;
+}
+
 
 .projectBodyFrost {
   height: 60vh;
@@ -47,7 +66,7 @@
 
 
 .coverImg {
-  height: 60vh;
+  height: 58vh;
   width: auto;
   margin: 2vh 0 2vh 2vw;
 }

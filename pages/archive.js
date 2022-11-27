@@ -6,6 +6,7 @@ import {
 } from "../src/APIs/projectBodyAPIs";
 
 import {
+  defaultString,
   defaultStringToLowerCase,
   reRenderDate,
 } from "../src/components/commonFn";
@@ -32,7 +33,7 @@ const Archive = () => {
             const singleObj = {
               id: 1,
               title: items.attributes.project.data.attributes.ProjectName,
-              date: "-",
+              date: reRenderDate(defaultString(items.attributes.PublishDate)),
               Project: items.attributes.project.data.attributes.ProjectName,
               UrlProject: null,
             };
@@ -50,7 +51,9 @@ const Archive = () => {
               const EacObjData = {
                 id: eachArr.id,
                 title: eachArr.attributes.Title,
-                date: reRenderDate(eachArr.attributes.PublishDate),
+                date: reRenderDate(
+                  defaultString(eachArr.attributes.PublishDate)
+                ),
                 Project: returnDefault(eachArr.attributes.project.data),
                 UrlProject: defaultStringToLowerCase(
                   eachArr.attributes.project.data
@@ -68,7 +71,7 @@ const Archive = () => {
 
       result.then((value) => {
         const flattend = value.flat();
-        console.log(flattend);
+
         setTable(flattend);
       }, []);
       return;

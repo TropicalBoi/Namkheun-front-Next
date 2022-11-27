@@ -7,8 +7,12 @@ const RenderProjectBody = (props) => {
   const [projectItems, SetProjectItems] = useState(<></>);
 
   const fetch = async () => {
+    if (props.projectName === "News") {
+      return;
+    }
+
     try {
-      const manifestoData = await fetchingProjectDeatail(props.projectName);
+      const returnedData = await fetchingProjectDeatail(props.projectName);
 
       // const findImgSize = (h, w) => {
       //   if (h < w) {
@@ -66,7 +70,7 @@ const RenderProjectBody = (props) => {
         }
       };
 
-      const outputBody = renderProjectBody(manifestoData);
+      const outputBody = renderProjectBody(returnedData);
 
       SetProjectItems(outputBody);
     } catch (e) {
