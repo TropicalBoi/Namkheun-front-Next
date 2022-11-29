@@ -63,15 +63,23 @@
 .manifestoPDF {
   width: 96vw;
   height: fit-content;
+  display: flex;
+  align-items: baseline;
   margin: 4vh 2vw;
   padding: 0 26.125vw;
+  cursor: pointer;
+}
+
+.manifestoDownloadIcon {
+  height: auto;
+  width: 1vw;
+  margin-left: 0.5vw;
 }
 
 .manifestoImg {
   width: 43.75vw;
   height: fit-content;
   margin: 5vh 28.125vw 11vh 28.125vw;
-
 }
 
 .manifestoPageImage {

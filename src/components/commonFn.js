@@ -28,3 +28,11 @@ export const reRenderDate = (data) => {
   }
   return data.replace(/([\w ]+)-([\w ]+)-([\w ]+)/g, "$3/$2/$1");
 };
+
+export const addHTTP = (data) => {
+  const checkedInput = /[h][t][t][p]/.test(data);
+  if (!checkedInput) {
+    return `http://${data}`;
+  }
+  return data;
+};

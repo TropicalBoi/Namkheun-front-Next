@@ -1,9 +1,23 @@
 .projectsContainer {
+  position: fixed;
   width: 100vw;
   height: 100vh;
-  background-color: white;
-  padding:20vh 0 12vh 0;
+  padding-top: 20vh;
+  padding-bottom: 12vh;
   overflow: scroll;
+  scroll-behavior: smooth;
+  scroll-padding: 20vh;
+}
+
+.projectsContainerNoScroll {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 20vh;
+  padding-bottom: 12vh;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  scroll-padding: 20vh;
 }
 
 .projectContainer {
@@ -29,12 +43,11 @@
   padding-left: 1.82vw;
 }
 
-
-
 .dungoIcon {
   height: 4vh;
   width: auto;
-  padding-right: 1.82vw;
+  padding: 0 1.82vw;
+  cursor: pointer;
 }
 
 .projectBody {
@@ -54,7 +67,6 @@
   display: none;
 }
 
-
 .projectBodyFrost {
   height: 60vh;
   width: 100vw;
@@ -64,9 +76,126 @@
   align-items: center;
 }
 
-
 .coverImg {
-  height: 58vh;
+  height: 56vh;
   width: auto;
-  margin: 2vh 0 2vh 2vw;
+  margin: 2vh 0 4vh 2vw;
+}
+
+.popupContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.popupContainer p {
+  font-family: moderat-meduim;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.45vw;
+  line-height: 4vh;
+  letter-spacing: 0.02em;
+}
+
+.popupOuter {
+  width: 50vw;
+  z-index: 20;
+}
+
+.popupInner {
+  width: 50vw;
+  height: 100vh;
+  background-image: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0)
+  );
+  z-index: 20;
+}
+
+.popupClose {
+  position: fixed;
+  top: 20vh;
+  right: 42vw;
+  width: 4vh;
+  height: 4vh;
+  padding: 2vh 0 0 2vh;
+  cursor: pointer;
+  z-index: 25;
+}
+
+.closeIcon {
+  height: 4vh;
+  width: auto;
+}
+
+.popupHeader {
+  width: 40vw;
+  height: 12vh;
+  position: fixed;
+  top: 20vh;
+  right: 0;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+  z-index: 15;
+}
+
+.popupContent {
+  width: 40vw;
+  height: 68vh;
+  position: fixed;
+  top: 20vh;
+  right: 0;
+  padding: 10vh 10vh 5vh 0;
+  overflow: scroll;
+}
+
+.popupLanguageSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 40vw;
+  height: 7vh;
+  padding-right: 10vh;
+}
+
+.languageOnActive {
+  text-decoration: underline;
+}
+.languageOnHover {
+  cursor: pointer;
+}
+
+.popupPDF {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: baseline;
+  margin: 2vh 0;
+  cursor: pointer;
+}
+
+.popupDownloadIcon {
+  height: auto;
+  width: 1vw;
+  margin-left: 0.5vw;
 }

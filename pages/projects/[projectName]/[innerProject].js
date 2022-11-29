@@ -8,6 +8,7 @@ import {
   defaultString,
   replaceTags,
   reRenderDate,
+  addHTTP,
 } from "../../../src/components/commonFn";
 
 const Manifesto = () => {
@@ -56,6 +57,7 @@ const Manifesto = () => {
             content: replaceTags(rawContentData.Content),
             contentTH: replaceTags(defaultString(rawContentData.ThContent)),
             textAlign: rawContentData.TextAlign,
+            downloadLink: defaultString(rawContentData.DownloadLink),
           };
 
           setContent(contentData);
@@ -130,9 +132,27 @@ const Manifesto = () => {
             )}
           </div>
         </div>
-        <div className={style.manifestoPDF}>
-          <p>PDF</p>
-        </div>
+
+        {content.downloadLink ? (
+          <a
+            target="_blank"
+            href={addHTTP(content.downloadLink)}
+            rel="noopener noreferrer"
+          >
+            <div className={style.manifestoPDF}>
+              <p>PDF</p>
+              <picture>
+                <img
+                  src="/NK_Icon-download.svg"
+                  className={style.manifestoDownloadIcon}
+                  alt="download"
+                />
+              </picture>
+            </div>
+          </a>
+        ) : (
+          ""
+        )}
         <div className={style.manifestoImg}>
           <picture>
             <img
