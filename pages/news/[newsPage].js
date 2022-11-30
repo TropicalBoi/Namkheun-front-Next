@@ -11,7 +11,7 @@ import {
   addHTTP,
 } from "../../src/components/commonFn";
 
-const innerProject = () => {
+const OneNews = () => {
   const router = useRouter();
 
   const [content, setContent] = useState([]);
@@ -176,4 +176,4 @@ const innerProject = () => {
   );
 };
 
-export default innerProject;
+export default OneNews;

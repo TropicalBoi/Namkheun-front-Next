@@ -45,8 +45,8 @@ const Shop = () => {
           })
           .map((item) => {
             return (
-              <Link href={`/shop/${item.id}`}>
-                <div className={style.itemContainer} key={item.id}>
+              <div className={style.itemContainer} key={item.id}>
+                <Link href={`/shop/${item.id}`}>
                   <div className={style.imgContainer} key={item.displayImage}>
                     <picture>
                       <img
@@ -72,8 +72,8 @@ const Shop = () => {
                       </picture>
                     </div>
                   </div>
-                </div>
-              </Link>
+                </Link>
+              </div>
             );
           })}
       </div>

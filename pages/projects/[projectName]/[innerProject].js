@@ -11,7 +11,7 @@ import {
   addHTTP,
 } from "../../../src/components/commonFn";
 
-const innerProject = () => {
+const InnerProject = () => {
   const router = useRouter();
 
   const [content, setContent] = useState([]);
@@ -177,4 +177,4 @@ const innerProject = () => {
   );
 };
 
-export default innerProject;
+export default InnerProject;
