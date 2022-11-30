@@ -48,7 +48,7 @@ const News = () => {
             return (
               <div className={style.oneNewsContainer} key={News.id}>
                 <Link href={`/news/${News.id}`}>
-                  <>
+                  <div>
                     <picture>
                       <img
                         src={News.coverImage}
@@ -65,7 +65,7 @@ const News = () => {
                         <p>{News.date}</p>
                       </div>
                     </div>
-                  </>
+                  </div>
                 </Link>
               </div>
             );

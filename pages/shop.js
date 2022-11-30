@@ -47,7 +47,7 @@ const Shop = () => {
             return (
               <div className={style.itemContainer} key={item.id}>
                 <Link href={`/shop/${item.id}`}>
-                  <>
+                  <div>
                     <div className={style.imgContainer} key={item.displayImage}>
                       <picture>
                         <img
@@ -73,7 +73,7 @@ const Shop = () => {
                         </picture>
                       </div>
                     </div>
-                  </>
+                  </div>
                 </Link>
               </div>
             );
