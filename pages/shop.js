@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../src/components/layout";
-import axios from "axios";
+import { fetchingProjectDeatail } from "../src/APIs/projectBodyAPIs";
 import { replaceTags, defaultString } from "../src/components/commonFn";
 import style from "../styles/shop.module.css";
 import Link from "next/link";
@@ -10,11 +10,7 @@ const Shop = () => {
 
   const fetch = async () => {
     try {
-      const shopRawData = await axios.get(
-        `https://namkheun-back.herokuapp.com/api/shops?populate=%2A`
-      );
-
-      const itemsData = shopRawData.data.data;
+      const itemsData = await fetchingProjectDeatail("shops");
 
       const allItemsData = itemsData.map((data) => {
         const itemData = {
@@ -51,31 +47,33 @@ const Shop = () => {
             return (
               <div className={style.itemContainer} key={item.id}>
                 <Link href={`/shop/${item.id}`}>
-                  <div className={style.imgContainer} key={item.displayImage}>
-                    <picture>
-                      <img
-                        src={item.displayImage}
-                        className={style.itemDisplayImage}
-                        alt="Item display"
-                      />
-                    </picture>
-                  </div>
-                  <div className={style.itemDetail} key={item.title}>
-                    <div>
-                      <h2>{item.title}</h2>
-                      <p dangerouslySetInnerHTML={clean(item)} />
-                    </div>
-                    <div className={style.itemMoreInfo}>
-                      <p>More info</p>
+                  <>
+                    <div className={style.imgContainer} key={item.displayImage}>
                       <picture>
                         <img
-                          src="/NK_Icon-download.svg"
-                          className={style.moreInfoIcon}
-                          alt="download"
+                          src={item.displayImage}
+                          className={style.itemDisplayImage}
+                          alt="Item display"
                         />
                       </picture>
                     </div>
-                  </div>
+                    <div className={style.itemDetail} key={item.title}>
+                      <div>
+                        <h2>{item.title}</h2>
+                        <p dangerouslySetInnerHTML={clean(item)} />
+                      </div>
+                      <div className={style.itemMoreInfo}>
+                        <p>More info</p>
+                        <picture>
+                          <img
+                            src="/NK_Icon-download.svg"
+                            className={style.moreInfoIcon}
+                            alt="download"
+                          />
+                        </picture>
+                      </div>
+                    </div>
+                  </>
                 </Link>
               </div>
             );

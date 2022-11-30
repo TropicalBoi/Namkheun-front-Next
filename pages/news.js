@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../src/components/layout";
-import axios from "axios";
+import { fetchingProjectDeatail } from "../src/APIs/projectBodyAPIs";
 import {
   excerptHeader,
   excerptText,
@@ -14,11 +14,7 @@ const News = () => {
 
   const fetch = async () => {
     try {
-      const newsRawData = await axios.get(
-        `https://namkheun-back.herokuapp.com/api/news?populate=%2A`
-      );
-
-      const newsData = newsRawData.data.data;
+      const newsData = await fetchingProjectDeatail("news");
 
       const returnedNewsData = newsData.map((data) => {
         const resetNewsData = {
@@ -52,22 +48,24 @@ const News = () => {
             return (
               <div className={style.oneNewsContainer} key={News.id}>
                 <Link href={`/news/${News.id}`}>
-                  <picture>
-                    <img
-                      src={News.coverImage}
-                      className={style.newsCoverImage}
-                      alt="News cover"
-                    />
-                  </picture>
-                  <div className={style.newsDetail}>
-                    <div className={style.contentDetail}>
-                      <h2>{News.title}</h2>
-                      <p>{News.content}</p>
+                  <>
+                    <picture>
+                      <img
+                        src={News.coverImage}
+                        className={style.newsCoverImage}
+                        alt="News cover"
+                      />
+                    </picture>
+                    <div className={style.newsDetail}>
+                      <div className={style.contentDetail}>
+                        <h2>{News.title}</h2>
+                        <p>{News.content}</p>
+                      </div>
+                      <div className={style.newsDate}>
+                        <p>{News.date}</p>
+                      </div>
                     </div>
-                    <div className={style.newsDate}>
-                      <p>{News.date}</p>
-                    </div>
-                  </div>
+                  </>
                 </Link>
               </div>
             );
