@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
-import Layout from "../../../src/components/layout";
-import style from "../../../styles/innerProjects.module.css";
+import Layout from "../../src/components/layout";
+import style from "../../styles/innerProjects.module.css";
 import cn from "classnames";
 import {
   defaultString,
   replaceTags,
   reRenderDate,
   addHTTP,
-} from "../../../src/components/commonFn";
+} from "../../src/components/commonFn";
 
 const innerProject = () => {
   const router = useRouter();
@@ -24,11 +24,10 @@ const innerProject = () => {
     if (router.isReady) {
       const fetch = async () => {
         try {
-          const projectName = router.query.projectName;
-          const id = router.query.innerProject;
+          const id = router.query.newsPage;
 
           const data = await axios.get(
-            `https://namkheun-back.herokuapp.com/api/${projectName}/${id}?populate=*`
+            `https://namkheun-back.herokuapp.com/api/news/${id}?populate=*`
           );
 
           const rawContentData = data.data.data.attributes;

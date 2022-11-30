@@ -5,13 +5,6 @@ export const defaultString = (input) => {
   return input;
 };
 
-export const defaultStringToLowerCase = (input) => {
-  if (!input) {
-    return null;
-  }
-  return input.attributes.ProjectName.toLowerCase();
-};
-
 export const replaceTags = (data) => {
   if (data) {
     return data
@@ -20,6 +13,23 @@ export const replaceTags = (data) => {
       .replace(/_(.*?)_/g, "<i>$1</i>");
   }
   return null;
+};
+
+export const excerptText = (data) => {
+  if (data) {
+    const inputData = data
+      .replace(/\n/g, ` `)
+      .replace(/\*{2}(.*?)\*{2}/g, `$1`)
+      .replace(/[<u>](.*?)[</u>]/g, `$1`)
+      .replace(/_(.*?)_/g, `$1`);
+
+    return inputData.substring(0, 100) + "...";
+  }
+  return null;
+};
+
+export const excerptHeader = (data) => {
+  return data.substring(0, 35);
 };
 
 export const reRenderDate = (data) => {

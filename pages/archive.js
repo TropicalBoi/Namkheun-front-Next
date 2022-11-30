@@ -5,11 +5,7 @@ import {
   fetchingProjectDeatail,
 } from "../src/APIs/projectBodyAPIs";
 
-import {
-  defaultString,
-  defaultStringToLowerCase,
-  reRenderDate,
-} from "../src/components/commonFn";
+import { defaultString, reRenderDate } from "../src/components/commonFn";
 
 import Link from "next/link";
 import style from "../styles/archiver.module.css";
@@ -34,33 +30,24 @@ const Archive = () => {
               id: 1,
               title: items.attributes.project.data.attributes.ProjectName,
               date: reRenderDate(defaultString(items.attributes.PublishDate)),
-              Project: items.attributes.project.data.attributes.ProjectName,
+              Project: data.attributes.ProjectName,
               UrlProject: null,
             };
 
             return singleObj;
           } else if (Array.isArray(items)) {
             const arrData = items.map((eachArr) => {
-              const returnDefault = (input) => {
-                if (!input) {
-                  return null;
-                }
-                return input.attributes.ProjectName;
-              };
-
-              const EacObjData = {
+              const EachObjData = {
                 id: eachArr.id,
                 title: eachArr.attributes.Title,
                 date: reRenderDate(
                   defaultString(eachArr.attributes.PublishDate)
                 ),
-                Project: returnDefault(eachArr.attributes.project.data),
-                UrlProject: defaultStringToLowerCase(
-                  eachArr.attributes.project.data
-                ),
+                Project: data.attributes.ProjectName,
+                UrlProject: data.attributes.ProjectName.toLowerCase(),
               };
 
-              return EacObjData;
+              return EachObjData;
             });
             return arrData;
           } else {
@@ -95,25 +82,44 @@ const Archive = () => {
           </div>
 
           {table.map((value, index) => {
+            if (value.UrlProject === "news") {
+              return (
+                <div key={index}>
+                  <div className={style.archiveDetail} key={index}>
+                    <Link href={`/${value.UrlProject}/${value.id}`}>
+                      <p className={style.archiveTitle}>{value.title}</p>
+                    </Link>
+                    <p className={style.archiveDate}>{value.date}</p>
+                    <Link href={`/${value.UrlProject}`}>
+                      <p className={style.archiveProject}>{value.Project}</p>
+                    </Link>
+                  </div>
+                </div>
+              );
+            } else if (value.UrlProject) {
+              return (
+                <div key={index}>
+                  <div className={style.archiveDetail} key={index}>
+                    <Link href={`/projects/${value.UrlProject}/${value.id}`}>
+                      <p className={style.archiveTitle}>{value.title}</p>
+                    </Link>
+                    <p className={style.archiveDate}>{value.date}</p>
+                    <Link href={`/projects#${value.UrlProject}`}>
+                      <p className={style.archiveProject}>{value.Project}</p>
+                    </Link>
+                  </div>
+                </div>
+              );
+            }
             return (
               <div key={index}>
-                {value.UrlProject ? (
-                  <Link href={`/projects/${value.UrlProject}/${value.id}`}>
-                    <div className={style.archiveDetail} key={index}>
-                      <p className={style.archiveTitle}>{value.title}</p>
-                      <p className={style.archiveDate}>{value.date}</p>
-                      <p className={style.archiveProject}>{value.Project}</p>
-                    </div>
-                  </Link>
-                ) : (
-                  <Link href="/projects">
-                    <div className={style.archiveDetail} key={index}>
-                      <p className={style.archiveTitle}>{value.title}</p>
-                      <p className={style.archiveDate}>{value.date}</p>
-                      <p className={style.archiveProject}>{value.Project}</p>
-                    </div>
-                  </Link>
-                )}
+                <Link href={`/projects#${value.Project.toLowerCase()}`}>
+                  <div className={style.archiveDetail} key={index}>
+                    <p className={style.archiveTitle}>{value.title}</p>
+                    <p className={style.archiveDate}>{value.date}</p>
+                    <p className={style.archiveProject}>{value.Project}</p>
+                  </div>
+                </Link>
               </div>
             );
           })}

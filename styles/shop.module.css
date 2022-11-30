@@ -1,5 +1,77 @@
-.shopContainer{
+.shopContainer {
+  position: fixed;
   width: 100vw;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: white;
+  padding-top: 20vh;
+  padding-bottom: 12vh;
+  overflow: scroll;
+  scroll-behavior: smooth;
 }
+
+.itemContainer {
+  height: fit-content;
+  width: 65vw;
+  display: flex;
+  margin-bottom: 10vh;
+}
+
+.imgContainer {
+  height: 47.5vh;
+  width: 84.4vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.itemDisplayImage {
+  height: 47.5vh;
+  width: auto;
+}
+
+.itemDetail {
+  height: 47.5vh;
+  width: 34vw;
+  padding-left: 4vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.itemDetail h2 {
+  font-family: moderat-meduim, BaiJamjuree-Regular;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 3.125vw;
+  line-height: 7.6vh;
+  color: #000000;
+  margin: 0 0 1vh 0;
+}
+
+.itemDetail p {
+  font-family: moderat-meduim, BaiJamjuree-Regular;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.45vw;
+  line-height: 4vh;
+  letter-spacing: 0.02em;
+}
+
+.itemMoreInfo {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  width: 30vw;
+}
+
+.moreInfoIcon {
+  height: auto;
+  width: 0.8vw;
+  margin-left: 0.5vw;
+  transform: rotate(-0.25turn);
+}
+
