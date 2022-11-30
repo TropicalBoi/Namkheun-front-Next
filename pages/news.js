@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../src/components/layout";
-import { fetchingProjectDeatail } from "../src/APIs/projectBodyAPIs";
+import axios from "axios";
 import {
   excerptHeader,
   excerptText,
@@ -14,7 +14,11 @@ const News = () => {
 
   const fetch = async () => {
     try {
-      const newsData = await fetchingProjectDeatail("news");
+      const newsRawData = await axios.get(
+        `https://namkheun-back.herokuapp.com/api/news?populate=%2A`
+      );
+
+      const newsData = newsRawData.data.data;
 
       const returnedNewsData = newsData.map((data) => {
         const resetNewsData = {

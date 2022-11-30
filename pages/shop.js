@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../src/components/layout";
-import { fetchingProjectDeatail } from "../src/APIs/projectBodyAPIs";
+import axios from "axios";
 import { replaceTags, defaultString } from "../src/components/commonFn";
 import style from "../styles/shop.module.css";
 import Link from "next/link";
@@ -10,7 +10,11 @@ const Shop = () => {
 
   const fetch = async () => {
     try {
-      const itemsData = await fetchingProjectDeatail("shops");
+      const shopRawData = await axios.get(
+        `https://namkheun-back.herokuapp.com/api/shops?populate=%2A`
+      );
+
+      const itemsData = shopRawData.data.data;
 
       const allItemsData = itemsData.map((data) => {
         const itemData = {
