@@ -46,9 +46,9 @@ const News = () => {
           })
           .map((News) => {
             return (
-              <div className={style.oneNewsContainer} key={News.id}>
+              <div key={News.id}>
                 <Link href={`/news/${News.id}`}>
-                  <div>
+                  <div className={style.oneNewsContainer}>
                     <picture>
                       <img
                         src={News.coverImage}
