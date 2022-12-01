@@ -40,9 +40,13 @@ export const reRenderDate = (data) => {
 };
 
 export const addHTTP = (data) => {
-  const checkedInput = /[h][t][t][p]/.test(data);
-  if (!checkedInput) {
-    return `http://${data}`;
+  if (!data) {
+    return null;
+  } else {
+    const checkedInput = /[h][t][t][p]/.test(data);
+    if (!checkedInput) {
+      return `http://${data}`;
+    }
+    return data;
   }
-  return data;
 };

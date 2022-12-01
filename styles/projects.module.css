@@ -194,6 +194,10 @@
   cursor: pointer;
 }
 
+.downloadArea {
+  width: 4.5vw;
+}
+
 .popupDownloadIcon {
   height: auto;
   width: 1vw;

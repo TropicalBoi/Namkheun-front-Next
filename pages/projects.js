@@ -7,13 +7,26 @@ import {
 } from "../src/APIs/projectBodyAPIs";
 import { defaultString } from "../src/components/commonFn";
 import RenderProjectBody from "../src/components/projectBody";
-import AboutPopUp from "../src/components/projectAboutPopup";
+import PopUp from "../src/components/projectPopup";
 import Link from "next/link";
 
 const Projects = () => {
-  const [projects, SetProjects] = useState([]);
+  const [projects, setProjects] = useState([]);
 
-  const [popup, setPopup] = useState(false);
+  const [popup, setPopup] = useState({});
+
+  const [popupState, setPopupState] = useState(false);
+
+  const anyPopup = (input) => {
+    if (Object.values(input).every((value) => !value)) {
+      setPopupState(true);
+    }
+  };
+
+  const handleClick = (input) => {
+    setPopup((previousPopup) => ({ ...previousPopup, [input]: true }));
+    anyPopup(popup);
+  };
 
   const fetchProjects = async () => {
     const projectData = await fetchingProjects();
@@ -25,7 +38,7 @@ const Projects = () => {
 
     // console.log(projectItems);
 
-    SetProjects(projectData);
+    setProjects(projectData);
   };
 
   useEffect(() => {
@@ -36,7 +49,7 @@ const Projects = () => {
     <Layout>
       <div
         className={
-          popup ? style.projectsContainerNoScroll : style.projectsContainer
+          popupState ? style.projectsContainerNoScroll : style.projectsContainer
         }
       >
         {projects
@@ -55,7 +68,7 @@ const Projects = () => {
                   id={Project.attributes.ProjectName.toLowerCase()}
                 >
                   <p className={style.projectName}>
-                    {Project.attributes.ProjectName}
+                    {Project.attributes.ProjectName} {Project.id}
                   </p>
                   <Link
                     href={`/projects/#${Project.attributes.ProjectName.toLowerCase()}`}
@@ -65,18 +78,22 @@ const Projects = () => {
                         src="/NK_Icon-dungo.svg"
                         className={style.dungoIcon}
                         alt="about"
-                        onClick={() => setTimeout(() => setPopup(true), 500)}
+                        onClick={() =>
+                          setTimeout(() => handleClick(Project.id), 500)
+                        }
                       />
                     </picture>
                   </Link>
                 </div>
 
-                <AboutPopUp
+                <PopUp
                   trigger={popup}
                   setTrigger={setPopup}
+                  setScroll={setPopupState}
+                  projectId={Project.id}
                   textContent={Project.attributes.Description}
                   thTextContent={Project.attributes.ThDescription}
-                  downloadLink={defaultString(Project.attributes.DownloadLink)}
+                  downloadLink={Project.attributes.DownloadLink}
                 />
 
                 <RenderProjectBody

@@ -1,21 +1,29 @@
 import React, { useState } from "react";
-import { addHTTP, defaultString, replaceTags } from "./commonFn";
+import { addHTTP, replaceTags } from "./commonFn";
 import style from "../../styles/projects.module.css";
 
-const AboutPopUp = (props) => {
+const Popup = (props) => {
   const [thaiText, setThaiText] = useState();
 
-  const returnContent = replaceTags(defaultString(props.textContent));
+  const handleClose = (input) => {
+    props.setTrigger((previousPopup) => ({ ...previousPopup, [input]: false }));
+    props.setScroll(false);
+  };
 
-  const returnContentTh = replaceTags(defaultString(props.thTextContent));
+  const returnContent = replaceTags(props.textContent);
+
+  const returnContentTh = replaceTags(props.thTextContent);
 
   const clean = { __html: returnContent };
 
   const cleanTh = { __html: returnContentTh };
 
-  return props.trigger ? (
-    <div className={style.popupContainer}>
-      <div className={style.popupClose} onClick={() => props.setTrigger(false)}>
+  return props.trigger[props.projectId] ? (
+    <div className={style.popupContainer} key={props.projectId}>
+      <div
+        className={style.popupClose}
+        onClick={() => handleClose(props.projectId)}
+      >
         <picture>
           <img
             src="/NK_Icon-close.svg"
@@ -26,7 +34,7 @@ const AboutPopUp = (props) => {
       </div>
       <div
         className={style.popupOuter}
-        onClick={() => props.setTrigger(false)}
+        onClick={() => handleClose(props.projectId)}
       ></div>
       <div className={style.popupInner}>
         <div className={style.popupHeader}>
@@ -55,26 +63,30 @@ const AboutPopUp = (props) => {
         <div className={style.popupContent}>
           <p dangerouslySetInnerHTML={!thaiText ? clean : cleanTh} />
           {props.downloadLink ? (
-            <a
-              target="_blank"
-              href={addHTTP(props.downloadLink)}
-              rel="noopener noreferrer"
-            >
-              <div className={style.popupPDF}>
-                <p>PDF</p>
-                <picture>
-                  <img
-                    src="/NK_Icon-download.svg"
-                    className={style.popupDownloadIcon}
-                    alt="download"
-                  />
-                </picture>
-              </div>
-            </a>
+            <div className={style.downloadArea}>
+              <a
+                target="_blank"
+                href={addHTTP(props.downloadLink)}
+                rel="noopener noreferrer"
+              >
+                <div className={style.popupPDF}>
+                  <p>PDF</p>
+                  <picture>
+                    <img
+                      src="/NK_Icon-download.svg"
+                      className={style.popupDownloadIcon}
+                      alt="download"
+                    />
+                  </picture>
+                </div>
+              </a>
+            </div>
           ) : (
             ""
           )}
         </div>
+
+        {/* <PopupContent projectId={props.projectId} thaiText={thaiText} /> */}
       </div>
     </div>
   ) : (
@@ -82,4 +94,4 @@ const AboutPopUp = (props) => {
   );
 };
 
-export default AboutPopUp;
+export default Popup;

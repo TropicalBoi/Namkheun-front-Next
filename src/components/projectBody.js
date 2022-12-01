@@ -4,7 +4,7 @@ import style from "../../styles/projects.module.css";
 import Link from "next/link";
 
 const RenderProjectBody = (props) => {
-  const [projectItems, SetProjectItems] = useState(<></>);
+  const [projectItems, setProjectItems] = useState([]);
 
   const fetch = async () => {
     if (props.projectName === "News") {
@@ -72,7 +72,7 @@ const RenderProjectBody = (props) => {
 
       const outputBody = renderProjectBody(returnedData);
 
-      SetProjectItems(outputBody);
+      setProjectItems(outputBody);
     } catch (e) {
       console.log(e);
     }

@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const fetchingProjects = async () => {
   const data = await axios.get(
-    "https://namkheun-back.herokuapp.com/api/projects/"
+    "https://namkheun-back.herokuapp.com/api/projects?populate=*"
   );
   return data.data.data;
 };
