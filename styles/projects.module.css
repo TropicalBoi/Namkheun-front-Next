@@ -168,6 +168,10 @@
   overflow: scroll;
 }
 
+.popupContent p {
+  margin-bottom: 2vh;
+}
+
 .popupLanguageSection {
   display: flex;
   flex-direction: row;
@@ -190,7 +194,7 @@
   height: fit-content;
   display: flex;
   align-items: baseline;
-  margin: 2vh 0;
+  margin-bottom: 2vh;
   cursor: pointer;
 }
 
@@ -202,4 +206,18 @@
   height: auto;
   width: 1vw;
   margin-left: 0.5vw;
+}
+
+.logosContainer {
+  width: 40vw;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2vh;
+}
+
+.singleLogo {
+  width: auto;
+  height: 10vh;
+  margin: 0 1vw;
 }

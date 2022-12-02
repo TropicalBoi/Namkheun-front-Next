@@ -84,6 +84,23 @@ const Popup = (props) => {
           ) : (
             ""
           )}
+          {props.logosData ? (
+            <div className={style.logosContainer}>
+              {props.logosData.map((logo) => {
+                return (
+                  <picture>
+                    <img
+                      src={logo.attributes.url}
+                      className={style.singleLogo}
+                      alt={logo.attributes.name}
+                    />
+                  </picture>
+                );
+              })}
+            </div>
+          ) : (
+            ""
+          )}
         </div>
 
         {/* <PopupContent projectId={props.projectId} thaiText={thaiText} /> */}

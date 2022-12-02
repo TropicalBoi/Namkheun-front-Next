@@ -68,7 +68,7 @@ const Projects = () => {
                   id={Project.attributes.ProjectName.toLowerCase()}
                 >
                   <p className={style.projectName}>
-                    {Project.attributes.ProjectName} {Project.id}
+                    {Project.attributes.ProjectName}
                   </p>
                   <Link
                     href={`/projects/#${Project.attributes.ProjectName.toLowerCase()}`}
@@ -94,6 +94,7 @@ const Projects = () => {
                   textContent={Project.attributes.Description}
                   thTextContent={Project.attributes.ThDescription}
                   downloadLink={Project.attributes.DownloadLink}
+                  logosData={Project.attributes.Logos.data}
                 />
 
                 <RenderProjectBody
