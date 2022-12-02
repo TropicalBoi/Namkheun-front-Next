@@ -17,26 +17,13 @@ const Projects = () => {
 
   const [popupState, setPopupState] = useState(false);
 
-  const anyPopup = (input) => {
-    if (Object.values(input).every((value) => !value)) {
-      setPopupState(true);
-    }
-  };
-
   const handleClick = (input) => {
     setPopup((previousPopup) => ({ ...previousPopup, [input]: true }));
-    anyPopup(popup);
+    setPopupState(true);
   };
 
   const fetchProjects = async () => {
     const projectData = await fetchingProjects();
-
-    // const projectItems = projectData.map((data) => {
-    //   const items = fetchingProjectDeatail(data.attributes.ProjectName);
-    //   return items;
-    // });
-
-    // console.log(projectItems);
 
     setProjects(projectData);
   };
@@ -52,14 +39,10 @@ const Projects = () => {
           popupState ? style.projectsContainerNoScroll : style.projectsContainer
         }
       >
-        {projects
-          .sort((a, b) => {
-            return b.id - a.id;
-          })
-          .map((Project) => {
-            if (Project.attributes.ProjectName === "News") {
-              return;
-            }
+        {projects.map((Project) => {
+          if (Project.attributes.ProjectName === "News") {
+            return;
+          } else if (Project.attributes.Pin) {
             return (
               <div className={style.projectContainer} key={Project.id}>
                 <div
@@ -67,9 +50,15 @@ const Projects = () => {
                   key={Project.attributes.ProjectName}
                   id={Project.attributes.ProjectName.toLowerCase()}
                 >
-                  <p className={style.projectName}>
-                    {Project.attributes.ProjectName}
-                  </p>
+                  <div className={style.pinProject}>
+                    <p className={style.projectName}>
+                      {Project.attributes.ProjectName}
+                    </p>
+                    <picture>
+                      <img src="/NK_Pin.png" className={style.pin} alt="pin" />
+                    </picture>
+                  </div>
+
                   <Link
                     href={`/projects/#${Project.attributes.ProjectName.toLowerCase()}`}
                   >
@@ -102,6 +91,61 @@ const Projects = () => {
                 />
               </div>
             );
+          }
+          return;
+        })}
+        {projects
+          .sort((a, b) => {
+            return b.id - a.id;
+          })
+          .map((Project) => {
+            if (Project.attributes.ProjectName === "News") {
+              return;
+            } else if (!Project.attributes.Pin) {
+              return (
+                <div className={style.projectContainer} key={Project.id}>
+                  <div
+                    className={style.projectHeader}
+                    key={Project.attributes.ProjectName}
+                    id={Project.attributes.ProjectName.toLowerCase()}
+                  >
+                    <p className={style.projectName}>
+                      {Project.attributes.ProjectName}{" "}
+                    </p>
+
+                    <Link
+                      href={`/projects/#${Project.attributes.ProjectName.toLowerCase()}`}
+                    >
+                      <picture>
+                        <img
+                          src="/NK_Icon-dungo.svg"
+                          className={style.dungoIcon}
+                          alt="about"
+                          onClick={() =>
+                            setTimeout(() => handleClick(Project.id), 500)
+                          }
+                        />
+                      </picture>
+                    </Link>
+                  </div>
+
+                  <PopUp
+                    trigger={popup}
+                    setTrigger={setPopup}
+                    setScroll={setPopupState}
+                    projectId={Project.id}
+                    textContent={Project.attributes.Description}
+                    thTextContent={Project.attributes.ThDescription}
+                    downloadLink={Project.attributes.DownloadLink}
+                    logosData={Project.attributes.Logos.data}
+                  />
+
+                  <RenderProjectBody
+                    projectName={Project.attributes.ProjectName}
+                  />
+                </div>
+              );
+            }
           })}
       </div>
     </Layout>

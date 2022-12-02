@@ -221,3 +221,15 @@
   height: 10vh;
   margin: 0 1vw;
 }
+
+.pinProject {
+  display: flex;
+  align-items: flex-end;
+}
+
+.pin {
+  height: 5vh;
+  width: auto;
+  margin-left: 1vw;
+}
+

@@ -18,6 +18,7 @@ const Shop = () => {
           displayImage: data.attributes.DisplayImage.data[0].attributes.url,
           title: data.attributes.ItemName,
           content: replaceTags(defaultString(data.attributes.ItemMainDetail)),
+          pin: data.attributes.Pin,
         };
 
         return itemData;
@@ -39,11 +40,8 @@ const Shop = () => {
   return (
     <Layout>
       <div className={style.shopContainer}>
-        {shopDetails
-          .sort((a, b) => {
-            return b.id - a.id;
-          })
-          .map((item) => {
+        {shopDetails.map((item) => {
+          if (item.pin) {
             return (
               <div key={item.id}>
                 <Link href={`/shop/${item.id}`}>
@@ -59,7 +57,16 @@ const Shop = () => {
                     </div>
                     <div className={style.itemDetail} key={item.title}>
                       <div>
-                        <h2>{item.title}</h2>
+                        <h2>
+                          <picture>
+                            <img
+                              src="/NK_Pin.png"
+                              className={style.pin}
+                              alt="pin"
+                            />
+                          </picture>
+                          {item.title}
+                        </h2>
                         <p dangerouslySetInnerHTML={clean(item)} />
                       </div>
                       <div className={style.itemMoreInfo}>
@@ -77,6 +84,53 @@ const Shop = () => {
                 </Link>
               </div>
             );
+          }
+          return;
+        })}
+        {shopDetails
+          .sort((a, b) => {
+            return b.id - a.id;
+          })
+          .map((item) => {
+            if (!item.pin) {
+              return (
+                <div key={item.id}>
+                  <Link href={`/shop/${item.id}`}>
+                    <div className={style.itemContainer}>
+                      <div
+                        className={style.imgContainer}
+                        key={item.displayImage}
+                      >
+                        <picture>
+                          <img
+                            src={item.displayImage}
+                            className={style.itemDisplayImage}
+                            alt="Item display"
+                          />
+                        </picture>
+                      </div>
+                      <div className={style.itemDetail} key={item.title}>
+                        <div>
+                          <h2>{item.title}</h2>
+                          <p dangerouslySetInnerHTML={clean(item)} />
+                        </div>
+                        <div className={style.itemMoreInfo}>
+                          <p>More info</p>
+                          <picture>
+                            <img
+                              src="/NK_Icon-download.svg"
+                              className={style.moreInfoIcon}
+                              alt="download"
+                            />
+                          </picture>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              );
+            }
+            return;
           })}
       </div>
     </Layout>

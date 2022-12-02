@@ -102,8 +102,6 @@ const Popup = (props) => {
             ""
           )}
         </div>
-
-        {/* <PopupContent projectId={props.projectId} thaiText={thaiText} /> */}
       </div>
     </div>
   ) : (
