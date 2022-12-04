@@ -134,6 +134,10 @@
     line-height: 48px;
   }
 
+  .HomeLink:hover, .HomeLink:active {
+    animation: none 0s;
+  }
+
   .navbar {
     height: 20vh;
   }
