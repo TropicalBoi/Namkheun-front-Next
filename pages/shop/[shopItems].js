@@ -56,7 +56,7 @@ const ShopItem = () => {
 
       fetch();
     }
-  }, [router.isReady]);
+  }, [router, router.isReady]);
 
   return (
     <Layout>

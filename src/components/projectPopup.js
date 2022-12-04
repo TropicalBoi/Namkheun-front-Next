@@ -85,9 +85,9 @@ const Popup = (props) => {
           )}
           {props.logosData ? (
             <div className={style.logosContainer}>
-              {props.logosData.map((logo) => {
+              {props.logosData.map((logo, index) => {
                 return (
-                  <picture>
+                  <picture key={index}>
                     <img
                       src={logo.attributes.url}
                       className={style.singleLogo}

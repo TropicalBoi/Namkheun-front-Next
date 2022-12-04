@@ -76,7 +76,7 @@ const InnerProject = () => {
       };
       fetch();
     }
-  }, [router.isReady]);
+  }, [router, router.isReady]);
 
   return (
     <Layout>

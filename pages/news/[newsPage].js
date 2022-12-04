@@ -76,7 +76,7 @@ const OneNews = () => {
       };
       fetch();
     }
-  }, [router.isReady]);
+  }, [router, router.isReady]);
 
   return (
     <Layout>
