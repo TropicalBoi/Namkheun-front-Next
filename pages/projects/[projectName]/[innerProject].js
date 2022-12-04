@@ -28,9 +28,17 @@ const InnerProject = () => {
           const projectName = router.query.projectName;
           const id = router.query.innerProject;
 
-          const data = await axios.get(
-            `https://namkheun-back.herokuapp.com/api/${projectName}/${id}?populate=*`
-          );
+          let data = null;
+
+          try {
+            data = await axios.get(
+              `https://namkheun-back.herokuapp.com/api/${projectName}/${id}?populate=*`
+            );
+          } catch (err) {
+            if (err.response.status == 404) {
+              router.push("/404");
+            }
+          }
 
           const rawContentData = data.data.data.attributes;
 

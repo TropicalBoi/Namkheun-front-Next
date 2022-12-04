@@ -27,9 +27,17 @@ const OneNews = () => {
         try {
           const id = router.query.newsPage;
 
-          const data = await axios.get(
-            `https://namkheun-back.herokuapp.com/api/news/${id}?populate=*`
-          );
+          let data = null;
+
+          try {
+            data = await axios.get(
+              `https://namkheun-back.herokuapp.com/api/news/${id}?populate=*`
+            );
+          } catch (err) {
+            if (err.response.status == 404) {
+              router.push("/404");
+            }
+          }
 
           const rawContentData = data.data.data.attributes;
 

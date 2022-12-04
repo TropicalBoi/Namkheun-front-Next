@@ -1,0 +1,28 @@
+.notFoundBody {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.notFoundBody h2{
+  font-family: moderat-meduim, BaiJamjuree-Regular;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 3.125vw;
+  line-height: 7.6vh;
+  color: #000000;
+  margin: 0 0 3vh 0;
+}
+
+.notFoundBody p {
+  font-family: moderat-meduim, BaiJamjuree-Regular;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.45vw;
+  line-height: 4vh;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+}

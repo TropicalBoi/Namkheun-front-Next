@@ -21,9 +21,17 @@ const ShopItem = () => {
         try {
           const id = router.query.shopItems;
 
-          const data = await axios.get(
-            `https://namkheun-back.herokuapp.com/api/shops/${id}?populate=*`
-          );
+          let data = null;
+
+          try {
+            data = await axios.get(
+              `https://namkheun-back.herokuapp.com/api/shops/${id}?populate=*`
+            );
+          } catch (err) {
+            if (err.response.status == 404) {
+              router.push("/404");
+            }
+          }
 
           const rawData = data.data.data;
 
