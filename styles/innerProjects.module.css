@@ -93,6 +93,11 @@
   margin: 0 28.125vw;
 }
 
+.manifestoContent img{
+  width: 43.75vw;
+  height: auto;
+}
+
 .textLeft {
   text-align: left;
 }
@@ -117,21 +122,4 @@
 }
 .languageOnHover {
   cursor: pointer;
-}
-
-.contentBody{
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center; 
-}
-
-.contentBody p {
-  font-family: moderat-meduim;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 1.45vw;
-  line-height: 4vh;
-  letter-spacing: 0.02em;
 }

@@ -57,9 +57,20 @@
   border: 1px solid black;
 }
 
+.mainDetail img{
+  width: 50vw;
+  height: auto;
+}
+
+
 .moreDetail {
   width: 50vw;
   height: fit-content;
+}
+
+.moreDetail img{
+  width: 50vw;
+  height: auto;
 }
 
 

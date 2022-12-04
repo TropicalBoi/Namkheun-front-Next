@@ -8,6 +8,7 @@ import {
   addHTTP,
 } from "../../src/components/commonFn";
 import style from "../../styles/shopItem.module.css";
+import ReactMarkdown from "react-markdown";
 
 const ShopItem = () => {
   const router = useRouter();
@@ -49,10 +50,6 @@ const ShopItem = () => {
     }
   }, [router.isReady]);
 
-  const clean = (input) => {
-    return { __html: input };
-  };
-
   return (
     <Layout>
       <div className={style.itemContainer}>
@@ -68,7 +65,7 @@ const ShopItem = () => {
         <div className={style.mainDetail}>
           <div>
             <p>{itemInfo.title}</p>
-            <p dangerouslySetInnerHTML={clean(itemInfo.content)} />
+            <ReactMarkdown>{itemInfo.content}</ReactMarkdown>
           </div>
           <a
             target="_blank"
@@ -82,7 +79,7 @@ const ShopItem = () => {
         <div className={style.moreDetail}>
           <br />
           <br />
-          <p dangerouslySetInnerHTML={clean(itemInfo.moreContent)} />
+          <ReactMarkdown>{itemInfo.moreContent}</ReactMarkdown>
         </div>
       </div>
     </Layout>

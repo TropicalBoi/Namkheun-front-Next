@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { addHTTP, replaceTags } from "./commonFn";
 import style from "../../styles/projects.module.css";
+import ReactMarkdown from "react-markdown";
 
 const Popup = (props) => {
   const [thaiText, setThaiText] = useState();
@@ -13,10 +14,6 @@ const Popup = (props) => {
   const returnContent = replaceTags(props.textContent);
 
   const returnContentTh = replaceTags(props.thTextContent);
-
-  const clean = { __html: returnContent };
-
-  const cleanTh = { __html: returnContentTh };
 
   return props.trigger[props.projectId] ? (
     <div className={style.popupContainer} key={props.projectId}>
@@ -61,7 +58,9 @@ const Popup = (props) => {
           </div>
         </div>
         <div className={style.popupContent}>
-          <p dangerouslySetInnerHTML={!thaiText ? clean : cleanTh} />
+          <ReactMarkdown>
+            {!thaiText ? returnContent : returnContentTh}
+          </ReactMarkdown>
           {props.downloadLink ? (
             <div className={style.downloadArea}>
               <a

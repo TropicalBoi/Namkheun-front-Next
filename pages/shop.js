@@ -4,6 +4,7 @@ import { fetchingProjectDeatail } from "../src/APIs/projectBodyAPIs";
 import { replaceTags, defaultString } from "../src/components/commonFn";
 import style from "../styles/shop.module.css";
 import Link from "next/link";
+import ReactMarkdown from "react-markdown";
 
 const Shop = () => {
   const [shopDetails, setShopDetails] = useState([]);
@@ -32,10 +33,6 @@ const Shop = () => {
   useEffect(() => {
     fetch();
   }, []);
-
-  const clean = (input) => {
-    return { __html: input.content };
-  };
 
   return (
     <Layout>
@@ -67,7 +64,7 @@ const Shop = () => {
                           </picture>
                           {item.title}
                         </h2>
-                        <p dangerouslySetInnerHTML={clean(item)} />
+                        <ReactMarkdown>{item.content}</ReactMarkdown>
                       </div>
                       <div className={style.itemMoreInfo}>
                         <p>More info</p>
@@ -112,7 +109,7 @@ const Shop = () => {
                       <div className={style.itemDetail} key={item.title}>
                         <div>
                           <h2>{item.title}</h2>
-                          <p dangerouslySetInnerHTML={clean(item)} />
+                          <ReactMarkdown>{item.content}</ReactMarkdown>
                         </div>
                         <div className={style.itemMoreInfo}>
                           <p>More info</p>

@@ -10,6 +10,7 @@ import {
   reRenderDate,
   addHTTP,
 } from "../../../src/components/commonFn";
+import ReactMarkdown from "react-markdown";
 
 const InnerProject = () => {
   const router = useRouter();
@@ -55,7 +56,7 @@ const InnerProject = () => {
             year: rawContentData.Year,
             img: headlineImg(rawContentData),
             content: replaceTags(rawContentData.Content),
-            contentTH: replaceTags(defaultString(rawContentData.ThContent)),
+            contentTH: replaceTags(rawContentData.ThContent),
             textAlign: rawContentData.TextAlign,
             downloadLink: defaultString(rawContentData.DownloadLink),
           };
@@ -68,10 +69,6 @@ const InnerProject = () => {
       fetch();
     }
   }, [router.isReady]);
-
-  const clean = { __html: content.content };
-
-  const cleanTh = { __html: content.contentTH };
 
   return (
     <Layout>
@@ -163,14 +160,15 @@ const InnerProject = () => {
           </picture>
         </div>
         <div className={style.manifestoContent}>
-          <p
+          <ReactMarkdown
             className={cn({
               [style.textLeft]: content.textAlign === "Left",
               [style.textCenter]: content.textAlign === "Center",
               [style.textRight]: content.textAlign === "Right",
             })}
-            dangerouslySetInnerHTML={!thaiText ? clean : cleanTh}
-          />
+          >
+            {!thaiText ? content.content : content.contentTH}
+          </ReactMarkdown>
         </div>
       </div>
     </Layout>

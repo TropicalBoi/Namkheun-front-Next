@@ -7,10 +7,7 @@ export const defaultString = (input) => {
 
 export const replaceTags = (data) => {
   if (data) {
-    return data
-      .replace(/\n/g, "<br />")
-      .replace(/\*{2}(.*?)\*{2}/g, "<b>$1</b>")
-      .replace(/_(.*?)_/g, "<i>$1</i>");
+    return data.replace(/\n/g, "&nbsp;  \n &nbsp;  ");
   }
   return null;
 };
@@ -29,7 +26,7 @@ export const excerptText = (data) => {
 };
 
 export const excerptHeader = (data) => {
-  return data.substring(0, 35);
+  return data.substring(0, 40);
 };
 
 export const reRenderDate = (data) => {
