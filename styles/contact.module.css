@@ -1,6 +1,12 @@
+.contactWrapper{
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+}
+
 .contactContainer {
   width: 100vw;
-  height: 90vh;
+  height: 65vh;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -10,7 +16,7 @@
   font-weight: 500;
   font-size: 3.125vw;
   letter-spacing: 0.02em;
-  padding-top: 10vh;
+  margin-top: 20vh;
 }
 .signupSection {
   width: 23.02vw;
@@ -43,9 +49,10 @@
   background-color: transparent;
 }
 .socialUpdate {
-  width: 39.89vw;
-  height: 60.82vh;
+  width: 50vw;
+  height: fit-content;
   line-height: 6.86vh;
+  overflow-wrap: break-word;
 }
 @media screen and (max-width: 428px) {
   .contactContainer {
@@ -57,7 +64,6 @@
     padding: 0;
     font-size: 7.729468599033816vw;
     font-weight: 500;
-    overflow: scroll;
   }
   .signupSection {
     width: 80vw;

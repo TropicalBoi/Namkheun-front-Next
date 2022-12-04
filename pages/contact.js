@@ -5,59 +5,61 @@ import style from "../styles/contact.module.css";
 const Contact = () => {
   return (
     <Layout>
-      <div className={style.contactContainer}>
-        <div className={style.signupSection}>
-          <p>
-            Sign up for<br></br>
-            our mailing list:<br></br>
-            <input
-              className={style.inputSection}
-              type="text"
-              placeholder="Your email here"
-            />
-            <br></br>
-            <input
-              className={style.summitSection}
-              type="submit"
-              value="Subscribe"
-            />
-          </p>
-        </div>
-        <div className={style.socialUpdate}>
-          <p>
-            For regular updates, follow us on
-            <br />
-            <br />
-            IG{" "}
-            <a
-              href="https://www.instagram.com/namkheun/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              @namkheun
-            </a>
-            <br></br>
-            Twitter{" "}
-            <a
-              href="https://twitter.com/namkheun"
-              target="_blank"
-              rel="noreferrer"
-            >
-              @namkheun
-            </a>
-            <br></br>
-            FB{" "}
-            <a
-              href="https://www.facebook.com/namkheun"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span>น้ำขึ้น</span> Namkheun
-            </a>
-            <br></br>
-            <br></br>
-            Alternatively, write to us at collective@namkheun.com
-          </p>
+      <div className={style.contactWrapper}>
+        <div className={style.contactContainer}>
+          <div className={style.signupSection}>
+            <p>
+              Sign up for<br></br>
+              our mailing list:<br></br>
+              <input
+                className={style.inputSection}
+                type="text"
+                placeholder="Your email here"
+              />
+              <br></br>
+              <input
+                className={style.summitSection}
+                type="submit"
+                value="Subscribe"
+              />
+            </p>
+          </div>
+          <div className={style.socialUpdate}>
+            <p>
+              For regular updates, follow us on
+              <br />
+              <br />
+              IG{" "}
+              <a
+                href="https://www.instagram.com/namkheun/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                @namkheun
+              </a>
+              <br></br>
+              Twitter{" "}
+              <a
+                href="https://twitter.com/namkheun"
+                target="_blank"
+                rel="noreferrer"
+              >
+                @namkheun
+              </a>
+              <br></br>
+              FB{" "}
+              <a
+                href="https://www.facebook.com/namkheun"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>น้ำขึ้น</span> Namkheun
+              </a>
+              <br></br>
+              <br></br>
+              Alternatively, write to us at collective@namkheun.com
+            </p>
+          </div>
         </div>
       </div>
     </Layout>
