@@ -4,7 +4,7 @@
   overflow: scroll;
   scrollbar-width: none;
   width: 100vw;
-  height: 80vh;
+  height: 100vh;
   font-size: 1.45vw;
   font-weight: 400;
   font-family: moderat-meduim,BaiJamjuree-Regular;
@@ -75,7 +75,7 @@
 
   .archiveProject {
     display: list-item;
-    list-style-type: ",";
+    list-style-type: ", ";
     font-size: 3.84vw;
   }
 }
