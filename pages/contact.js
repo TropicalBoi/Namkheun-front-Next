@@ -23,8 +23,8 @@ const Contact = () => {
         </p>
         <p className={style.socialUpdate}>
           For regular updates, follow us on
-          <br></br>
-          <br></br>
+          <br />
+          <br />
           IG{" "}
           <a
             href="https://www.instagram.com/namkheun/"

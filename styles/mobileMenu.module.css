@@ -43,8 +43,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin-top: 20vh;
 }
 
 .MobileMenus {
@@ -54,6 +53,6 @@
   font-size: 9.3vw;
   letter-spacing: 0.02em;
   line-height: 5.1vh;
-  margin-bottom: 10vw;
+  margin: 0 0 10vw 7vw;
   text-shadow: 0px 0px 40px #FFFFFF;
 }

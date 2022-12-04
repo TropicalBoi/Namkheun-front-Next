@@ -11,13 +11,13 @@ const MobileMenu = (props) => {
         <picture className={style.cornerBTNs}>
           {!search && (
             <button onClick={() => setSearch(true)} className={style.cornerBTN}>
-              <picture>
+              {/* <picture>
                 <img
                   src="/Search.svg"
                   className={style.cornerIcon}
                   alt="Search"
                 />
-              </picture>
+              </picture> */}
             </button>
           )}
           {search && (

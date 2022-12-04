@@ -54,6 +54,8 @@
   }
   .aboutInfo {
     width: 88.64734299516908vw;
+    height: fit-content;
+    margin-bottom: 20vh;
   }
   .aboutSection {
     padding-top: 28vh;

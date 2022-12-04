@@ -33,9 +33,9 @@ const Navbar = () => {
       </div>
       {!mobileMenu && (
         <>
-          <picture>
+          {/* <picture>
             <img src="/Search.svg" className={style.SearchIcon} alt="search" />
-          </picture>
+          </picture> */}
           <button
             className={style.HamburgerButton}
             onClick={() => setMobileMenu(true)}
