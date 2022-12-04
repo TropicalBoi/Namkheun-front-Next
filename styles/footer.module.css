@@ -86,10 +86,19 @@
 }
 
 @media screen and (max-width: 428px) {
+  .footerContainer {
+    height: 13vh;
+  }
+
   .ArchiveFont {
     font-size: 40px;
     line-height: 38px;
   }
+
+  .ArchiveFont:hover {
+    animation: none 0s;
+  }
+
 
   .footerInner {
     justify-content: space-around;

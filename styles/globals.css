@@ -175,6 +175,11 @@ span {
   html {
     cursor: default;
   }
+
+  a:hover {
+    animation: none 0s;
+  }
+
   .engTxt {
     font-size: 5.797101449275362vw;
     font-weight: 400;
