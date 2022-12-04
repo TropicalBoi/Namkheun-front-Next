@@ -8,7 +8,7 @@
   height: 100vh;
   font-size: 1.45vw;
   font-weight: 400;
-  font-family: moderat-meduim,BaiJamjuree-Regular;
+  font-family: moderat-meduim, BaiJamjuree-Regular;
 }
 
 .archiveContainer::-webkit-scrollbar {
@@ -18,8 +18,7 @@
 .archiveInfo {
   width: 72vw;
   height: fit-content;
-  margin: 0 auto 20vh auto;
-  margin-bottom: 30vh;
+  margin: 4vh auto 30vh auto;
 }
 .heading {
   display: flex;
@@ -46,7 +45,7 @@
 
 .archiveTitle {
   display: list-item;
-  list-style-image: url('/NK_Bullet.png');
+  list-style-image: url("/NK_Bullet.png");
   list-style-position: inside;
   width: 55%;
 }
@@ -67,6 +66,10 @@
   }
   .archiveTitle {
     width: 100%;
+  }
+
+  .archiveInfo {
+    margin-top: 0;
   }
   .archiveDate {
     font-size: 3.84vw;
