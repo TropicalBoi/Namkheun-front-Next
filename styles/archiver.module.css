@@ -16,7 +16,9 @@
 
 .archiveInfo {
   width: 72vw;
-  margin: 7vw auto;
+  height: fit-content;
+  margin: 7vh auto 20vh auto;
+  margin-bottom: 20vh;
 }
 .heading {
   display: flex;
@@ -43,7 +45,7 @@
 
 .archiveTitle {
   display: list-item;
-  list-style-image: url('/whiteDot.png');
+  list-style-image: url('/NK_Bullet.png');
   list-style-position: inside;
   width: 55%;
 }
