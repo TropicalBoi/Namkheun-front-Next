@@ -61,7 +61,8 @@
   }
   .signupSection {
     width: 80vw;
-    line-height: 43px;
+    height: fit-content;
+    line-height: 4vh;
     display: flex;
     margin-bottom: 4vh;
   }
@@ -75,8 +76,9 @@
   }
   .socialUpdate {
     width: 80vw;
+    height: fit-content;
     font-size: 5.797101449275362vw;
     line-height: 4vh;
-    height: fit-content;
+    margin-bottom: 20vh;
   }
 }
