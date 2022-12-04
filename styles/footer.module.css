@@ -95,7 +95,7 @@
     line-height: 38px;
   }
 
-  .ArchiveFont:hover {
+  .ArchiveFont:hover, .ArchiveFont:active  {
     animation: none 0s;
   }
 

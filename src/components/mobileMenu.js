@@ -58,10 +58,10 @@ const MobileMenu = (props) => {
             <Link href="/projects">
               <p className={style.MobileMenus}> Projects</p>
             </Link>
-            <Link href="/projects">
+            <Link href="/news">
               <p className={style.MobileMenus}> News</p>
             </Link>
-            <Link href="/projects">
+            <Link href="/shop">
               <p className={style.MobileMenus}> Shop</p>
             </Link>
             <Link href="/contact">

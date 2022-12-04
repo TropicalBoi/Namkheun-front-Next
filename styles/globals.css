@@ -176,7 +176,7 @@ span {
     cursor: default;
   }
 
-  a:hover {
+  a:hover, a:active {
     animation: none 0s;
   }
 
