@@ -1,6 +1,7 @@
 .archiveContainer {
-  margin-top: 15vh;
-  position: absolute;
+  position: fixed;
+  top: 0;
+  padding-top: 20vh;
   overflow: scroll;
   scrollbar-width: none;
   width: 100vw;
@@ -17,7 +18,7 @@
 .archiveInfo {
   width: 72vw;
   height: fit-content;
-  margin: 7vh auto 20vh auto;
+  margin: 4vh auto 20vh auto;
   margin-bottom: 20vh;
 }
 .heading {
@@ -77,5 +78,6 @@
     display: list-item;
     list-style-type: ", ";
     font-size: 3.84vw;
+    margin-left: 1vw;
   }
 }
