@@ -196,6 +196,10 @@
   scrollbar-width: none;
 }
 
+.popupContentWrapper {
+  height: fit-content;
+}
+
 .popupContent::-webkit-scrollbar {
   display: none;
 }
@@ -320,7 +324,7 @@
 
   .projectWrapper {
     height: fit-content;
-    margin-bottom: 7vh;
+    margin-bottom: 6vh;
   }
   
 
@@ -406,18 +410,22 @@
   }
 
   .popupHeader {
-    width: 100vw;
+    width: 90vw;
     top: 15vh;
   }
 
   .popupLanguageSection {
     width: 100vw;
     justify-content: flex-start;
-    padding-left: 10vw;
   }
 
   .popupLanguageSection p {
     animation: none 0s;
+  }
+
+  .popupContentWrapper {
+    height: fit-content;
+    margin-bottom: 12vh;
   }
 
   .popupContent {
@@ -426,4 +434,5 @@
     padding-right: 10vw;
     top: 15vh;
   }
+
 }
