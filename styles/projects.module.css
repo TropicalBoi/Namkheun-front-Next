@@ -304,15 +304,13 @@
 @media screen and (max-width: 428px) {
   .projectsContainer {
     padding-top: 14vh;
-    padding-bottom: 16vh;
-    margin-bottom: 12vh;
+    padding-bottom: 18vh;
     scroll-padding: 14vh;
   }
 
   .projectsContainerNoScroll {
     padding-top: 14vh;
-    padding-bottom: 16vh;
-    margin-bottom: 12vh;
+    padding-bottom: 18vh;
     scroll-padding: 14vh;
   }
 
