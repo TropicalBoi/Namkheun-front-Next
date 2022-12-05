@@ -42,71 +42,11 @@ const Projects = () => {
           popupState ? style.projectsContainerNoScroll : style.projectsContainer
         }
       >
-        {projects.map((Project) => {
-          if (Project.attributes.ProjectName === "News") {
-            return;
-          } else if (Project.attributes.Pin) {
-            return (
-              <div className={style.projectContainer} key={Project.id}>
-                <div
-                  className={style.projectHeader}
-                  key={Project.attributes.ProjectName}
-                  id={Project.attributes.ProjectName.toLowerCase()}
-                >
-                  <div className={style.pinProject}>
-                    <p className={style.projectName}>
-                      {Project.attributes.ProjectName}
-                    </p>
-                    <picture>
-                      <img src="/NK_Pin.png" className={style.pin} alt="pin" />
-                    </picture>
-                  </div>
-
-                  <Link
-                    href={`/projects/#${Project.attributes.ProjectName.toLowerCase()}`}
-                  >
-                    <picture>
-                      <img
-                        src="/NK_Icon-dungo.svg"
-                        className={style.dungoIcon}
-                        alt="about"
-                        onClick={() =>
-                          setTimeout(() => handleClick(Project.id), 500)
-                        }
-                      />
-                    </picture>
-                  </Link>
-                </div>
-
-                <PopUp
-                  trigger={popup}
-                  setTrigger={setPopup}
-                  setScroll={setPopupState}
-                  slide={popupSlide}
-                  setSlide={setPopupSlide}
-                  projectId={Project.id}
-                  textContent={Project.attributes.Description}
-                  thTextContent={Project.attributes.ThDescription}
-                  downloadLink={Project.attributes.DownloadLink}
-                  logosData={Project.attributes.Logos.data}
-                />
-
-                <RenderProjectBody
-                  projectName={Project.attributes.ProjectName}
-                />
-              </div>
-            );
-          }
-          return;
-        })}
-        {projects
-          .sort((a, b) => {
-            return b.id - a.id;
-          })
-          .map((Project) => {
+        <div className={style.projectWrapper}>
+          {projects.map((Project) => {
             if (Project.attributes.ProjectName === "News") {
               return;
-            } else if (!Project.attributes.Pin) {
+            } else if (Project.attributes.Pin) {
               return (
                 <div className={style.projectContainer} key={Project.id}>
                   <div
@@ -114,9 +54,18 @@ const Projects = () => {
                     key={Project.attributes.ProjectName}
                     id={Project.attributes.ProjectName.toLowerCase()}
                   >
-                    <p className={style.projectName}>
-                      {Project.attributes.ProjectName}{" "}
-                    </p>
+                    <div className={style.pinProject}>
+                      <p className={style.projectName}>
+                        {Project.attributes.ProjectName}
+                      </p>
+                      <picture>
+                        <img
+                          src="/NK_Pin.png"
+                          className={style.pin}
+                          alt="pin"
+                        />
+                      </picture>
+                    </div>
 
                     <Link
                       href={`/projects/#${Project.attributes.ProjectName.toLowerCase()}`}
@@ -153,7 +102,64 @@ const Projects = () => {
                 </div>
               );
             }
+            return;
           })}
+          {projects
+            .sort((a, b) => {
+              return b.id - a.id;
+            })
+            .map((Project) => {
+              if (Project.attributes.ProjectName === "News") {
+                return;
+              } else if (!Project.attributes.Pin) {
+                return (
+                  <div className={style.projectContainer} key={Project.id}>
+                    <div
+                      className={style.projectHeader}
+                      key={Project.attributes.ProjectName}
+                      id={Project.attributes.ProjectName.toLowerCase()}
+                    >
+                      <p className={style.projectName}>
+                        {Project.attributes.ProjectName}{" "}
+                      </p>
+
+                      <Link
+                        href={`/projects/#${Project.attributes.ProjectName.toLowerCase()}`}
+                      >
+                        <picture>
+                          <img
+                            src="/NK_Icon-dungo.svg"
+                            className={style.dungoIcon}
+                            alt="about"
+                            onClick={() =>
+                              setTimeout(() => handleClick(Project.id), 500)
+                            }
+                          />
+                        </picture>
+                      </Link>
+                    </div>
+
+                    <PopUp
+                      trigger={popup}
+                      setTrigger={setPopup}
+                      setScroll={setPopupState}
+                      slide={popupSlide}
+                      setSlide={setPopupSlide}
+                      projectId={Project.id}
+                      textContent={Project.attributes.Description}
+                      thTextContent={Project.attributes.ThDescription}
+                      downloadLink={Project.attributes.DownloadLink}
+                      logosData={Project.attributes.Logos.data}
+                    />
+
+                    <RenderProjectBody
+                      projectName={Project.attributes.ProjectName}
+                    />
+                  </div>
+                );
+              }
+            })}
+        </div>
       </div>
     </Layout>
   );

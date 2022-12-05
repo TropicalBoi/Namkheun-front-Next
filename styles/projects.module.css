@@ -20,6 +20,10 @@
   scroll-padding: 20vh;
 }
 
+.projectWrapper {
+  height: fit-content;
+}
+
 .projectContainer {
   height: fit-content;
   width: 100vw;
@@ -313,6 +317,12 @@
     padding-bottom: 18vh;
     scroll-padding: 14vh;
   }
+
+  .projectWrapper {
+    height: fit-content;
+    margin-bottom: 8vh;
+  }
+  
 
   .projectName {
     font-size: 40px;
