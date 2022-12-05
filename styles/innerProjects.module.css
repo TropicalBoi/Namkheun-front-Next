@@ -133,6 +133,7 @@
 
   .manifestoBody {
     padding-top: 18vh;
+    overflow-x: hidden;
   }
 
   .manifestoBody p {
