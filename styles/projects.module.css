@@ -330,6 +330,7 @@
   .projectName {
     font-size: 40px;
     margin-left: 7vw;
+    padding: 0;
   }
 
   .projectBody {

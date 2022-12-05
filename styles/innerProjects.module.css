@@ -44,20 +44,25 @@
   width: 26.125vw;
   margin: 0;
   display: flex;
+  flex-direction: column;
 }
 
-.authorYearKey {
-  width: 6.5vw;
+.author {
   margin: 0 2vw 0 0;
   display: flex;
-  flex-direction: column;
 }
 
-.authorYearValue {
-  width: 25vw;
-  margin: 0;
+.year{
+  margin: 0 2vw 0 0;
   display: flex;
-  flex-direction: column;
+}
+
+.authorKey {
+  width: 6vw;
+}
+
+.yearKey {
+  width: 6vw;
 }
 
 .manifestoPDF {
@@ -93,7 +98,7 @@
   margin: 0 28.125vw;
 }
 
-.manifestoContent img{
+.manifestoContent img {
   width: 43.75vw;
   height: auto;
 }
@@ -122,4 +127,101 @@
 }
 .languageOnHover {
   cursor: pointer;
+}
+
+@media screen and (max-width: 428px) {
+
+  .manifestoBody {
+    padding-top: 18vh;
+  }
+
+  .manifestoBody p {
+    font-size: 5.7vw;
+  }
+
+  .manifestoHeader {
+    flex-direction: column;
+    margin-left: 7vw;
+  }
+
+  .manifestoTitle {
+    width: 100%;
+    margin-bottom: 4vh;
+  }
+
+  .manifestoTitle p {
+    font-size: 40px;
+    line-height: 6vh;
+  }
+
+  .manifestoDescription {
+    width: 100%;
+    padding-right: 8vw;
+    margin-bottom: 4vh;
+  }
+
+  .manifestoDetail {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 8vw;
+    align-items: flex-end;
+  }
+
+  .authorYear {
+    width: 100%;
+  }
+
+  .author {
+    width: 100%;
+    margin-bottom: 1vh;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .year {
+    width: 100%;
+    margin-bottom: 1vh;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .authorKey {
+    width: 20vw;
+  }
+
+  .yearKey {
+    width: 20vw;
+  }
+
+  .manifestoPDF{
+    height: 2vw;
+    margin: 0 0 0 7vw;
+    padding: 0;
+    transform: translateY(-4vh);
+  }
+
+  .manifestoDownloadIcon {
+    width: 4vw;
+  }
+
+  .manifestoImg{
+    width: 100%;
+    margin: 2vh 0 0 7vw;
+    padding-right: 12vw;
+  }
+
+  .manifestoPageImage{
+    width: 100%;
+  }
+
+  .manifestoContent {
+    width: 100%;
+    margin: 0 0 20vh 7vw;
+    padding-right: 12vw;
+  }
+
+  .manifestoContent p {
+    line-height: 5vh;
+  }
+
 }

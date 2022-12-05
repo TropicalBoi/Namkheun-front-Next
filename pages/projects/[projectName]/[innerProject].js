@@ -92,21 +92,35 @@ const InnerProject = () => {
               <p>{content.descriptionTH}</p>
             )}
 
-            <p>Published by Namkheun Collective on: {content.publishDate}</p>
+            <p>
+              {!thaiText
+                ? "Published by Namkheun Collective on"
+                : "เผยแพร่โดย น้ำขึ้นคอลเลคทีฟ เมื่อ"}
+              : {content.publishDate}
+            </p>
           </div>
           <div className={style.manifestoDetail}>
             <div className={style.authorYear}>
-              <div className={style.authorYearKey}>
-                {content.author ? <p>Author</p> : ""}
-                {content.year ? <p>Year</p> : ""}
-              </div>
-              <div className={style.authorYearValue}>
+              <div className={style.author}>
+                {content.author ? (
+                  <p className={style.authorKey}>
+                    {!thaiText ? "Author" : "ผู้เขียน"}
+                  </p>
+                ) : (
+                  ""
+                )}
                 {!thaiText ? (
                   <p>{content.author}</p>
                 ) : (
                   <p>{content.authorTH}</p>
                 )}
-
+              </div>
+              <div className={style.year}>
+                {content.year ? (
+                  <p className={style.yearKey}>{!thaiText ? "Year" : "ปี"}</p>
+                ) : (
+                  ""
+                )}
                 <p>{content.year}</p>
               </div>
             </div>
