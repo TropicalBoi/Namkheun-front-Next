@@ -302,33 +302,37 @@
 }
 
 @media screen and (max-width: 428px) {
-
   .projectsContainer {
     padding-top: 16vh;
     margin-bottom: 12vh;
     scroll-padding: 16vh;
   }
-  
+
   .projectsContainerNoScroll {
     padding-top: 16vh;
     margin-bottom: 12vh;
     scroll-padding: 16vh;
   }
 
-  .projectName{
+  .projectName {
     font-size: 40px;
     margin-left: 7vw;
   }
 
   .projectBody {
     padding: 0 7vw;
+    height: 55vh;
+  }
+
+  .projectBodyFrost {
+    height: 55vh;
   }
 
   .coverImg {
-  height: 50vh;
-  width: auto;
-  margin: 1vh 0 2vh 2vw;
-}
+    height: 52vh;
+    width: auto;
+    margin: 1vh 0 2vh 2vw;
+  }
 
   .dungoIcon {
     padding: 0 2vw 0 1.82vw;
@@ -338,11 +342,11 @@
   .popupContainerIn {
     animation: MobileSlideIn 1.5s forwards;
   }
-  
+
   .popupContainerOut {
     animation: MobileSlideOut 1.5s forwards;
   }
-  
+
   .popupContainerIn p {
     font-family: moderat-meduim, BaiJamjuree-Regular;
     font-style: normal;
@@ -352,7 +356,7 @@
     letter-spacing: 0.02em;
     animation: MobileSlideIn 1.5s forwards;
   }
-  
+
   .popupContainerOut p {
     font-family: moderat-meduim, BaiJamjuree-Regular;
     font-style: normal;
@@ -370,18 +374,18 @@
   .popupInner {
     width: 100vw;
     background-image: linear-gradient(
-    to left,
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0.8),
-    rgba(255, 255, 255, 0)
-  );
+      to left,
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0)
+    );
     z-index: 20;
   }
 
