@@ -321,17 +321,17 @@
 
   .projectBody {
     padding: 0 7vw;
-    height: 55vh;
+    height: 52vh;
   }
 
   .projectBodyFrost {
-    height: 55vh;
+    height: 52vh;
   }
 
   .coverImg {
-    height: 52vh;
+    height: 50vh;
     width: auto;
-    margin: 1vh 0 2vh 2vw;
+    margin: 1vh 0 1vh 2vw;
   }
 
   .dungoIcon {
