@@ -70,48 +70,50 @@ const Popup = (props) => {
           </div>
         </div>
         <div className={style.popupContent}>
-          <ReactMarkdown>
-            {!thaiText ? returnContent : returnContentTh}
-          </ReactMarkdown>
-          {props.downloadLink ? (
-            <div className={style.downloadArea}>
-              <a
-                target="_blank"
-                href={addHTTP(props.downloadLink)}
-                rel="noopener noreferrer"
-              >
-                <div className={style.popupPDF}>
-                  <p>PDF</p>
-                  <picture>
-                    <img
-                      src="/NK_Icon-download.svg"
-                      className={style.popupDownloadIcon}
-                      alt="download"
-                    />
-                  </picture>
-                </div>
-              </a>
-            </div>
-          ) : (
-            ""
-          )}
-          {props.logosData ? (
-            <div className={style.logosContainer}>
-              {props.logosData.map((logo, index) => {
-                return (
-                  <picture key={index}>
-                    <img
-                      src={logo.attributes.url}
-                      className={style.singleLogo}
-                      alt={logo.attributes.name}
-                    />
-                  </picture>
-                );
-              })}
-            </div>
-          ) : (
-            ""
-          )}
+          <div className={style.popupContentWrapper}>
+            <ReactMarkdown>
+              {!thaiText ? returnContent : returnContentTh}
+            </ReactMarkdown>
+            {props.downloadLink ? (
+              <div className={style.downloadArea}>
+                <a
+                  target="_blank"
+                  href={addHTTP(props.downloadLink)}
+                  rel="noopener noreferrer"
+                >
+                  <div className={style.popupPDF}>
+                    <p>PDF</p>
+                    <picture>
+                      <img
+                        src="/NK_Icon-download.svg"
+                        className={style.popupDownloadIcon}
+                        alt="download"
+                      />
+                    </picture>
+                  </div>
+                </a>
+              </div>
+            ) : (
+              ""
+            )}
+            {props.logosData ? (
+              <div className={style.logosContainer}>
+                {props.logosData.map((logo, index) => {
+                  return (
+                    <picture key={index}>
+                      <img
+                        src={logo.attributes.url}
+                        className={style.singleLogo}
+                        alt={logo.attributes.name}
+                      />
+                    </picture>
+                  );
+                })}
+              </div>
+            ) : (
+              ""
+            )}
+          </div>
         </div>
       </div>
     </div>
