@@ -95,7 +95,7 @@ const InnerProject = () => {
             <p>
               {!thaiText
                 ? "Published by Namkheun Collective on"
-                : "เผยแพร่โดย น้ำขึ้นคอลเลคทีฟ เมื่อ"}
+                : "เผยแพร่โดย น้ำขึ้นคอลเลคทีฟ"}
               : {content.publishDate}
             </p>
           </div>
