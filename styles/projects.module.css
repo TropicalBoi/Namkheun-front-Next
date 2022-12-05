@@ -307,15 +307,15 @@
 
 @media screen and (max-width: 428px) {
   .projectsContainer {
-    padding-top: 14vh;
+    padding-top: 16vh;
     padding-bottom: 18vh;
-    scroll-padding: 14vh;
+    scroll-padding: 16vh;
   }
 
   .projectsContainerNoScroll {
-    padding-top: 14vh;
+    padding-top: 16vh;
     padding-bottom: 18vh;
-    scroll-padding: 14vh;
+    scroll-padding: 16vh;
   }
 
   .projectWrapper {
@@ -393,7 +393,8 @@
       rgba(255, 255, 255, 1),
       rgba(255, 255, 255, 1),
       rgba(255, 255, 255, 1),
-      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 1),
       rgba(255, 255, 255, 0)
     );
     z-index: 20;
@@ -401,10 +402,12 @@
 
   .popupClose {
     right: 10vw;
+    top: 16vh;
   }
 
   .popupHeader {
     width: 100vw;
+    top: 16vh;
   }
 
   .popupLanguageSection {
@@ -413,9 +416,14 @@
     padding-left: 10vw;
   }
 
+  .popupLanguageSection p {
+    animation: none 0s;
+  }
+
   .popupContent {
     width: 90vw;
     height: 80vh;
     padding-right: 10vw;
+    top: 16vh;
   }
 }
