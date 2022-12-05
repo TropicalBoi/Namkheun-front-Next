@@ -27,8 +27,8 @@
   height: fit-content;
   justify-content: space-between;
   position: absolute;
-  top: 4.5vh;
-  right: 7vw;
+  top: 3vh;
+  right: 5vw;
   margin: 0;
   padding: 0;
 }
@@ -64,7 +64,7 @@
   letter-spacing: 0.02em;
   line-height: 5.1vh;
   margin: 0 0 10vw 7vw;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 1);
   box-shadow: 0 0 40px #ffffff;
 }
 

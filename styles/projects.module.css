@@ -152,7 +152,7 @@
   right: 42vw;
   width: 4vh;
   height: 4vh;
-  padding: 2vh 0 0 2vh;
+  padding: 2.5vh 0 0 2vh;
   cursor: pointer;
   z-index: 25;
 }
@@ -181,12 +181,19 @@
 
 .popupContent {
   width: 40vw;
-  height: 68vh;
+  height: 70vh;
   position: fixed;
   top: 20vh;
   right: 0;
-  padding: 10vh 10vh 5vh 0;
-  overflow: scroll;
+  padding: 10vh 5vw 10vh 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.popupContent::-webkit-scrollbar {
+  display: none;
 }
 
 .popupContent p {
@@ -269,5 +276,118 @@
   }
   100% {
     transform: translateX(50vw);
+  }
+}
+
+@keyframes MobileSlideIn {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes MobileSlideOut {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+@media screen and (max-width: 428px) {
+
+  .projectsContainer {
+    padding-bottom: 14vh;
+  }
+  
+  .projectsContainerNoScroll {
+    padding-bottom: 14vh;
+  }
+
+  .projectName{
+    font-size: 40px;
+    margin-left: 7vw;
+  }
+
+  .projectBody {
+    padding: 0 7vw;
+  }
+
+  .dungoIcon {
+    padding: 0 2vw 0 1.82vw;
+    margin: 0 5vw;
+  }
+
+  .popupContainerIn {
+    animation: MobileSlideIn 1.5s forwards;
+  }
+  
+  .popupContainerOut {
+    animation: MobileSlideOut 1.5s forwards;
+  }
+  
+  .popupContainerIn p {
+    font-family: moderat-meduim, BaiJamjuree-Regular;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 5.7vw;
+    line-height: 4vh;
+    letter-spacing: 0.02em;
+    animation: MobileSlideIn 1.5s forwards;
+  }
+  
+  .popupContainerOut p {
+    font-family: moderat-meduim, BaiJamjuree-Regular;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 5.7vw;
+    line-height: 4vh;
+    letter-spacing: 0.02em;
+  }
+
+  .popupOuter {
+    width: 0;
+    z-index: 20;
+  }
+
+  .popupInner {
+    width: 100vw;
+    background-image: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0)
+  );
+    z-index: 20;
+  }
+
+  .popupClose {
+    right: 10vw;
+  }
+
+  .popupHeader {
+    width: 100vw;
+  }
+
+  .popupLanguageSection {
+    width: 100vw;
+    justify-content: flex-start;
+    padding-left: 10vw;
+  }
+
+  .popupContent {
+    width: 90vw;
+    height: 80vh;
+    padding-right: 10vw;
   }
 }
