@@ -10,7 +10,7 @@ const MobileMenu = (props) => {
     setSearch(false);
     setTimeout(() => {
       props.setTrigger(false);
-    }, 1500);
+    }, 500);
   };
 
   return props.trigger ? (

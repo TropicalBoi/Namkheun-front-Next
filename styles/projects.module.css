@@ -305,10 +305,16 @@
 
   .projectsContainer {
     padding-bottom: 14vh;
+    padding-top: 18vh;
+    margin-bottom: 12vh;
+    scroll-padding: 18vh;
   }
   
   .projectsContainerNoScroll {
     padding-bottom: 14vh;
+    padding-top: 18vh;
+    margin-bottom: 12vh;
+    scroll-padding: 18vh;
   }
 
   .projectName{
