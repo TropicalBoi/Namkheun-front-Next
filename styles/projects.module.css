@@ -307,20 +307,20 @@
 
 @media screen and (max-width: 428px) {
   .projectsContainer {
-    padding-top: 16vh;
+    padding-top: 15vh;
     padding-bottom: 18vh;
-    scroll-padding: 16vh;
+    scroll-padding: 15vh;
   }
 
   .projectsContainerNoScroll {
-    padding-top: 16vh;
+    padding-top: 15vh;
     padding-bottom: 18vh;
-    scroll-padding: 16vh;
+    scroll-padding: 15vh;
   }
 
   .projectWrapper {
     height: fit-content;
-    margin-bottom: 8vh;
+    margin-bottom: 7vh;
   }
   
 
@@ -402,12 +402,12 @@
 
   .popupClose {
     right: 10vw;
-    top: 16vh;
+    top: 15vh;
   }
 
   .popupHeader {
     width: 100vw;
-    top: 16vh;
+    top: 15vh;
   }
 
   .popupLanguageSection {
@@ -424,6 +424,6 @@
     width: 90vw;
     height: 80vh;
     padding-right: 10vw;
-    top: 16vh;
+    top: 15vh;
   }
 }
