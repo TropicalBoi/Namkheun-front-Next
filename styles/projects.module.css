@@ -82,16 +82,37 @@
   margin: 2vh 0 4vh 2vw;
 }
 
-.popupContainer {
+.popupContainerIn {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   display: flex;
+  animation: slideIn 1.5s forwards;
 }
 
-.popupContainer p {
+.popupContainerOut {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  animation: slideOut 1.5s forwards;
+}
+
+.popupContainerIn p {
+  font-family: moderat-meduim, BaiJamjuree-Regular;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.45vw;
+  line-height: 4vh;
+  letter-spacing: 0.02em;
+  animation: slideIn 1.5s forwards;
+}
+
+.popupContainerOut p {
   font-family: moderat-meduim, BaiJamjuree-Regular;
   font-style: normal;
   font-weight: 500;
@@ -233,3 +254,20 @@
   margin-left: 1vw;
 }
 
+@keyframes slideIn {
+  0% {
+    transform: translateX(50vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(50vw);
+  }
+}

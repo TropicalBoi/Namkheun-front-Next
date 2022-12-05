@@ -166,5 +166,16 @@
     height: auto;
     right: 7vw;
     top: 5vh;
+    animation: fadeIn 1s forwards;
+  }
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

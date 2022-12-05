@@ -2,12 +2,21 @@ import React, { useState } from "react";
 import { addHTTP, replaceTags } from "./commonFn";
 import style from "../../styles/projects.module.css";
 import ReactMarkdown from "react-markdown";
+import { set } from "immutable";
 
 const Popup = (props) => {
   const [thaiText, setThaiText] = useState();
 
   const handleClose = (input) => {
-    props.setTrigger((previousPopup) => ({ ...previousPopup, [input]: false }));
+    props.setSlide(false);
+
+    setTimeout(() => {
+      props.setTrigger((previousPopup) => ({
+        ...previousPopup,
+        [input]: false,
+      }));
+    }, 1500);
+
     props.setScroll(false);
   };
 
@@ -16,7 +25,10 @@ const Popup = (props) => {
   const returnContentTh = replaceTags(props.thTextContent);
 
   return props.trigger[props.projectId] ? (
-    <div className={style.popupContainer} key={props.projectId}>
+    <div
+      className={props.slide ? style.popupContainerIn : style.popupContainerOut}
+      key={props.projectId}
+    >
       <div
         className={style.popupClose}
         onClick={() => handleClose(props.projectId)}

@@ -17,8 +17,11 @@ const Projects = () => {
 
   const [popupState, setPopupState] = useState(false);
 
+  const [popupSlide, setPopupSlide] = useState(false);
+
   const handleClick = (input) => {
     setPopup((previousPopup) => ({ ...previousPopup, [input]: true }));
+    setPopupSlide(true);
     setPopupState(true);
   };
 
@@ -79,6 +82,8 @@ const Projects = () => {
                   trigger={popup}
                   setTrigger={setPopup}
                   setScroll={setPopupState}
+                  slide={popupSlide}
+                  setSlide={setPopupSlide}
                   projectId={Project.id}
                   textContent={Project.attributes.Description}
                   thTextContent={Project.attributes.ThDescription}
@@ -133,6 +138,8 @@ const Projects = () => {
                     trigger={popup}
                     setTrigger={setPopup}
                     setScroll={setPopupState}
+                    slide={popupSlide}
+                    setSlide={setPopupSlide}
                     projectId={Project.id}
                     textContent={Project.attributes.Description}
                     thTextContent={Project.attributes.ThDescription}

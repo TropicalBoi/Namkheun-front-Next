@@ -7,6 +7,8 @@ import style from "../../styles/navbar.module.css";
 const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
 
+  const [fade, setFade] = useState(false);
+
   return (
     <nav className={style.navbar}>
       <div className={style.navbarContainer}>
@@ -38,7 +40,10 @@ const Navbar = () => {
           </picture> */}
           <button
             className={style.HamburgerButton}
-            onClick={() => setMobileMenu(true)}
+            onClick={() => {
+              setFade(true);
+              setMobileMenu(true);
+            }}
           >
             <picture>
               <img
@@ -50,7 +55,12 @@ const Navbar = () => {
           </button>
         </>
       )}
-      <MobileMenu trigger={mobileMenu} setTrigger={setMobileMenu} />
+      <MobileMenu
+        trigger={mobileMenu}
+        setTrigger={setMobileMenu}
+        fade={fade}
+        setFade={setFade}
+      />
     </nav>
   );
 };

@@ -5,8 +5,16 @@ import style from "../../styles/mobileMenu.module.css";
 const MobileMenu = (props) => {
   const [search, setSearch] = useState(false);
 
+  const handleClose = () => {
+    props.setFade(false);
+    setSearch(false);
+    setTimeout(() => {
+      props.setTrigger(false);
+    }, 1500);
+  };
+
   return props.trigger ? (
-    <div className={style.mobileMenu}>
+    <div className={props.fade ? style.mobileMenuIn : style.mobileMenuOut}>
       <div className={style.mobileMenuInner}>
         <picture className={style.cornerBTNs}>
           {!search && (
@@ -36,8 +44,7 @@ const MobileMenu = (props) => {
           )}
           <button
             onClick={() => {
-              props.setTrigger(false);
-              setSearch(false);
+              handleClose();
             }}
             className={style.cornerBTN}
           >
