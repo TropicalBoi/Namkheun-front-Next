@@ -327,7 +327,6 @@
     margin-bottom: 6vh;
   }
   
-
   .projectName {
     font-size: 40px;
     margin-left: 7vw;
@@ -433,6 +432,15 @@
     height: 80vh;
     padding-right: 10vw;
     top: 15vh;
+  }
+
+  .popupDownloadIcon {
+    width: 4vw;
+    margin-left: 1vw;
+  }
+
+  .logosContainer {
+    width: 80vw;
   }
 
 }
