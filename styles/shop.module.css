@@ -12,20 +12,17 @@
   scroll-behavior: smooth;
 }
 
+.shopWrapper{
+  height: fit-content;
+  margin: 0;
+}
+
 .itemContainer {
   height: fit-content;
   width: 65vw;
   display: flex;
+  flex-direction: row;
   margin-bottom: 10vh;
-}
-
-.imgContainer {
-  height: 47.5vh;
-  width: 84.4vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
 }
 
 .itemDisplayImage {
@@ -79,5 +76,53 @@
   height: 5vh;
   width: auto;
   margin-right: 1vw;
+}
+
+@media screen and (max-width: 428px) {
+
+  .shopContainer {
+    padding-top: 17vh;
+  }
+
+  .shopWrapper {
+    height: fit-content;
+    margin-bottom: 10vh;
+  }
+
+  .itemContainer {
+    width: 90vw;
+    flex-direction: column;
+  }
+  
+
+  .itemDisplayImage {
+    height: auto;
+    width: 90vw;
+  }
+
+  .itemDetail {
+    width: 90vw;
+    height: fit-content;
+    padding: 0;
+  }
+
+  .itemDetail h2 {
+    font-size: 40px;
+  }
+  
+  .itemDetail p {
+   font-size: 5.7vw;
+  }
+
+  .itemMoreInfo{
+    width: 90vw;
+    margin-top: 2vh;
+  }
+
+  .moreInfoIcon{
+    height: auto;
+    width: 4vw;
+    margin-left: 2vw;
+  }
 }
 
