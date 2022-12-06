@@ -180,6 +180,12 @@
     display: flex;
   }
 
+  .authorTh {
+    width: 80%;
+    margin-bottom: 1vh;
+    display: flex;
+  }
+
   .year {
     width: 30%;
     margin: 0;
@@ -187,13 +193,21 @@
     justify-content: space-between;
   }
 
+  .yearTh {
+    width: 20%;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
   .authorKey {
-    width: 20vw;
-    margin-right: 1vw;
+    width: fit-content;
+    margin-right: 3vw;
   }
 
   .yearKey {
-    width: 20vw;
+    width: fit-content;
+    margin-right: 3vw;
   }
 
   .manifestoPDF{
