@@ -48,8 +48,8 @@
 
 @media screen and (max-width: 428px) {
   .languageSection {
-    font-size: 5.797101449275362vw;
-    top: 20vh;
+    font-size: 5.7vw;
+    top: 17.5vh;
     left: 6vw;
   }
   .aboutInfo {
@@ -58,6 +58,6 @@
     margin-bottom: 20vh;
   }
   .aboutSection {
-    padding-top: 28vh;
+    padding-top: 26vh;
   }
 }
