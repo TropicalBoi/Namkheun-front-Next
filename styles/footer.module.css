@@ -93,6 +93,7 @@
   .ArchiveFont {
     font-size: 40px;
     line-height: 38px;
+    padding-right: 5vw;
   }
 
   .ArchiveFont:hover, .ArchiveFont:active  {
@@ -101,7 +102,7 @@
 
 
   .footerInner {
-    justify-content: space-around;
+    justify-content: space-between;
     bottom: 5vw;
   }
 }

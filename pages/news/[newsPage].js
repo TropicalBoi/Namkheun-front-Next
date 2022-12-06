@@ -134,7 +134,7 @@ const OneNews = () => {
                   </p>
                 )}
                 {!thaiText && <p className={style.languageOnActive}>EN</p>}
-                <p>/</p>
+                <p>&nbsp;/&nbsp;</p>
                 {!thaiText && (
                   <p
                     className={style.languageOnHover}
