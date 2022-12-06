@@ -65,14 +65,14 @@
   line-height: 5.1vh;
   margin: 0 0 9vw 5vw;
   /* background-color: rgba(255, 255, 255, 0.9); */
-  text-shadow: 1px 0 5.9vh #ffffff,
-  1px 0 5.9vh #ffffff,
-  -1px 0 5.9vh #ffffff,
-  -1px 0 5.9vh #ffffff,
-  0 1px 5.9vh #ffffff,
-  0 1px 5.9vh #ffffff,
-  0 -1px 5.9vh #ffffff,
-  0 -1px 5.9vh #ffffff;
+  text-shadow: 1px 0 2vh #ffffff,
+  1px 0 2vh #ffffff,
+  -1px 0 2vh #ffffff,
+  -1px 0 2vh #ffffff,
+  0 1px 2vh #ffffff,
+  0 1px 2vh #ffffff,
+  0 -1px 2vh #ffffff,
+  0 -1px 2vh #ffffff;
 }
 
 @keyframes fadeIn {
