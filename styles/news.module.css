@@ -16,13 +16,8 @@
   height: fit-content;
   width: fit-content;
   display: flex;
+  flex-direction: row;
   margin-bottom: 10vh;
-}
-
-.imgContainer {
-  height: 47.5vh;
-  width: 84.4vh;
-  overflow: hidden;
 }
 
 .newsCoverImage {
@@ -71,4 +66,43 @@
   height: 5vh;
   width: auto;
   margin-right: 1vw;
+}
+
+@media screen and (max-width: 428px) {
+  .newsContainer {
+    padding-top: 17vh;
+  }
+
+  .oneNewsContainer {
+    width: 90vw;
+    flex-direction: column;
+  }
+
+  .newsCoverImage {
+    width: 90vw;
+    height: auto;
+  }
+
+  .newsDetail {
+    width: 90vw;
+    height: fit-content;
+    padding-left: 0;
+  }
+  
+  .contentDetail {
+    height: fit-content;
+  }
+
+  .contentDetail p {
+    margin-bottom: 2vh;
+  }
+
+  .newsDetail h2 {
+    font-size: 40px;
+    word-break: normal;
+  }
+
+  .newsDetail p {
+    font-size: 5.7vw;
+  }
 }
