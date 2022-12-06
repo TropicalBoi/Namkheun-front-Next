@@ -113,7 +113,7 @@
   font-size: 1.45vw;
   line-height: 4vh;
   letter-spacing: 0.02em;
-  animation: slideIn 1.5s forwards;
+  animation: slideIn 0.5s forwards;
 }
 
 .popupContainerOut p {
@@ -324,12 +324,12 @@
 
   .projectWrapper {
     height: fit-content;
-    margin-bottom: 6vh;
+    margin-bottom: 7vh;
   }
   
   .projectName {
     font-size: 40px;
-    margin-left: 7vw;
+    margin-left: 5vw;
     padding: 0;
   }
 

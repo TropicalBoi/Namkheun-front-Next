@@ -84,7 +84,10 @@ const Archive = () => {
           {table.map((value, index) => {
             if (value.UrlProject === "news") {
               return (
-                <div key={index}>
+                <div className={style.archiveRow} key={index}>
+                  <picture>
+                    <img src="/NK_Bullet.png" className={style.bullet} />
+                  </picture>
                   <div className={style.archiveDetail} key={index}>
                     <Link href={`/${value.UrlProject}/${value.id}`}>
                       <p className={style.archiveTitle}>{value.title}</p>
@@ -98,7 +101,10 @@ const Archive = () => {
               );
             } else if (value.UrlProject) {
               return (
-                <div key={index}>
+                <div className={style.archiveRow} key={index}>
+                  <picture>
+                    <img src="/NK_Bullet.png" className={style.bullet} />
+                  </picture>
                   <div className={style.archiveDetail} key={index}>
                     <Link href={`/projects/${value.UrlProject}/${value.id}`}>
                       <p className={style.archiveTitle}>{value.title}</p>
@@ -112,7 +118,10 @@ const Archive = () => {
               );
             }
             return (
-              <div key={index}>
+              <div className={style.archiveRow} key={index}>
+                <picture>
+                  <img src="/NK_Bullet.png" className={style.bullet} />
+                </picture>
                 <Link href={`/projects#${value.Project.toLowerCase()}`}>
                   <div className={style.archiveDetail} key={index}>
                     <p className={style.archiveTitle}>{value.title}</p>

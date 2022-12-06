@@ -15,6 +15,12 @@
   display: none;
 }
 
+.bullet {
+  width: 1.5vw;
+  height: auto;
+  margin-right: 1vw;
+}
+
 .archiveInfo {
   width: 72vw;
   height: fit-content;
@@ -25,15 +31,22 @@
   margin-bottom: 4vh;
 }
 .headingTitle {
-  width: 55%;
+  width: 55vw;
 }
 .headingDate {
-  width: 25%;
+  width: 25vw;
 }
 .headingProject {
-  width: 20%;
+  width: 20vw;
 }
+
+.archiveRow{
+  display: flex;
+  align-items: flex-start;
+}
+
 .archiveDetail {
+  width: 100%;
   display: flex;
   margin-bottom: 1vh;
   flex-wrap: wrap;
@@ -45,12 +58,13 @@
 
 .archiveTitle {
   display: list-item;
-  list-style-image: url("/NK_Bullet.png");
+  list-style-type: none;
   list-style-position: inside;
-  width: 55%;
+  width: 37.15vw;
 }
 .archiveDate {
-  width: 25%;
+  width: 17.9vw;
+  margin: 0;
 }
 .archiveProject {
   width: 20%;
@@ -64,15 +78,30 @@
   .headingProject {
     display: none;
   }
-  .archiveTitle {
+  
+  .archiveInfo {
     width: 100%;
+    margin: 0 0 30vh 5vw;
+    padding-right: 10vw;
+    word-break: break-all;
   }
 
-  .archiveInfo {
-    margin-top: 0;
+  .archiveDetail {
+    margin-bottom: 2.5vh;
   }
+
+  .bullet {
+    width: 6vw;
+  }
+
+  .archiveTitle {
+    width: 100%;
+    margin-bottom: 0.5vh;
+  }
+
+
   .archiveDate {
-    font-size: 3.84vw;
+    font-size: 4.3vw;
     width: fit-content;
     margin-right: 1vw;
   }
@@ -80,7 +109,8 @@
   .archiveProject {
     display: list-item;
     list-style-type: ", ";
-    font-size: 3.84vw;
-    margin-left: 1vw;
+    font-size: 4.3vw;
+    margin-left: 2vw;
+    width: fit-content;
   }
 }

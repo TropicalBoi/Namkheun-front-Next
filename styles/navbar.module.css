@@ -165,8 +165,8 @@
     width: 7vw;
     height: auto;
     right: 5vw;
-    top: 3vh;
-    animation: fadeIn 1s forwards;
+    top: 3.2vh;
+    animation: fadeIn 0.5s forwards;
   }
 }
 
