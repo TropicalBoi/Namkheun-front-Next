@@ -99,30 +99,39 @@ const OneNews = () => {
             </p>
           </div>
           <div className={style.manifestoDetail}>
-            <div className={style.authorYear}>
-              <div className={style.author}>
-                {content.author ? (
-                  <p className={style.authorKey}>
-                    {!thaiText ? "Author" : "ผู้เขียน"}
-                  </p>
-                ) : (
-                  ""
-                )}
-                {!thaiText ? (
+            {!thaiText ? (
+              <div className={style.authorYear}>
+                <div className={style.author}>
+                  {content.author ? (
+                    <p className={style.authorKey}>Author</p>
+                  ) : (
+                    ""
+                  )}
+
                   <p>{content.author}</p>
-                ) : (
+                </div>
+                <div className={style.year}>
+                  {content.year ? <p className={style.yearKey}>Year</p> : ""}
+                  <p>{content.year}</p>
+                </div>
+              </div>
+            ) : (
+              <div className={style.authorYear}>
+                <div className={style.authorTh}>
+                  {content.author ? (
+                    <p className={style.authorKey}>ผู้เขียน</p>
+                  ) : (
+                    ""
+                  )}
+
                   <p>{content.authorTH}</p>
-                )}
+                </div>
+                <div className={style.yearTh}>
+                  {content.year ? <p className={style.yearKey}>ปี</p> : ""}
+                  <p>{content.year}</p>
+                </div>
               </div>
-              <div className={style.year}>
-                {content.year ? (
-                  <p className={style.yearKey}>{!thaiText ? "Year" : "ปี"}</p>
-                ) : (
-                  ""
-                )}
-                <p>{content.year}</p>
-              </div>
-            </div>
+            )}
             {!thaiOnly ? (
               <div className={style.languageSection}>
                 {thaiText && (
