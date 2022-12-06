@@ -113,7 +113,7 @@
   font-size: 1.45vw;
   line-height: 4vh;
   letter-spacing: 0.02em;
-  animation: slideIn 0.5s forwards;
+  animation: slideIn 1.5s forwards;
 }
 
 .popupContainerOut p {
@@ -368,7 +368,7 @@
     font-size: 5.7vw;
     line-height: 4vh;
     letter-spacing: 0.02em;
-    animation: MobileSlideIn 1.5s forwards;
+    animation: MobileSlideIn 0.5s forwards;
   }
 
   .popupContainerOut p {
