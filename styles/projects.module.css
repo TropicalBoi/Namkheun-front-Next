@@ -271,6 +271,7 @@
   height: 5vh;
   width: auto;
   margin-left: 1vw;
+  margin-bottom: 0.5vh;
 }
 
 @keyframes slideIn {
@@ -442,6 +443,18 @@
 
   .logosContainer {
     width: 80vw;
+  }
+
+  .pinProject {
+    display: flex;
+    align-items: baseline;
+  }
+  
+  .pin {
+    height: 4vh;
+    width: auto;
+    margin-left: 2vw;
+    margin-bottom: 0;
   }
 
 }

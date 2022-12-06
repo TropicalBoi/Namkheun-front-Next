@@ -73,6 +73,7 @@
   .archiveContainer {
     font-size: 5.7vw;
     font-weight: 500;
+    overflow-x: hidden;
   }
   .headingDate,
   .headingProject {

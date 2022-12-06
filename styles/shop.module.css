@@ -108,6 +108,8 @@
 
   .itemDetail h2 {
     font-size: 40px;
+    line-height: 6.5vh;
+    margin-top: 2vh;
   }
   
   .itemDetail p {

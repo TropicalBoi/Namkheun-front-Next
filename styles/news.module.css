@@ -109,7 +109,8 @@
 
   .newsDetail h2 {
     font-size: 40px;
-    word-break: normal;
+    line-height: 6.5vh;
+    margin-top: 2vh;
   }
 
   .newsDetail p {
