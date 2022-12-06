@@ -47,7 +47,7 @@ const Navbar = () => {
           >
             <picture>
               <img
-                src="/HamburgerIcon.svg"
+                src="/NK_Icon-hamburger.svg"
                 className={style.HamburgerIcon}
                 alt="search"
               />

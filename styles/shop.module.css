@@ -126,5 +126,9 @@
     width: 4vw;
     margin-left: 2vw;
   }
+
+  .pin {
+    height: 4vh;
+  }
 }
 

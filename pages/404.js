@@ -6,7 +6,17 @@ const NotFound = () => {
   return (
     <Layout>
       <div className={style.notFoundBody}>
-        <h2>404, Page not found.</h2>
+        <div className={style.notFoundWrapper}>
+          <h2>404,</h2>
+          <h2>&nbsp;Page not found</h2>
+          <picture>
+            <img
+              src="/NK_NotFound.png"
+              className={style.notFoundIcon}
+              alt="Page not found"
+            />
+          </picture>
+        </div>
         <Link href="/">
           <p> Go back to the Homepage </p>
         </Link>

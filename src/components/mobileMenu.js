@@ -35,7 +35,7 @@ const MobileMenu = (props) => {
             >
               <picture>
                 <img
-                  src="/HamburgerIcon.svg"
+                  src="/NK_Icon-hamburger.svg"
                   className={style.cornerIcon}
                   alt="Search"
                 />
@@ -50,7 +50,7 @@ const MobileMenu = (props) => {
           >
             <picture>
               <img
-                src="/CloseBtn.svg"
+                src="/NK_Icon-close.svg"
                 className={style.cornerIcon}
                 alt="close button"
               />

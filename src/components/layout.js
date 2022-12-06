@@ -11,7 +11,7 @@ export default function Layout({ children }) {
       <Head>
         <meta charSet="utf-8" />
         <title>Namkheun Collective</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/NK_favicon.png" />
       </Head>
       <Navbar />
       {children}

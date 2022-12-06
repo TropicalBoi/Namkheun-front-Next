@@ -30,7 +30,7 @@ const RenderProjectBody = (props) => {
                 <picture>
                   <img
                     src={inputValue.attributes.CoverImages.data.attributes.url}
-                    className={style.coverImg}
+                    className={style.coverImgFrost}
                     alt={`${props.projectName}`}
                   />
                 </picture>

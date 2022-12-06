@@ -116,4 +116,8 @@
   .newsDetail p {
     font-size: 5.7vw;
   }
+
+  .pin {
+    height: 4vh;
+  }
 }

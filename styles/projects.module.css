@@ -50,7 +50,7 @@
 .dungoIcon {
   height: 4vh;
   width: auto;
-  padding: 0 1.82vw;
+  margin-right: 2vw;
   cursor: pointer;
 }
 
@@ -84,6 +84,12 @@
   height: 56vh;
   width: auto;
   margin: 2vh 0 4vh 2vw;
+}
+
+.coverImgFrost {
+  height: 56vh;
+  width: auto;
+  margin: 2vh 0 4vh 0;
 }
 
 .popupContainerIn {
@@ -162,8 +168,8 @@
 }
 
 .closeIcon {
-  height: 4vh;
-  width: auto;
+  height: auto;
+  width: 7vw;
 }
 
 .popupHeader {
@@ -350,8 +356,9 @@
   }
 
   .dungoIcon {
-    padding: 0 2vw 0 1.82vw;
     margin: 0 5vw;
+    width: 7vw;
+    height: auto;
   }
 
   .popupContainerIn {
@@ -406,8 +413,10 @@
   }
 
   .popupClose {
-    right: 10vw;
+    right: 5vw;
     top: 15vh;
+    width: fit-content;
+    height: fit-content;
   }
 
   .popupHeader {
