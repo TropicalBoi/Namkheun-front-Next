@@ -61,15 +61,13 @@ const ShopItem = () => {
   return (
     <Layout>
       <div className={style.itemContainer}>
-        <div className={style.imageContainer}>
-          <picture>
-            <img
-              src={itemInfo.displayImage}
-              className={style.itemImg}
-              alt="item image"
-            />
-          </picture>
-        </div>
+        <picture>
+          <img
+            src={itemInfo.displayImage}
+            className={style.itemImg}
+            alt="item image"
+          />
+        </picture>
         <div className={style.mainDetail}>
           <div>
             <p>{itemInfo.title}</p>
