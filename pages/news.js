@@ -41,51 +41,9 @@ const News = () => {
   return (
     <Layout>
       <div className={style.newsContainer}>
-        {newsDetails.map((News) => {
-          if (News.pin) {
-            return (
-              <div key={News.id}>
-                <Link href={`/news/${News.id}`}>
-                  <div className={style.oneNewsContainer}>
-                    <picture>
-                      <img
-                        src={News.coverImage}
-                        className={style.newsCoverImage}
-                        alt="News cover"
-                      />
-                    </picture>
-                    <div className={style.newsDetail}>
-                      <div className={style.contentDetail}>
-                        <h2>
-                          <picture>
-                            <img
-                              src="/NK_Pin.png"
-                              className={style.pin}
-                              alt="pin"
-                            />
-                          </picture>
-                          {News.title}
-                        </h2>
-
-                        <p>{News.content}</p>
-                      </div>
-                      <div className={style.newsDate}>
-                        <p>{News.date}</p>
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              </div>
-            );
-          }
-          return;
-        })}
-        {newsDetails
-          .sort((a, b) => {
-            return b.id - a.id;
-          })
-          .map((News) => {
-            if (!News.pin) {
+        <div className={style.newsWrapper}>
+          {newsDetails.map((News) => {
+            if (News.pin) {
               return (
                 <div key={News.id}>
                   <Link href={`/news/${News.id}`}>
@@ -99,7 +57,17 @@ const News = () => {
                       </picture>
                       <div className={style.newsDetail}>
                         <div className={style.contentDetail}>
-                          <h2>{News.title}</h2>
+                          <h2>
+                            <picture>
+                              <img
+                                src="/NK_Pin.png"
+                                className={style.pin}
+                                alt="pin"
+                              />
+                            </picture>
+                            {News.title}
+                          </h2>
+
                           <p>{News.content}</p>
                         </div>
                         <div className={style.newsDate}>
@@ -111,7 +79,41 @@ const News = () => {
                 </div>
               );
             }
+            return;
           })}
+          {newsDetails
+            .sort((a, b) => {
+              return b.id - a.id;
+            })
+            .map((News) => {
+              if (!News.pin) {
+                return (
+                  <div key={News.id}>
+                    <Link href={`/news/${News.id}`}>
+                      <div className={style.oneNewsContainer}>
+                        <picture>
+                          <img
+                            src={News.coverImage}
+                            className={style.newsCoverImage}
+                            alt="News cover"
+                          />
+                        </picture>
+                        <div className={style.newsDetail}>
+                          <div className={style.contentDetail}>
+                            <h2>{News.title}</h2>
+                            <p>{News.content}</p>
+                          </div>
+                          <div className={style.newsDate}>
+                            <p>{News.date}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
+                );
+              }
+            })}
+        </div>
       </div>
     </Layout>
   );

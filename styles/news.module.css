@@ -12,6 +12,11 @@
   scroll-behavior: smooth;
 }
 
+.newsWrapper {
+  height: fit-content;
+  margin: 0;
+}
+
 .oneNewsContainer {
   height: fit-content;
   width: fit-content;
@@ -71,6 +76,11 @@
 @media screen and (max-width: 428px) {
   .newsContainer {
     padding-top: 17vh;
+  }
+
+  .newsWrapper {
+    height: fit-content;
+    margin-bottom: 10vh;
   }
 
   .oneNewsContainer {
