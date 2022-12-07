@@ -162,10 +162,10 @@
   .HamburgerIcon {
     display: flex;
     position: absolute;
-    width: 7vw;
-    height: auto;
+    width: auto;
+    height: 3vh;
     right: 5vw;
-    top: 3.2vh;
+    top: 3.4vh;
     animation: fadeIn 0.5s forwards;
   }
 }

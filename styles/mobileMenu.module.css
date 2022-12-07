@@ -27,7 +27,7 @@
   height: fit-content;
   justify-content: space-between;
   position: absolute;
-  top: 3vh;
+  top: 2.7vh;
   right: 5vw;
   margin: 0;
   padding: 0;
@@ -41,8 +41,8 @@
 }
 
 .cornerIcon {
-  width: 7vw;
-  height: auto;
+  width: auto;
+  height: 3vh;
   margin: 0;
   padding: 0;
 }

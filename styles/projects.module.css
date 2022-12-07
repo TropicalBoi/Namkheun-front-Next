@@ -50,7 +50,7 @@
 .dungoIcon {
   height: 4vh;
   width: auto;
-  margin-right: 2vw;
+  margin-right: 1.25vw;
   cursor: pointer;
 }
 
@@ -168,8 +168,8 @@
 }
 
 .closeIcon {
-  height: auto;
-  width: 7vw;
+  height: 4vh;
+  width: auto;
 }
 
 .popupHeader {
@@ -356,9 +356,9 @@
   }
 
   .dungoIcon {
-    margin: 0 5vw;
-    width: 7vw;
-    height: auto;
+    width: auto;
+    height: 3vh;
+    margin-right: 3vw;
   }
 
   .popupContainerIn {
@@ -417,6 +417,11 @@
     top: 15vh;
     width: fit-content;
     height: fit-content;
+  }
+
+  .closeIcon {
+    height: 3vh;
+    width: auto;
   }
 
   .popupHeader {
