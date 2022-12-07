@@ -426,7 +426,8 @@
 
   .popupHeader {
     width: 90vw;
-    top: 15vh;
+    top: 13vh;
+    padding-top: 2vh;
   }
 
   .popupLanguageSection {
