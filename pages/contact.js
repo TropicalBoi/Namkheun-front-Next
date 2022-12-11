@@ -30,7 +30,7 @@ const Contact = () => {
               ref={ref}
               id="submit-form"
               method="POST"
-              action="https://script.google.com/macros/s/AKfycbx9qHLwyQSfCR9LBPvXmFi40NHeCUONXO8T6XC9RyJq4jm58N63AaDxJeHvxc3otizgmA/exec"
+              action="https://script.google.com/macros/s/AKfycbwuVHuAWxprRIQAMibr5ICRymdVlhcZU7RlQgTczZIKVlkpEw602Fs3m6drZjA_fA_bsA/exec"
               onSubmit={onFormSubmit}
             >
               <p>
