@@ -43,7 +43,7 @@
 
 @media screen and (max-width: 428px) {
   .notFoundBody {
-    padding-top: 20;
+    height: 80vh;
   }
 
   .notFoundWrapper {
