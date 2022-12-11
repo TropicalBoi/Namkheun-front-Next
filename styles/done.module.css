@@ -39,6 +39,9 @@
 }
 
 @media screen and (max-width: 428px) {
+  .doneBody{
+    height: 82vh;
+  }
 
   .doneBody h2 {
     font-size: 40px;
