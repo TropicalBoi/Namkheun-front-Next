@@ -1,3 +1,4 @@
+import React from "react";
 import Layout from "../src/components/layout";
 import style from "../styles/notFound.module.css";
 import Link from "next/link";

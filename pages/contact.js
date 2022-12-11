@@ -1,28 +1,57 @@
-import React from "react";
+import React, { useRef } from "react";
+import { useRouter } from "next/router";
 import Layout from "../src/components/layout";
 import style from "../styles/contact.module.css";
 
 const Contact = () => {
+  const ref = useRef(null);
+
+  const router = useRouter();
+
+  const onFormSubmit = (e) => {
+    const form = document.getElementById("submit-form");
+    e.preventDefault();
+    const data = new FormData(form);
+    const action = e.target.action;
+    fetch(action, {
+      method: "POST",
+      body: data,
+    }).then(() => {
+      router.push("/done");
+    });
+  };
+
   return (
     <Layout>
       <div className={style.contactWrapper}>
         <div className={style.contactContainer}>
           <div className={style.signupSection}>
-            <p>
-              Sign up for<br></br>
-              our mailing list:<br></br>
-              <input
-                className={style.inputSection}
-                type="text"
-                placeholder="Your email here"
-              />
-              <br></br>
-              <input
-                className={style.summitSection}
-                type="submit"
-                value="Subscribe"
-              />
-            </p>
+            <form
+              ref={ref}
+              id="submit-form"
+              method="POST"
+              action="https://script.google.com/macros/s/AKfycbx9qHLwyQSfCR9LBPvXmFi40NHeCUONXO8T6XC9RyJq4jm58N63AaDxJeHvxc3otizgmA/exec"
+              onSubmit={onFormSubmit}
+            >
+              <p>
+                Sign up for<br></br>
+                our mailing list:<br></br>
+                <input
+                  name="Email"
+                  type="email"
+                  className={style.inputSection}
+                  autoComplete="off"
+                  placeholder="Your email here"
+                  required
+                />
+                <br></br>
+                <input
+                  className={style.summitSection}
+                  type="submit"
+                  value="Subscribe"
+                />
+              </p>
+            </form>
           </div>
           <div className={style.socialUpdate}>
             <p>

@@ -1,0 +1,58 @@
+.doneBody {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+.doneBody h2 {
+  font-family: moderat-meduim, BaiJamjuree-Regular;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 3.125vw;
+  line-height:7.6vh;
+  color: #000000;
+  margin: 0;
+  width: 80vw;
+  margin: 1vw 0;
+}
+
+.doneBody p {
+  font-family: moderat-meduim, BaiJamjuree-Regular;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.45vw;
+  line-height: 4vh;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  width: 40vw;
+}
+
+.doneIcon {
+  width: 4.6vw;
+  height: auto;
+  margin-left: 1vw;
+}
+
+@media screen and (max-width: 428px) {
+
+  .doneBody h2 {
+    font-size: 40px;
+    line-height: 5vh;
+    margin: 4vw 0;
+  }
+
+  .doneBody p {
+    font-size: 5.7vw;
+    width: 80vw;
+  }
+
+  .doneIcon {
+    width: 15vw;
+    margin: 1vh 0 0 0;
+  }
+}

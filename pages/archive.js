@@ -86,7 +86,11 @@ const Archive = () => {
               return (
                 <div className={style.archiveRow} key={index}>
                   <picture>
-                    <img src="/NK_Bullet.png" className={style.bullet} />
+                    <img
+                      src="/NK_Bullet.png"
+                      className={style.bullet}
+                      alt="bullet"
+                    />
                   </picture>
                   <div className={style.archiveDetail} key={index}>
                     <Link href={`/${value.UrlProject}/${value.id}`}>
@@ -103,7 +107,11 @@ const Archive = () => {
               return (
                 <div className={style.archiveRow} key={index}>
                   <picture>
-                    <img src="/NK_Bullet.png" className={style.bullet} />
+                    <img
+                      src="/NK_Bullet.png"
+                      className={style.bullet}
+                      alt="bullet"
+                    />
                   </picture>
                   <div className={style.archiveDetail} key={index}>
                     <Link href={`/projects/${value.UrlProject}/${value.id}`}>
@@ -120,7 +128,11 @@ const Archive = () => {
             return (
               <div className={style.archiveRow} key={index}>
                 <picture>
-                  <img src="/NK_Bullet.png" className={style.bullet} />
+                  <img
+                    src="/NK_Bullet.png"
+                    className={style.bullet}
+                    alt="bullet"
+                  />
                 </picture>
                 <Link href={`/projects#${value.Project.toLowerCase()}`}>
                   <div className={style.archiveDetail} key={index}>

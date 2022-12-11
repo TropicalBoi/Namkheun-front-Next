@@ -55,9 +55,6 @@ const Projects = () => {
                     id={Project.attributes.ProjectName.toLowerCase()}
                   >
                     <div className={style.pinProject}>
-                      <p className={style.projectName}>
-                        {Project.attributes.ProjectName}
-                      </p>
                       <picture>
                         <img
                           src="/NK_Pin.png"
@@ -65,6 +62,9 @@ const Projects = () => {
                           alt="pin"
                         />
                       </picture>
+                      <p className={style.projectName}>
+                        {Project.attributes.ProjectName}
+                      </p>
                     </div>
 
                     <Link

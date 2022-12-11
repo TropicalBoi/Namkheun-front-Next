@@ -20,7 +20,7 @@ export const excerptText = (data) => {
       .replace(/[<u>](.*?)[</u>]/g, `$1`)
       .replace(/_(.*?)_/g, `$1`);
 
-    return inputData.substring(0, 100) + "...";
+    return inputData.substring(0, 120) + "...";
   }
   return null;
 };

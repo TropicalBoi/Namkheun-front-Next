@@ -32,7 +32,6 @@ const Clock = () => {
   const [date, setDate] = useState(new Date());
 
   useEffect(() => {
-    
     let timerID = setInterval(() => setDate(new Date()), 1000);
     return function cleanup() {
       clearInterval(timerID);
@@ -45,8 +44,8 @@ const Clock = () => {
       <div className={style.date}>
         <div className={style.shortDays}>{shortDays[date.getDay()]}&nbsp;</div>
         <div className={style.fullDays}>{days[date.getDay()]}&nbsp;</div>
-        {monthNames[date.getMonth()]}&nbsp;
         {date.getDate()}&nbsp;
+        {monthNames[date.getMonth()]}&nbsp;
         {date.getFullYear()}
       </div>
     </div>
@@ -54,7 +53,3 @@ const Clock = () => {
 };
 
 export default Clock;
-
-
-
-
