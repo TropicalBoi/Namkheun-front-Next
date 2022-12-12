@@ -20,7 +20,7 @@ const Archive = () => {
       const result = Promise.all(
         projectData.map(async (data) => {
           const items = await fetchingProjectDeatail(
-            data.attributes.ProjectName
+            data.attributes.ProjectAPIName
           );
 
           // console.log(items);

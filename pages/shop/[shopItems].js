@@ -73,13 +73,17 @@ const ShopItem = () => {
             <p>{itemInfo.title}</p>
             <ReactMarkdown>{itemInfo.content}</ReactMarkdown>
           </div>
-          <a
-            target="_blank"
-            href={addHTTP(itemInfo.purchaseLink)}
-            rel="noopener noreferrer"
-          >
-            <button>Purchase here</button>
-          </a>
+          {itemInfo.purchaseLink ? (
+            <a
+              target="_blank"
+              href={addHTTP(itemInfo.purchaseLink)}
+              rel="noopener noreferrer"
+            >
+              <button>Purchase here</button>
+            </a>
+          ) : (
+            ""
+          )}
         </div>
 
         <div className={style.moreDetail}>

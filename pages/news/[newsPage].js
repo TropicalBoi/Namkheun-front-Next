@@ -63,7 +63,7 @@ const OneNews = () => {
             year: rawContentData.Year,
             img: headlineImg(rawContentData),
             content: replaceTags(rawContentData.Content),
-            contentTH: defaultString(rawContentData.ThContent),
+            contentTH: replaceTags(defaultString(rawContentData.ThContent)),
             textAlign: rawContentData.TextAlign,
             downloadLink: defaultString(rawContentData.DownloadLink),
           };

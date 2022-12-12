@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../src/components/layout";
 import style from "../styles/projects.module.css";
-import {
-  fetchingProjects,
-  fetchingProjectDeatail,
-} from "../src/APIs/projectBodyAPIs";
-import { defaultString } from "../src/components/commonFn";
+import { fetchingProjects } from "../src/APIs/projectBodyAPIs";
 import RenderProjectBody from "../src/components/projectBody";
 import PopUp from "../src/components/projectPopup";
 import Link from "next/link";
@@ -52,17 +48,17 @@ const Projects = () => {
                   <div
                     className={style.projectHeader}
                     key={Project.attributes.ProjectName}
-                    id={Project.attributes.ProjectName.toLowerCase()}
+                    id={Project.attributes.ProjectAPIName.toLowerCase()}
                   >
                     <div className={style.pinProject}>
-                      <picture>
-                        <img
-                          src="/NK_Pin.png"
-                          className={style.pin}
-                          alt="pin"
-                        />
-                      </picture>
                       <p className={style.projectName}>
+                        <picture>
+                          <img
+                            src="/NK_Pin.png"
+                            className={style.pin}
+                            alt="pin"
+                          />
+                        </picture>
                         {Project.attributes.ProjectName}
                       </p>
                     </div>
@@ -97,7 +93,7 @@ const Projects = () => {
                   />
 
                   <RenderProjectBody
-                    projectName={Project.attributes.ProjectName}
+                    projectName={Project.attributes.ProjectAPIName}
                   />
                 </div>
               );
@@ -117,7 +113,7 @@ const Projects = () => {
                     <div
                       className={style.projectHeader}
                       key={Project.attributes.ProjectName}
-                      id={Project.attributes.ProjectName.toLowerCase()}
+                      id={Project.attributes.ProjectAPIName.toLowerCase()}
                     >
                       <p className={style.projectName}>
                         {Project.attributes.ProjectName}{" "}
@@ -153,7 +149,7 @@ const Projects = () => {
                     />
 
                     <RenderProjectBody
-                      projectName={Project.attributes.ProjectName}
+                      projectName={Project.attributes.ProjectAPIName}
                     />
                   </div>
                 );
