@@ -82,56 +82,7 @@ const OneNews = () => {
       <div className={style.manifestoBody} key={content.title}>
         <div className={style.manifestoHeader}>
           <div className={style.manifestoTitle}>
-            {!thaiText ? <p>{content.title}</p> : <p>{content.titleTH}</p>}
-          </div>
-          <div className={style.manifestoDescription}>
-            {!thaiText ? (
-              <p>{content.description}</p>
-            ) : (
-              <p>{content.descriptionTH}</p>
-            )}
-
-            <p>
-              {!thaiText
-                ? "Published by Namkheun Collective on"
-                : "เผยแพร่โดย น้ำขึ้นคอลเลคทีฟ"}
-              : {content.publishDate}
-            </p>
-          </div>
-          <div className={style.manifestoDetail}>
-            {!thaiText ? (
-              <div className={style.authorYear}>
-                <div className={style.author}>
-                  {content.author ? (
-                    <p className={style.authorKey}>Author</p>
-                  ) : (
-                    ""
-                  )}
-
-                  <p>{content.author}</p>
-                </div>
-                <div className={style.year}>
-                  {content.year ? <p className={style.yearKey}>Year</p> : ""}
-                  <p>{content.year}</p>
-                </div>
-              </div>
-            ) : (
-              <div className={style.authorYear}>
-                <div className={style.authorTh}>
-                  {content.author ? (
-                    <p className={style.authorKey}>ผู้เขียน</p>
-                  ) : (
-                    ""
-                  )}
-
-                  <p>{content.authorTH}</p>
-                </div>
-                <div className={style.yearTh}>
-                  {content.year ? <p className={style.yearKey}>ปี</p> : ""}
-                  <p>{content.year}</p>
-                </div>
-              </div>
-            )}
+            {!thaiText ? <h2>{content.title}</h2> : <h2>{content.titleTH}</h2>}
             {!thaiOnly ? (
               <div className={style.languageSection}>
                 {thaiText && (
@@ -143,7 +94,7 @@ const OneNews = () => {
                   </p>
                 )}
                 {!thaiText && <p className={style.languageOnActive}>EN</p>}
-                <p>&nbsp;/&nbsp;</p>
+                <p>&nbsp;|&nbsp;</p>
                 {!thaiText && (
                   <p
                     className={style.languageOnHover}
@@ -157,6 +108,49 @@ const OneNews = () => {
             ) : (
               ""
             )}
+          </div>
+          <div className={style.descriptionAndDetail}>
+            <div className={style.manifestoDescription}>
+              {!thaiText ? (
+                <p>{content.description}</p>
+              ) : (
+                <p>{content.descriptionTH}</p>
+              )}
+
+              <p>
+                {!thaiText
+                  ? "Published by Namkheun Collective on"
+                  : "เผยแพร่โดย น้ำขึ้นคอลเลคทีฟ"}
+                : {content.publishDate}
+              </p>
+            </div>
+            <div className={style.manifestoDetail}>
+              {!thaiText ? (
+                <div className={style.authorYear}>
+                  <div className={style.author}>
+                    {content.author ? <h2>Author</h2> : ""}
+
+                    <p>{content.author}</p>
+                  </div>
+                  <div className={style.year}>
+                    {content.year ? <h2>Year</h2> : ""}
+                    <p>{content.year}</p>
+                  </div>
+                </div>
+              ) : (
+                <div className={style.authorYear}>
+                  <div className={style.authorTh}>
+                    {content.author ? <h2>ผู้เขียน</h2> : ""}
+
+                    <p>{content.authorTH}</p>
+                  </div>
+                  <div className={style.yearTh}>
+                    {content.year ? <h2>ปี</h2> : ""}
+                    <p>{content.year}</p>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
 
