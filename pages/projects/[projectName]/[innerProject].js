@@ -140,12 +140,12 @@ const InnerProject = () => {
                 </div>
               ) : (
                 <div className={style.authorYear}>
-                  <div className={style.authorTh}>
+                  <div className={style.author}>
                     {content.author ? <h2>ผู้เขียน</h2> : ""}
 
                     <p>{content.authorTH}</p>
                   </div>
-                  <div className={style.yearTh}>
+                  <div className={style.yearTH}>
                     {content.year ? <h2>ปี</h2> : ""}
                     <p>{content.year}</p>
                   </div>
