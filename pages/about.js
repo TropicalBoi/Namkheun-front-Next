@@ -1,8 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../src/components/layout";
 import style from "../styles/about.module.css";
-
-import { useState, useEffect } from "react";
 
 const About = () => {
   const [thaiText, setThaiText] = useState();
@@ -22,7 +20,7 @@ const About = () => {
                 </p>
               )}
               {!thaiText && <p className={style.languageOnActive}>EN</p>}
-              <p>&nbsp;/&nbsp;</p>
+              <p>&nbsp;|&nbsp;</p>
               {!thaiText && (
                 <p
                   className={style.languageOnHover}

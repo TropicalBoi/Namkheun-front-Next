@@ -113,7 +113,7 @@ const Projects = () => {
                     <div
                       className={style.projectHeader}
                       key={Project.attributes.ProjectName}
-                      id={Project.attributes.ProjectAPIName.toLowerCase()}
+                      id={Project.attributes.ProjectName.toLowerCase()}
                     >
                       <p className={style.projectName}>
                         {Project.attributes.ProjectName}{" "}
