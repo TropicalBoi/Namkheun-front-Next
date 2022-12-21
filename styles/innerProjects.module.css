@@ -61,32 +61,25 @@
 
 .authorYear h2 {
   font-size: 1.45vw;
-  width: 7vw;
-  margin: 0 2.5vw 0 0;
+  width: 6vw;
+  margin: 0;
   font-weight: 900;
-}
-
-.authorYear p {
-  width: 100%;
 }
 
 .author {
   margin: 0 2vw 0 0;
   display: flex;
   align-items: fisrt baseline;
+  width: 100%;
 }
 
 .year {
   margin: 0 2vw 0 0;
   display: flex;
   align-items: fisrt baseline;
+  width: 100%;
 }
 
-.yearTH {
-  margin: 0 2vw 0 0;
-  display: flex;
-  align-items: fisrt baseline;
-}
 
 .manifestoPDF {
   width: 96vw;
@@ -230,21 +223,9 @@
     align-items: first baseline;
   }
 
-  .yearTH {
-    width: fit-content;
-    margin: 0;
-    display: flex;
-    align-items: first baseline;
-  }
-
   .year h2 {
     font-size: 5.7vw;
-    width: 36vw;
-  }
-
-  .yearTH h2 {
-    font-size: 5.7vw;
-    width: 33vw;
+    width: 25vw;
   }
 
 

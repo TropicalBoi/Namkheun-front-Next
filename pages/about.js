@@ -3,7 +3,7 @@ import Layout from "../src/components/layout";
 import style from "../styles/about.module.css";
 
 const About = () => {
-  const [thaiText, setThaiText] = useState();
+  const [engText, setEngText] = useState();
 
   return (
     <Layout>
@@ -11,27 +11,27 @@ const About = () => {
         <div className={style.aboutSection}>
           <div className={style.aboutInfo}>
             <div className={style.languageSection}>
-              {thaiText && (
+              {!engText && (
                 <p
                   className={style.languageOnHover}
-                  onClick={() => setThaiText(!thaiText)}
+                  onClick={() => setEngText(!engText)}
                 >
                   EN
                 </p>
               )}
-              {!thaiText && <p className={style.languageOnActive}>EN</p>}
+              {engText && <p className={style.languageOnActive}>EN</p>}
               <p>&nbsp;|&nbsp;</p>
-              {!thaiText && (
+              {engText && (
                 <p
                   className={style.languageOnHover}
-                  onClick={() => setThaiText(!thaiText)}
+                  onClick={() => setEngText(!engText)}
                 >
                   TH
                 </p>
               )}
-              {thaiText && <p className={style.languageOnActive}>TH</p>}
+              {!engText && <p className={style.languageOnActive}>TH</p>}
             </div>
-            {!thaiText && (
+            {engText && (
               <p className="engTxt">
                 Namkheun is translated as ‘rising tides’,
                 <span> (น้ำขึ้น) </span>
@@ -52,7 +52,7 @@ const About = () => {
               </p>
             )}
 
-            {thaiText && (
+            {!engText && (
               <p className="thaiTxt">
                 น้ำขึ้นเป็นคอลเลคทีฟที่ทำงานกับตัวหนังสือ
                 น้ำขึ้นก่อตัวจากการเม้ามอยโฟ่ฝอยระหว่าง

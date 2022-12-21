@@ -17,7 +17,7 @@ const OneNews = () => {
 
   const [content, setContent] = useState([]);
 
-  const [thaiText, setThaiText] = useState();
+  const [engText, setEngText] = useState();
 
   const [thaiOnly, setThaiOnly] = useState(true);
 
@@ -41,7 +41,7 @@ const OneNews = () => {
 
           const rawContentData = data.data.data.attributes;
 
-          if (rawContentData.ThContent) {
+          if (rawContentData.Content_EN) {
             setThaiOnly(false);
           }
 
@@ -53,17 +53,17 @@ const OneNews = () => {
           };
 
           const contentData = {
-            title: rawContentData.Title,
-            titleTH: rawContentData.ThTitle,
-            description: rawContentData.Description,
-            descriptionTH: rawContentData.ThDescription,
+            title: rawContentData.Title_EN,
+            titleTH: rawContentData.Title_TH,
+            description: rawContentData.Description_EN,
+            descriptionTH: rawContentData.Description_TH,
             publishDate: reRenderDate(rawContentData.PublishDate),
-            author: rawContentData.Author,
-            authorTH: rawContentData.ThAuthor,
+            author: rawContentData.Author_EN,
+            authorTH: rawContentData.Author_TH,
             year: rawContentData.Year,
             img: headlineImg(rawContentData),
-            content: replaceTags(rawContentData.Content),
-            contentTH: replaceTags(defaultString(rawContentData.ThContent)),
+            content: replaceTags(rawContentData.Content_EN),
+            contentTH: replaceTags(defaultString(rawContentData.Content_TH)),
             textAlign: rawContentData.TextAlign,
             downloadLink: defaultString(rawContentData.DownloadLink),
           };
@@ -82,28 +82,28 @@ const OneNews = () => {
       <div className={style.manifestoBody} key={content.title}>
         <div className={style.manifestoHeader}>
           <div className={style.manifestoTitle}>
-            {!thaiText ? <h2>{content.title}</h2> : <h2>{content.titleTH}</h2>}
+            {!engText ? <h2>{content.titleTH}</h2> : <h2>{content.title}</h2>}
             {!thaiOnly ? (
               <div className={style.languageSection}>
-                {thaiText && (
+                {!engText && (
                   <p
                     className={style.languageOnHover}
-                    onClick={() => setThaiText(!thaiText)}
+                    onClick={() => setEngText(!engText)}
                   >
                     EN
                   </p>
                 )}
-                {!thaiText && <p className={style.languageOnActive}>EN</p>}
+                {engText && <p className={style.languageOnActive}>EN</p>}
                 <p>&nbsp;|&nbsp;</p>
-                {!thaiText && (
+                {engText && (
                   <p
                     className={style.languageOnHover}
-                    onClick={() => setThaiText(!thaiText)}
+                    onClick={() => setEngText(!engText)}
                   >
                     TH
                   </p>
                 )}
-                {thaiText && <p className={style.languageOnActive}>TH</p>}
+                {!engText && <p className={style.languageOnActive}>TH</p>}
               </div>
             ) : (
               ""
@@ -111,21 +111,33 @@ const OneNews = () => {
           </div>
           <div className={style.descriptionAndDetail}>
             <div className={style.manifestoDescription}>
-              {!thaiText ? (
-                <p>{content.description}</p>
-              ) : (
+              {!engText ? (
                 <p>{content.descriptionTH}</p>
+              ) : (
+                <p>{content.description}</p>
               )}
 
               <p>
-                {!thaiText
-                  ? "Published by Namkheun Collective on"
-                  : "เผยแพร่โดย น้ำขึ้นคอลเลคทีฟ"}
+                {!engText
+                  ? "เผยแพร่โดย น้ำขึ้นคอลเลคทีฟ"
+                  : "Published by Namkheun Collective on"}
                 : {content.publishDate}
               </p>
             </div>
             <div className={style.manifestoDetail}>
-              {!thaiText ? (
+              {!engText ? (
+                <div className={style.authorYear}>
+                  <div className={style.author}>
+                    {content.author ? <h2>ผู้เขียน</h2> : ""}
+
+                    <p>{content.authorTH}</p>
+                  </div>
+                  <div className={style.year}>
+                    {content.year ? <h2>ปี</h2> : ""}
+                    <p>{content.year}</p>
+                  </div>
+                </div>
+              ) : (
                 <div className={style.authorYear}>
                   <div className={style.author}>
                     {content.author ? <h2>Author</h2> : ""}
@@ -134,18 +146,6 @@ const OneNews = () => {
                   </div>
                   <div className={style.year}>
                     {content.year ? <h2>Year</h2> : ""}
-                    <p>{content.year}</p>
-                  </div>
-                </div>
-              ) : (
-                <div className={style.authorYear}>
-                  <div className={style.authorTh}>
-                    {content.author ? <h2>ผู้เขียน</h2> : ""}
-
-                    <p>{content.authorTH}</p>
-                  </div>
-                  <div className={style.yearTh}>
-                    {content.year ? <h2>ปี</h2> : ""}
                     <p>{content.year}</p>
                   </div>
                 </div>
@@ -191,7 +191,7 @@ const OneNews = () => {
               [style.textRight]: content.textAlign === "Right",
             })}
           >
-            {!thaiText ? content.content : content.contentTH}
+            {!engText ? content.contentTH : content.content}
           </ReactMarkdown>
         </div>
       </div>

@@ -26,6 +26,20 @@
   margin-bottom: 10vh;
 }
 
+.languageSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: fit-content;
+}
+
+.languageOnActive {
+  text-decoration: underline;
+}
+.languageOnHover {
+  cursor: pointer;
+}
+
 .mainDetail {
   width: 50vw;
   height: fit-content;

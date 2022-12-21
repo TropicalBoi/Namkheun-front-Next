@@ -15,6 +15,10 @@ const ShopItem = () => {
 
   const [itemInfo, setItemInfo] = useState([]);
 
+  const [engText, setEngText] = useState();
+
+  const [thaiOnly, setThaiOnly] = useState(true);
+
   useEffect(() => {
     if (router.isReady) {
       const fetch = async () => {
@@ -35,15 +39,26 @@ const ShopItem = () => {
 
           const rawData = data.data.data;
 
+          if (rawData.attributes.ItemMainDetail_EN) {
+            setThaiOnly(false);
+          }
+
           const itemData = {
             displayImage:
               rawData.attributes.DisplayImage.data[0].attributes.url,
-            title: rawData.attributes.ItemName,
+            title: rawData.attributes.ItemName_EN,
+            titleTH: rawData.attributes.ItemName_TH,
             content: replaceTags(
-              defaultString(rawData.attributes.ItemMainDetail)
+              defaultString(rawData.attributes.ItemMainDetail_EN)
+            ),
+            contentTH: replaceTags(
+              defaultString(rawData.attributes.ItemMainDetail_TH)
             ),
             moreContent: replaceTags(
-              defaultString(rawData.attributes.ItemMoreDetail)
+              defaultString(rawData.attributes.ItemMoreDetail_EN)
+            ),
+            moreContentTH: replaceTags(
+              defaultString(rawData.attributes.ItemMoreDetail_TH)
             ),
             purchaseLink: rawData.attributes.PurchaseLink,
           };
@@ -70,8 +85,37 @@ const ShopItem = () => {
         </picture>
         <div className={style.mainDetail}>
           <div>
-            <p>{itemInfo.title}</p>
-            <ReactMarkdown>{itemInfo.content}</ReactMarkdown>
+            {!thaiOnly ? (
+              <div className={style.languageSection}>
+                {!engText && (
+                  <p
+                    className={style.languageOnHover}
+                    onClick={() => setEngText(!engText)}
+                  >
+                    EN
+                  </p>
+                )}
+                {engText && <p className={style.languageOnActive}>EN</p>}
+                <p>&nbsp;|&nbsp;</p>
+                {engText && (
+                  <p
+                    className={style.languageOnHover}
+                    onClick={() => setEngText(!engText)}
+                  >
+                    TH
+                  </p>
+                )}
+                {!engText && <p className={style.languageOnActive}>TH</p>}
+              </div>
+            ) : (
+              ""
+            )}
+            {!thaiOnly ? <br /> : ""}
+            {!engText ? <p>{itemInfo.titleTH}</p> : <p>{itemInfo.title}</p>}
+
+            <ReactMarkdown>
+              {!engText ? itemInfo.contentTH : itemInfo.content}
+            </ReactMarkdown>
           </div>
           {itemInfo.purchaseLink ? (
             <a
@@ -89,7 +133,11 @@ const ShopItem = () => {
         <div className={style.moreDetail}>
           <br />
           <br />
-          <ReactMarkdown>{itemInfo.moreContent}</ReactMarkdown>
+          <ReactMarkdown>
+            {!engText ? itemInfo.moreContentTH : itemInfo.moreContent}
+          </ReactMarkdown>
+          <br />
+          <br />
         </div>
       </div>
     </Layout>

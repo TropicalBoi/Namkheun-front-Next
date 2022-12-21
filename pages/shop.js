@@ -17,8 +17,10 @@ const Shop = () => {
         const itemData = {
           id: data.id,
           displayImage: data.attributes.DisplayImage.data[0].attributes.url,
-          title: data.attributes.ItemName,
-          content: replaceTags(defaultString(data.attributes.ItemMainDetail)),
+          title: data.attributes.ItemName_TH,
+          content: replaceTags(
+            defaultString(data.attributes.ItemMainDetail_TH)
+          ),
           pin: data.attributes.Pin,
         };
 

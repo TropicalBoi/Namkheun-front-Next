@@ -20,8 +20,8 @@ const News = () => {
         const resetNewsData = {
           id: data.id,
           coverImage: data.attributes.CoverImages.data.attributes.url,
-          title: excerptHeader(data.attributes.Title),
-          content: excerptText(data.attributes.Content),
+          title: excerptHeader(data.attributes.Title_TH),
+          content: excerptText(data.attributes.Content_TH),
           date: reRenderDate(data.attributes.PublishDate),
           pin: data.attributes.Pin,
         };

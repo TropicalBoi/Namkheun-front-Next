@@ -15,14 +15,6 @@ const RenderProjectBody = (props) => {
       try {
         const returnedData = await fetchingProjectDeatail(props.projectName);
 
-        // const findImgSize = (h, w) => {
-        //   if (h < w) {
-        //     return true;
-        //   } else {
-        //     return false;
-        //   }
-        // };
-
         const renderProjectBody = (inputValue) => {
           if (typeof inputValue === "object" && !Array.isArray(inputValue)) {
             return (
