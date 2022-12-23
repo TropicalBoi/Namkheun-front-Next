@@ -113,14 +113,14 @@ const Projects = () => {
                     <div
                       className={style.projectHeader}
                       key={Project.attributes.ProjectName}
-                      id={Project.attributes.ProjectName.toLowerCase()}
+                      id={Project.attributes.ProjectAPIName.toLowerCase()}
                     >
                       <p className={style.projectName}>
                         {Project.attributes.ProjectName}{" "}
                       </p>
 
                       <Link
-                        href={`/projects/#${Project.attributes.ProjectName.toLowerCase()}`}
+                        href={`/projects/#${Project.attributes.ProjectAPIName.toLowerCase()}`}
                       >
                         <picture>
                           <img

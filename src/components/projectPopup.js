@@ -5,7 +5,7 @@ import ReactMarkdown from "react-markdown";
 import { set } from "immutable";
 
 const Popup = (props) => {
-  const [thaiText, setThaiText] = useState();
+  const [engText, setEngText] = useState();
 
   const handleClose = (input) => {
     props.setSlide(false);
@@ -48,31 +48,31 @@ const Popup = (props) => {
       <div className={style.popupInner}>
         <div className={style.popupHeader}>
           <div className={style.popupLanguageSection}>
-            {thaiText && (
+            {!engText && (
               <p
                 className={style.languageOnHover}
-                onClick={() => setThaiText(!thaiText)}
+                onClick={() => setEngText(!engText)}
               >
                 EN
               </p>
             )}
-            {!thaiText && <p className={style.languageOnActive}>EN</p>}
+            {engText && <p className={style.languageOnActive}>EN</p>}
             <p>&nbsp;|&nbsp;</p>
-            {!thaiText && (
+            {engText && (
               <p
                 className={style.languageOnHover}
-                onClick={() => setThaiText(!thaiText)}
+                onClick={() => setEngText(!engText)}
               >
                 TH
               </p>
             )}
-            {thaiText && <p className={style.languageOnActive}>TH</p>}
+            {!engText && <p className={style.languageOnActive}>TH</p>}
           </div>
         </div>
         <div className={style.popupContent}>
           <div className={style.popupContentWrapper}>
             <ReactMarkdown>
-              {!thaiText ? returnContent : returnContentTh}
+              {!engText ? returnContentTh : returnContent}
             </ReactMarkdown>
             {props.downloadLink ? (
               <div className={style.downloadArea}>

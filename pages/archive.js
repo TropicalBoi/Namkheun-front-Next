@@ -39,12 +39,12 @@ const Archive = () => {
             const arrData = items.map((eachArr) => {
               const EachObjData = {
                 id: eachArr.id,
-                title: eachArr.attributes.Title,
+                title: eachArr.attributes.Title_TH,
                 date: reRenderDate(
                   defaultString(eachArr.attributes.PublishDate)
                 ),
                 Project: data.attributes.ProjectName,
-                UrlProject: data.attributes.ProjectName.toLowerCase(),
+                UrlProject: data.attributes.ProjectAPIName.toLowerCase(),
               };
 
               return EachObjData;

@@ -119,7 +119,7 @@
   font-size: 1.45vw;
   line-height: 4vh;
   letter-spacing: 0.02em;
-  animation: slideIn 1.5s forwards;
+  animation: none 0s;
 }
 
 .popupContainerOut p {
@@ -149,8 +149,6 @@
     rgba(255, 255, 255, 1),
     rgba(255, 255, 255, 1),
     rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0),
     rgba(255, 255, 255, 0)
   );
   z-index: 20;
@@ -174,7 +172,7 @@
 
 .popupHeader {
   width: 40vw;
-  height: 12vh;
+  height: 10vh;
   position: fixed;
   top: 20vh;
   right: 0;
