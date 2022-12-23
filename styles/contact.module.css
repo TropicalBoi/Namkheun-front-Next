@@ -29,6 +29,7 @@
   flex-direction: column;
   align-items: center;
 }
+
 .inputSection {
   width: 41.66vw;
   border: none;
@@ -40,6 +41,15 @@
   letter-spacing: 0.02em;
   text-align: center;
 }
+
+.inputSection:focus {
+  color: black;
+}
+
+.inputSection:focus::placeholder {
+  color: transparent;
+}
+
 .summitSection {
   border: none;
   color: #000000;
