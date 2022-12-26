@@ -61,6 +61,7 @@
   list-style-type: none;
   list-style-position: inside;
   width: 37.5vw;
+  word-break: break-word;
 }
 .archiveDate {
   width: 15vw;
@@ -68,6 +69,7 @@
 }
 .archiveProject {
   width: 25vw;
+  word-break: break-word;
 }
 @media screen and (max-width: 428px) {
   .archiveContainer {

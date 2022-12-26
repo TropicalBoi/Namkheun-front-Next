@@ -31,7 +31,8 @@
 }
 
 .manifestoTitle h2 {
-  font-weight: 900;
+  font-family: moderat-meduim, BaiJamjuree-Regular;
+  font-weight: 700;
   margin: 0 0 2vh 0;
 }
 
@@ -60,10 +61,11 @@
 }
 
 .authorYear h2 {
+  font-family: moderat-meduim, BaiJamjuree-Regular;
   font-size: 1.45vw;
   width: 6vw;
   margin: 0;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .author {
@@ -201,7 +203,6 @@
     width: 100%;
     margin-bottom: 2vh;
   }
-
 
   .author {
     width: fit-content;
