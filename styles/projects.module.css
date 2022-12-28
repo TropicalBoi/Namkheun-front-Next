@@ -4,7 +4,8 @@
   height: 100vh;
   padding-top: 20vh;
   padding-bottom: 12vh;
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
   scroll-behavior: smooth;
   scroll-padding: 20vh;
 }
