@@ -44,7 +44,7 @@ const Projects = () => {
               return;
             } else if (Project.attributes.Pin) {
               return (
-                <div className={style.projectContainer} key={Project.id}>
+                <div className={style.projectContainerPin} key={Project.id}>
                   <div
                     className={style.projectHeader}
                     key={Project.attributes.ProjectName}
