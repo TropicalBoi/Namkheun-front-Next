@@ -437,6 +437,12 @@
     margin: 1vh 0 1vh 2vw;
   }
 
+  .coverImgFrost {
+    height: 50vh;
+    width: auto;
+    margin: 1vh 0 1vh 2vw;
+  }
+
   .dungoIcon {
     width: auto;
     height: 3vh;
