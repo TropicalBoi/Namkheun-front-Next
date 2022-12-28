@@ -38,6 +38,8 @@
 }
 
 .projectName {
+  display: flex;
+  width: fit-content;
   font-family: moderat-meduim;
   font-style: normal;
   font-weight: 500;
@@ -314,6 +316,31 @@
   }
 }
 
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  45% {
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+  45.1% {
+    opacity: 0;
+  }
+  54.9% {
+    opacity: 0;
+  }
+  55% {
+    transform: translateX(105%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
 @media screen and (max-width: 428px) {
   .projectsContainer {
     padding-top: 15vh;
@@ -331,11 +358,57 @@
     height: fit-content;
     margin-bottom: 7vh;
   }
-  
+
+  .projectHeader {
+    align-items: center;
+  }
+
   .projectName {
     font-size: 40px;
-    margin-left: 5vw;
     padding: 0;
+    height: 8vh;
+  }
+
+  .projectNamePin {
+    width: 77.5vw;
+    height: 8vh;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .projectNamePin p {
+    width: fit-content;
+    animation: marquee 10s linear 3s infinite;
+  }
+
+  .projectNamePin p::before {
+    content: "\00a0 ";
+  }
+
+  .projectNameNoPin {
+    width: 86vw;
+    height: 8vh;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .projectNameNoPin p {
+    width: fit-content;
+    animation: marquee 15s linear 3s infinite;
+  }
+
+  .projectNameNoPin p::before {
+    content: "\00a0 ";
+  }
+
+
+  .projectNameMargin {
+    position: relative;
+    width: 5vw;
+    height: 8vh;
+    background-color: white;
+    box-shadow: 10px 0 10px white;
+    z-index: 10;
   }
 
   .projectBody {
@@ -356,7 +429,13 @@
   .dungoIcon {
     width: auto;
     height: 3vh;
-    margin-right: 3vw;
+    margin: 1.5vh 3vw 0 0;
+  }
+
+  .dungoShadow{
+    position: relative;
+    z-index: 10;
+    box-shadow: -18px 0 10px white;
   }
 
   .popupContainerIn {
@@ -462,11 +541,15 @@
     display: flex;
     align-items: baseline;
   }
-  
-  .pin {
-    height: 4vh;
-    width: auto;
-    margin: 0 2vw;
-  }
 
+  .pin {
+    position: relative;
+    height: 8vh;
+    width: auto;
+    margin: 0 0 0 5vw;
+    padding: 2vh 2vw 2vh 0;
+    background-color: white;
+    box-shadow: 10px 0 10px white;
+    z-index: 10;
+  }
 }

@@ -50,23 +50,23 @@ const Projects = () => {
                     key={Project.attributes.ProjectName}
                     id={Project.attributes.ProjectAPIName.toLowerCase()}
                   >
-                    <div className={style.pinProject}>
-                      <p className={style.projectName}>
-                        <picture>
-                          <img
-                            src="/NK_Pin.png"
-                            className={style.pin}
-                            alt="pin"
-                          />
-                        </picture>
-                        {Project.attributes.ProjectName}
-                      </p>
+                    <div className={style.projectName}>
+                      <picture>
+                        <img
+                          src="/NK_Pin.png"
+                          className={style.pin}
+                          alt="pin"
+                        />
+                      </picture>
+                      <div className={style.projectNamePin}>
+                        <p>{Project.attributes.ProjectName}</p>
+                      </div>
                     </div>
 
                     <Link
                       href={`/projects/#${Project.attributes.ProjectName.toLowerCase()}`}
                     >
-                      <picture>
+                      <picture className={style.dungoShadow}>
                         <img
                           src="/NK_Icon-dungo.svg"
                           className={style.dungoIcon}
@@ -115,14 +115,17 @@ const Projects = () => {
                       key={Project.attributes.ProjectName}
                       id={Project.attributes.ProjectAPIName.toLowerCase()}
                     >
-                      <p className={style.projectName}>
-                        {Project.attributes.ProjectName}{" "}
-                      </p>
+                      <div className={style.projectName}>
+                        <div className={style.projectNameMargin}></div>
+                        <div className={style.projectNameNoPin}>
+                          <p>{Project.attributes.ProjectName}</p>
+                        </div>
+                      </div>
 
                       <Link
                         href={`/projects/#${Project.attributes.ProjectAPIName.toLowerCase()}`}
                       >
-                        <picture>
+                        <picture className={style.dungoShadow}>
                           <img
                             src="/NK_Icon-dungo.svg"
                             className={style.dungoIcon}
