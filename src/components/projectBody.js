@@ -41,7 +41,7 @@ const RenderProjectBody = (props) => {
         width: targetRef.current.offsetWidth,
       });
     }
-  }, [props.projectName, targetRef.current]);
+  }, [props.projectName]);
 
   useEffect(() => {
     const updateWindowDimensions = () => {
@@ -62,7 +62,7 @@ const RenderProjectBody = (props) => {
     } else {
       setDivAnimation(false);
     }
-  }, [dimensions.width, width]);
+  }, [dimensions.width, width, props.projectName]);
 
   if (typeof projectItems === "object" && !Array.isArray(projectItems)) {
     return (
