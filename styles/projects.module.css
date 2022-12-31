@@ -105,14 +105,14 @@
   animation-play-state: paused;
 }
 
-@media(hover: hover) and (pointer: fine) {
+/* @media(hover: hover) and (pointer: fine) {
   .projectBodyInnerMove:hover {
     -webkit-animation-play-state: paused;
     -moz-animation-play-state: paused;
     -o-animation-play-state: paused;
     animation-play-state: paused;
   }
-}
+} */
 
 .projectBodyFrost {
   height: 60vh;
