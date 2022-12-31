@@ -96,6 +96,7 @@
   flex-direction: row;
   justify-content: flex-start;
   animation: bodyMove 30s linear infinite backwards;
+  background-color: black;
 }
 
 .projectBodyInnerMove:hover {
