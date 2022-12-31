@@ -98,12 +98,20 @@
   animation: bodyMove 30s linear infinite backwards;
 }
 
-.projectBodyInnerMove:hover,
-.projectBodyInnerMove:active {
+.projectBodyInnerMove:hover {
   -webkit-animation-play-state: paused;
   -moz-animation-play-state: paused;
   -o-animation-play-state: paused;
   animation-play-state: paused;
+}
+
+@media(hover: hover) and (pointer: fine) {
+  .projectBodyInnerMove:hover {
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
+  }
 }
 
 .projectBodyFrost {
