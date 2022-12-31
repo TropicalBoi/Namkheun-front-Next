@@ -14,7 +14,7 @@ const RenderProjectBody = (props) => {
     width: 0,
   });
 
-  const [divAnimation, setDivAnimation] = useState(false);
+  const [divAnimation, setDivAnimation] = useState(true);
 
   useEffect(() => {
     const fetch = async () => {
