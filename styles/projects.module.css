@@ -487,23 +487,6 @@
     padding: 0 7vw;
     height: 52vh;
   }
-
-  .projectBodyInner {
-    width: fit-content;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    animation: none 0s;
-  }
-  
-  .projectBodyInnerMove {
-    width: fit-content;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    animation: bodyMove 30s linear infinite backwards;
-    background-color: black;
-  }
   
 
   .projectBodyFrost {

@@ -10,6 +10,7 @@ export default function Layout({ children }) {
     <div className={style.layout}>
       <Head>
         <meta charSet="utf-8" />
+        <meta name="viewport" />
         <title>Namkheun Collective</title>
         <link rel="icon" href="/NK_favicon.png" />
       </Head>
