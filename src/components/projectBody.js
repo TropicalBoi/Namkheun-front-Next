@@ -4,7 +4,7 @@ import style from "../../styles/projects.module.css";
 import Link from "next/link";
 
 const RenderProjectBody = (props) => {
-  const targetRef = useRef();
+  const targetRef = useRef(null);
   const [projectItems, setProjectItems] = useState();
 
   const [width, setWidth] = useState(0);
@@ -12,10 +12,6 @@ const RenderProjectBody = (props) => {
   const [dimensions, setDimensions] = useState(1);
 
   const [divAnimation, setDivAnimation] = useState(true);
-
-  useEffect(() => {
-    setWidth(window.innerWidth);
-  }, []);
 
   useEffect(() => {
     const fetch = async () => {
@@ -27,6 +23,7 @@ const RenderProjectBody = (props) => {
         const returnedData = await fetchingProjectDeatail(props.projectName);
 
         setProjectItems(returnedData);
+        setWidth(window.innerWidth);
       } catch (e) {
         console.log(e);
       }
@@ -39,9 +36,12 @@ const RenderProjectBody = (props) => {
     if (targetRef.current) {
       setDimensions(targetRef.current.offsetWidth);
     }
-  }, [targetRef.current]);
+  }, [projectItems]);
 
   useEffect(() => {
+    if (!window) return;
+    setWidth(window.innerWidth);
+
     const updateWindowDimensions = () => {
       const newWidth = window.innerWidth;
       setWidth(newWidth);
@@ -54,13 +54,13 @@ const RenderProjectBody = (props) => {
   }, []);
 
   useEffect(() => {
-    console.log(props.projectName, dimensions, width);
+    console.log(dimensions, width);
     if (dimensions >= width) {
       setDivAnimation(true);
     } else {
       setDivAnimation(false);
     }
-  }, [dimensions, width, props.projectName]);
+  }, [dimensions, width]);
 
   if (typeof projectItems === "object" && !Array.isArray(projectItems)) {
     return (
