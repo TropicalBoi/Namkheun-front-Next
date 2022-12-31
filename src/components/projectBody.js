@@ -17,6 +17,10 @@ const RenderProjectBody = (props) => {
   const [divAnimation, setDivAnimation] = useState(true);
 
   useEffect(() => {
+    setWidth(window.innerWidth);
+  }, []);
+
+  useEffect(() => {
     const fetch = async () => {
       if (props.projectName === "News") {
         return;
@@ -30,7 +34,7 @@ const RenderProjectBody = (props) => {
         console.log(e);
       }
     };
-    setWidth(window.innerWidth);
+
     fetch();
   }, [props.projectName]);
 
@@ -57,7 +61,7 @@ const RenderProjectBody = (props) => {
 
   useEffect(() => {
     console.log(props.projectName, dimensions.width, width);
-    if (dimensions.width > width) {
+    if (dimensions.width >= width) {
       setDivAnimation(true);
     } else {
       setDivAnimation(false);
