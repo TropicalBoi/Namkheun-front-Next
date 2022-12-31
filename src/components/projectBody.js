@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import { fetchingProjectDeatail } from "../APIs/projectBodyAPIs";
 import style from "../../styles/projects.module.css";
 import Link from "next/link";
-import cn from "classnames";
 
 const RenderProjectBody = (props) => {
   const targetRef = useRef();
@@ -31,6 +30,7 @@ const RenderProjectBody = (props) => {
         console.log(e);
       }
     };
+    setWidth(window.innerWidth);
     fetch();
   }, [props.projectName]);
 
@@ -40,7 +40,6 @@ const RenderProjectBody = (props) => {
         div: props.projectName,
         width: targetRef.current.offsetWidth,
       });
-      setWidth(window.innerWidth);
     }
   }, [props.projectName, targetRef.current]);
 
