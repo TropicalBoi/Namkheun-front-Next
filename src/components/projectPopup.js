@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { addHTTP, replaceTags } from "./commonFn";
 import style from "../../styles/projects.module.css";
 import ReactMarkdown from "react-markdown";
-import { set } from "immutable";
 
 const Popup = (props) => {
   const [engText, setEngText] = useState();

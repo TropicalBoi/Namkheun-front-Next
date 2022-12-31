@@ -82,6 +82,30 @@
   display: none;
 }
 
+.projectBodyInner {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  animation: none 0s;
+}
+
+.projectBodyInnerMove {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  animation: bodyMove 30s linear infinite backwards;
+}
+
+.projectBodyInnerMove:hover,
+.projectBodyInnerMove:active {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
 .projectBodyFrost {
   height: 60vh;
   width: 100vw;
@@ -333,7 +357,7 @@
     opacity: 1;
   }
   45% {
-    transform: translateX(-100%);
+    transform: translateX(-105%);
     opacity: 1;
   }
   45.1% {
@@ -344,6 +368,35 @@
   }
   55% {
     transform: translateX(105%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes bodyMove {
+  0% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  5% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-105%);
+    opacity: 1;
+  }
+  50.1% {
+    opacity: 0;
+  }
+  55% {
+    opacity: 0;
+  }
+  55.1% {
+    transform: translateX(100vw);
     opacity: 1;
   }
   100% {
@@ -412,7 +465,6 @@
     content: "\00a0 ";
   }
 
-
   .projectNameMargin {
     position: relative;
     width: 5vw;
@@ -449,7 +501,7 @@
     margin: 1.5vh 3vw 0 0;
   }
 
-  .dungoShadow{
+  .dungoShadow {
     position: relative;
     z-index: 10;
     box-shadow: -18px 0 10px white;
