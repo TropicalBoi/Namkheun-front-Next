@@ -9,10 +9,7 @@ const RenderProjectBody = (props) => {
 
   const [width, setWidth] = useState(0);
 
-  const [dimensions, setDimensions] = useState({
-    div: "",
-    width: 0,
-  });
+  const [dimensions, setDimensions] = useState(1);
 
   const [divAnimation, setDivAnimation] = useState(true);
 
@@ -40,12 +37,9 @@ const RenderProjectBody = (props) => {
 
   useEffect(() => {
     if (targetRef.current) {
-      setDimensions({
-        div: props.projectName,
-        width: targetRef.current.offsetWidth,
-      });
+      setDimensions(targetRef.current.offsetWidth);
     }
-  }, [props.projectName]);
+  }, [targetRef.current]);
 
   useEffect(() => {
     const updateWindowDimensions = () => {
@@ -60,13 +54,13 @@ const RenderProjectBody = (props) => {
   }, []);
 
   useEffect(() => {
-    console.log(props.projectName, dimensions.width, width);
-    if (dimensions.width >= width) {
+    console.log(props.projectName, dimensions, width);
+    if (dimensions >= width) {
       setDivAnimation(true);
     } else {
       setDivAnimation(false);
     }
-  }, [dimensions.width, width, props.projectName]);
+  }, [dimensions, width, props.projectName]);
 
   if (typeof projectItems === "object" && !Array.isArray(projectItems)) {
     return (
