@@ -98,21 +98,12 @@
   animation: bodyMove 30s linear infinite backwards;
 }
 
-.projectBodyInnerMove:hover {
+.projectBodyInnerMove:hover, .projectBodyInnerMove:active {
   -webkit-animation-play-state: paused;
   -moz-animation-play-state: paused;
   -o-animation-play-state: paused;
   animation-play-state: paused;
 }
-
-/* @media(hover: hover) and (pointer: fine) {
-  .projectBodyInnerMove:hover {
-    -webkit-animation-play-state: paused;
-    -moz-animation-play-state: paused;
-    -o-animation-play-state: paused;
-    animation-play-state: paused;
-  }
-} */
 
 .projectBodyFrost {
   height: 60vh;
@@ -413,6 +404,35 @@
   }
 }
 
+@keyframes bodyMove2 {
+  0% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  5% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  70% {
+    transform: translateX(-105%);
+    opacity: 1;
+  }
+  70.1% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  75.1% {
+    transform: translateX(100vw);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
 @media screen and (max-width: 428px) {
   .projectsContainer {
     padding-top: 15vh;
@@ -485,6 +505,10 @@
   .projectBody {
     padding: 0 7vw;
     height: 52vh;
+  }
+
+  .projectBodyInnerMove {
+    animation: bodyMove2 30s linear infinite backwards;
   }
   
 
